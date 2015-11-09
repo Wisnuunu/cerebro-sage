@@ -1,0 +1,32 @@
+.footer {
+	margin-top: 10px;
+
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: $footer-height;
+
+	background-color: rgba(251, 189, 86, 1);	
+
+	.container-fluid {
+		background-color: rgba(251, 189, 86, 1);
+	}
+	
+	#menu-footer {
+		display: block;
+		list-style: none;
+		text-align: center;
+		margin: 0;
+		padding: 10px 0;
+
+		li {
+			display: inline;
+			margin: 5px 10px;
+		}
+	}
+
+	.textwidget {
+		text-align: center;
+		margin-bottom: 10px;
+	}
+}
