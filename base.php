@@ -25,7 +25,8 @@ use Roots\Sage\Wrapper;
       <div class="container">
         <div class="row">
           <?php 
-          if (!get_post_format()) { ?>
+          // manage layout if post format is standard (for news usage)
+          if (!get_post_format()) { ?> 
             <main>
               <?php include Wrapper\template_path(); ?>
             </main><!-- /.main -->

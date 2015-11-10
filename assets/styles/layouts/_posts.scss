@@ -1,0 +1,51 @@
+article {
+
+	#prev-next {
+		color: white;
+
+		#prev-link {
+			min-height: 0px;
+			line-height: 2.5;
+			//margin-right: 5px;
+
+			span {
+				padding-left: 10px;
+			}
+
+		}
+
+		#next-link {
+			min-height: 0px;
+			line-height: 2.5;
+			//margin-left: 5px;
+			text-align: right;
+
+			span {
+				padding-right: 10px;
+			}
+		}
+
+		a {
+			color: white;
+		}
+
+		span {
+			background-color: red;
+			min-width: 98%;
+		}
+	}
+
+	header, .featured-image {
+		background-color: white;
+		margin: 10px 0px;
+	}
+
+	.featured-image {
+		padding: 20px 5px;
+
+
+		.bg-image {
+			min-height: 400px;
+		}
+	}
+}
