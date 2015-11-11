@@ -33,8 +33,8 @@ use Roots\Sage\Wrapper;
           <?php }
 
 
-          else { ?>
-
+          else { ?> 
+            <!-- for other article -->
 
             <div class="col-md-8"> <!-- main post -->
                <main>
