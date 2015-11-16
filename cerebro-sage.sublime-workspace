@@ -4,6 +4,114 @@
 		"selected_items":
 		[
 			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"pad",
+				"padding-left"
+			],
+			[
+				"thu",
+				"thumbnail_width"
+			],
+			[
+				"comm",
+				"comment_args"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"style",
+				"style_color"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"img",
+				"img_url"
+			],
+			[
+				"relate",
+				"related_post"
+			],
+			[
+				"image",
+				"image"
+			],
+			[
+				"pos",
+				"post_id"
+			],
+			[
+				"wp_get",
+				"wp_get_attachment_image_src"
+			],
+			[
+				"po",
+				"post_id"
+			],
+			[
+				"get_post",
+				"get_post_thumbnail_id"
+			],
+			[
+				"cn",
+				"count"
+			],
+			[
+				"tag",
+				"tag_related_posts"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"article",
+				"article_tag"
+			],
+			[
+				"arti",
+				"article_tags"
+			],
+			[
+				"view",
+				"view_related_post"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
 				"sr",
 				"src-img"
 			],
@@ -24,24 +132,8 @@
 				"destination"
 			],
 			[
-				"margin",
-				"margin-bottom"
-			],
-			[
 				"margin-t",
 				"margin-bottom"
-			],
-			[
-				"min",
-				"min-height"
-			],
-			[
-				"margi",
-				"margin"
-			],
-			[
-				"pad",
-				"padding-top"
 			],
 			[
 				"text",
@@ -56,16 +148,8 @@
 				"inline-block"
 			],
 			[
-				"back",
-				"background"
-			],
-			[
 				"backgroun",
 				"background-color"
-			],
-			[
-				"mar",
-				"margin"
 			],
 			[
 				"rgb",
@@ -360,10 +444,6 @@
 				"document"
 			],
 			[
-				"img",
-				"imgID"
-			],
-			[
 				"que",
 				"queryImg"
 			],
@@ -415,7 +495,58 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 4961,
+				"buffer_size": 713,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "assets/styles/layouts/_posts.scss",
+			"settings":
+			{
+				"buffer_size": 2580,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nTheme - SoDaReloaded\n--------------------\n\n  Thanks for installing SoDaReloaded Theme, a custom UI theme for Sublime Text 3 optimized for better readability.\n  This theme supports the new Sublime Text 3 icons for file types out of the box!\n  \n  How to activate?\n  ================\n  \n  - Open your User Settings Preferences file:\n      Sublime Text -> Preferences -> Settings - User\n  - Add (or update) your theme entry to be:\n      \"theme\": \"SoDaReloaded Dark.sublime-theme\"\n      ... or ...\n      \"theme\": \"SoDaReloaded Light.sublime-theme\"\n  - Restart your editor\n  \n  For more information visit: https://github.com/Miw0/sodareloaded-theme\n  \n  Thanks\n  ======\n  \n  SoDaReloaded was created and is maintained by Michael Worm (https://github.com/Miw0).\n",
+			"settings":
+			{
+				"buffer_size": 806,
+				"line_ending": "Windows",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "/C/Users/Nunu/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 90,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "functions.php",
+			"settings":
+			{
+				"buffer_size": 1164,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "templates/format/format-news.php",
+			"settings":
+			{
+				"buffer_size": 5014,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "templates/comments-news.php",
+			"settings":
+			{
+				"buffer_size": 1966,
 				"line_ending": "Windows"
 			}
 		}
@@ -427,7 +558,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 150.0,
+		"height": 219.0,
 		"last_filter": "insta",
 		"selected_items":
 		[
@@ -469,10 +600,16 @@
 	},
 	"expanded_folders":
 	[
-		"/C/xampp/htdocs/cerebro/wp-content/themes/sage"
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/styles",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/styles/layouts",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/templates",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/templates/format"
 	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/templates/comments.php",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/sage/templates/header.php",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/sage/page.php",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/sage/assets/styles/common/_global.scss",
@@ -575,7 +712,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -589,6 +726,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"count",
 			"		//",
 			"iterateN",
 			",,\n",
@@ -618,6 +756,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"cnt"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -628,24 +767,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
 					"file": "README.md",
-					"semi_transient": true,
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4961,
+						"buffer_size": 713,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								564,
+								564
 							]
 						],
 						"settings":
@@ -653,10 +792,186 @@
 							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "assets/styles/layouts/_posts.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2580,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2564,
+								2564
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2585.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 806,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								806,
+								806
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/Nunu/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 90,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								43,
+								43
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "functions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1164,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1163,
+								1163
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 585.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "templates/format/format-news.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5014,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3012,
+								3012
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 44.0,
+						"translation.y": 1575.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "templates/comments-news.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1966,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								465,
+								465
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -705,7 +1020,7 @@
 	"project": "cerebro-sage.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -714,6 +1029,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"func",
+				"functions.php"
+			],
 			[
 				"page.",
 				"page.php"
@@ -807,7 +1126,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 212.0,
+	"side_bar_width": 173.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

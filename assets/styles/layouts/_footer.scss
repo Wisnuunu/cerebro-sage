@@ -22,11 +22,29 @@
 		li {
 			display: inline;
 			margin: 5px 10px;
+			text-align: center;
 		}
+
+		// li:before {
+		// 	content: " | ";
+		// }
+
+		// li:first-child:before {
+		// 	content: none;		
+		// }
+
+		a {
+	 		color: rgba(200,0,0,1);
+	 		font-weight: 600;
+	 		font-size: 11px;
+	 		text-transform: uppercase;
+		}
+
+		
 	}
 
 	.textwidget {
 		text-align: center;
-		margin-bottom: 10px;
+		font-size: 12px;
 	}
 }

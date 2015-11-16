@@ -14,7 +14,7 @@
 	<!-- </div> -->
 
 	<header>
-		<div class="container-fluid">
+		<div class="container-fluid" id="post-title">
 		  <h1 class="entry-title"><?php the_title(); ?></h1>
 		</div>
 	</header>
@@ -99,10 +99,31 @@
   		</div>
 	</div>
 
+	<section id="comment">	
+		<?php comments_template('/templates/comments-news.php'); ?> 
+	</section>
+
+	<section id="popular-post">
+		<?php
+		    if (function_exists('wpp_get_mostpopular'))
+		        wpp_get_mostpopular( "
+		        	header='Popular Posts'&
+		        	limit=4&
+		        	range=all&
+		        	post_type=post&
+		        	wpp_start='<div class=\"row\">'&
+		        	wpp_end='</div>'&
+		        	title_by_words=1&
+		        	thumbnail_width=200&
+		        	thumbnail_height=130&
+		        	post_html='<div class=\"col-md-3 pp-content\">{thumb}<div class=\"pp-title\"><b>{title}</b></div></div>'
+		        	" );
+		?>
+	</section>
+
 	<footer>
-	  <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
+	  	<?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
 	</footer>
-	<?php comments_template('/templates/comments.php'); ?> 
 
 </article>
 
