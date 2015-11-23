@@ -1,0 +1,82 @@
+/* LOGIN PAGE */
+
+.login-form{
+
+	.login-form-error {
+		max-width: 400px;
+		margin: 20px auto !important;
+		text-align: center;
+	}
+
+	.login-form-container {
+		max-width: 400px;
+		margin: 0 auto !important;
+		padding: 5px 20px 10px 20px;
+		background-color: white;
+		min-height: 340px;
+
+		border-radius: 5px;
+
+		#title {
+			text-align: center;
+			margin-bottom: 30px;
+		}
+	 	
+	 	input[type="submit"] {
+	 		min-width: 120px;
+	 		border-radius: 0px;
+	 	}
+
+	 	#more-info {
+	 		margin-top: 60px;
+	 	}
+
+	 	.forgot-password, .sign-up {
+			font-size: 10px;
+			display: inline;
+		}
+
+		.forgot-password {
+			padding-left: 0px;
+		}
+
+		.sign-up {
+			padding-right: 0px;
+			text-align: right;
+		}
+
+		.login-submit {
+			text-align: right;
+		}
+	}
+}
+
+.signup-form {
+	max-width: 500px;
+	margin: 10px auto !important;
+	background-color: white;
+	border-radius: 5px;
+	padding: 5px 20px 10px;
+	min-height: 450px;
+
+	#title {
+		text-align: center;
+	}
+
+	#button {
+		text-align: right;
+
+		button {
+			border-radius: 0px;
+			min-width: 150px;
+		}
+	}
+
+	#term-police {
+		font-size: 11px;
+	}
+}
+
+body {
+	background-color: #E8E8E8;
+}

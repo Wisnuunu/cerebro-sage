@@ -28,5 +28,30 @@
       </div> <!-- end container -->
       
     </nav>
+
   </div> <!-- end container -->
 </header>
+
+
+<?php 
+  $pageID = get_the_ID();
+  $title = get_the_title($pageID);
+  //register button is not presented on Login page
+  if ($title == 'Login' || $title == 'Signup' ) : ?>
+  <div class="sr-only">Disable Header</div>
+<?php 
+  else: ?>
+
+    <section id="login-status">
+      <div class="container" >      
+        <div class="col-md-6 logo">
+          <b>Cerebrovit Logo</b>
+        </div>
+        <div class="col-md-6 buttons-stat">
+          <a id="regis" class="btn btn-primary pull-right" href="<?php echo get_home_url().'/signup';/*echo wp_registration_url();*/ ?>">Register</a></button>
+          <a id="login" class="btn btn-primary pull-right" href="<?php echo get_home_url().'/login'; ?>">Login</a>
+        </div>
+      </div>
+    </section>
+
+<?php endif; ?>

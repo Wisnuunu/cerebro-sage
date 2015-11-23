@@ -32,6 +32,29 @@
 			top: 3px;
 		}
 	}
+}
 
+#login-status {
+	min-height: 100px;
 
+	.logo {
+		padding-left: 0px;
+	}
+
+	.buttons-stat {
+		padding-right: 0px;
+	}
+
+	.btn {
+		margin: 5px;
+		background-color: red;
+		font-weight: 600;
+		min-width: 90px;
+		border-radius: 0px;
+		border-style: none;
+	}
+
+	button:hover {
+		background-color: gray;
+	}
 }

@@ -20,5 +20,11 @@ Another wordpress themes using sage as base template
 ## adding popular post support
 * install plugin WordPress Popular Posts on news single page
 
+## allowing registration
+* go to setting > tick membership > set new user default role
+* add custom page for login
+* add custom page for registration
+
+
 --------
 aDMIN:rahasia
