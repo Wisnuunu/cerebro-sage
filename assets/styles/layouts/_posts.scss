@@ -5,24 +5,25 @@ article {
 
 		#prev-link {
 			min-height: 0px;
-			line-height: 2.5;
-			//margin-right: 5px;
+			background-color: #D00;
+			text-align: left;
+			line-height: 1.5;
 
-			span {
-				padding-left: 10px;
-			}
+			// span {
+			// 	padding-left: 10px;
+			// }
 
 		}
 
 		#next-link {
 			min-height: 0px;
-			line-height: 2.5;
-			//margin-left: 5px;
+			background-color: #D00;
 			text-align: right;
+			line-height: 1.5;
 
-			span {
-				padding-right: 10px;
-			}
+			// span {
+			// 	padding-right: 10px;
+			// }
 		}
 
 		a {
@@ -30,7 +31,6 @@ article {
 		}
 
 		span {
-			background-color: red;
 			min-width: 98%;
 		}
 	}
@@ -40,13 +40,13 @@ article {
 		margin-top: 10px;
 	}
 
-	.featured-image {
+	.featured-image, .featured-video {
 		background-color: white;
 		margin: 10px 0px;
 	}
 
-	.featured-image {
-		padding: 20px 5px;
+	.featured-image, .featured-video{
+		padding: 20px 0px;
 
 		.bg-image {
 			min-height: 350px;
@@ -62,6 +62,12 @@ article {
 		.sd-content li {
 			transform: scale(1.5, 1.5);
 			margin: 10px !important;
+		}
+
+		.featured-video-plus {
+			padding-top: 20px;
+			padding-bottom: 15px;
+			background-color: #222;
 		}
 	}
 
@@ -168,7 +174,7 @@ article {
 				border: solid 1px #cbcbcb;
 				margin: 10px auto;
 				padding: 10px;
-				border-radius: 10px;
+				border-radius: 5px;
 			}
 		}
 		
@@ -207,10 +213,10 @@ article {
 
 		.pp-title {
 			background-color: white;
-			top: -10px;
 			padding: 10px;
 			min-height: 80px;			
 			max-height: 80px;
+			font-size: 12px;
 
 			a {
 				color: #555;

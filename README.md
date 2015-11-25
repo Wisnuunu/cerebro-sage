@@ -24,7 +24,7 @@ Another wordpress themes using sage as base template
 * go to setting > tick membership > set new user default role
 * add custom page for login
 * add custom page for registration
-
+* adding plugin: WP User Avatar 2.0.3
 
 --------
 aDMIN:rahasia

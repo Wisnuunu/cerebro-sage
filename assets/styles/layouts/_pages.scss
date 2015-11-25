@@ -10,7 +10,7 @@
 
 	.login-form-container {
 		max-width: 400px;
-		margin: 0 auto !important;
+		margin: 30px auto 0 !important;
 		padding: 5px 20px 10px 20px;
 		background-color: white;
 		min-height: 340px;
@@ -28,7 +28,7 @@
 	 	}
 
 	 	#more-info {
-	 		margin-top: 60px;
+	 		margin-top: 50px;
 	 	}
 
 	 	.forgot-password, .sign-up {
@@ -51,9 +51,10 @@
 	}
 }
 
+/* SIGN UP FORM */
 .signup-form {
 	max-width: 500px;
-	margin: 10px auto !important;
+	margin: 20px auto !important;
 	background-color: white;
 	border-radius: 5px;
 	padding: 5px 20px 10px;
@@ -64,7 +65,7 @@
 	}
 
 	#button {
-		text-align: right;
+		text-align: center;
 
 		button {
 			border-radius: 0px;
@@ -74,6 +75,17 @@
 
 	#term-police {
 		font-size: 11px;
+	}
+
+
+}
+
+#message {
+	text-align: center;
+	.alert {
+		max-width: 500px;
+		margin: 0 auto 30px !important;
+		line-height: .5;
 	}
 }
 

@@ -44,7 +44,7 @@ function restrict_admin()
                 wp_redirect( site_url() );
   }
 }
-add_action( 'admin_init', 'restrict_admin', 1 );
+//add_action( 'admin_init', 'restrict_admin', 1 );
 
 function login_failed() {
     $login_page  = home_url( '/login/' );
@@ -68,3 +68,12 @@ function logout_page() {
     exit;
 }
 add_action('wp_logout','logout_page');
+
+function signup_redirect() {
+    global $pagenow;
+    $signup_page = home_url('/signup/');
+    if ((strtolower($pagenow) == 'wp-login.php') && (strtolower($_GET['action']) == 'register')) {
+        wp_redirect($signup_page);
+    }
+}
+add_filter('init', 'signup_redirect');

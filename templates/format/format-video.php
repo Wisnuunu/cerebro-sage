@@ -14,13 +14,16 @@
 		</section>
 	</div>
 
+	<!-- post title -->
 	<header>
 		<div class="container-fluid" id="post-title">
 		  <h1 class="entry-title"><?php the_title(); ?></h1>
 		</div>
 	</header>
 
-	<section class="featured-image">
+	<section class="featured-video">
+
+		<!-- share buttons -->
 		<div class="container-fluid">
 			<?php
 				if (function_exists('sharing_display')) {
@@ -33,22 +36,35 @@
 				}
 			?>
 		</div>
-		<div class="container-fluid">
-			<?php
-				if( has_post_thumbnail( $post->ID )) {
-					$thumb_id = get_post_thumbnail_id();
-					$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
-					$thumb_url = $thumb_url_array[0];
-					//echo $thumb_url;
-					// echo '<img src="'.$thumb_url.'" alt="featured image">';
 
-					echo '<div class="bg-image" style="background-image:url('.$thumb_url.')"></div>';
+		<!-- featured images & videos -->
+		<div class="container-fluid">
+
+			<?php
+				// display featured video
+				//echo has_post_video($post->ID);
+				if (has_post_video($post->ID)) {
+					echo get_the_post_video( $post->ID, 'large' );
+				}
+				else {
+					//display featured image
+					if( has_post_thumbnail( $post->ID )) {
+						$thumb_id = get_post_thumbnail_id();
+						$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+						$thumb_url = $thumb_url_array[0];
+						//echo $thumb_url;
+						//echo '<img src="'.$thumb_url.'" alt="featured image">';
+
+						echo '<div class="bg-image" style="background-image:url('.$thumb_url.')"></div>';
+					}
 				}
 			?>
 		</div> 		
 	</section>
 
-	<div class="entry-content container">
+	<!-- main content -->
+	<div class="entry-content container-fluid">
+		<!-- post meta -->
 		<div class="col-md-1" id="post-meta">
 			<i><b><?php the_date('d M Y'); ?></b></i> <br />
 			<i><b>Author:&nbsp</b></i>
@@ -64,6 +80,8 @@
 			<i><b>Shortlink:&nbsp</b></i>
 			<?php echo wp_get_shortlink(); ?>
 		</div>
+
+		<!-- main article -->
 		<div class="col-md-8" id="main">
 			<div id="content">
 	  			<?php the_content(); ?>
@@ -92,6 +110,8 @@
 				?>
 			</div>
   		</div>
+
+  		<!-- right sidebar ~ related post -->
   		<div class="col-md-3" id="rel-post">
   			<h5 id="title">Related Post</h5>
   			<div id="rel-content">

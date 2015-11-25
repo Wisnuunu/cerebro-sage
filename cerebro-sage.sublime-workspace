@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"tet",
+				"text-align"
+			],
+			[
+				"pad",
+				"padding-left"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
 				"emai",
 				"email2"
 			],
@@ -28,16 +56,8 @@
 				"genderBod"
 			],
 			[
-				"user",
-				"username"
-			],
-			[
 				"gender",
 				"genderBod"
-			],
-			[
-				"mar",
-				"margin-bottom"
 			],
 			[
 				"size",
@@ -52,16 +72,8 @@
 				"login"
 			],
 			[
-				"max",
-				"max-height"
-			],
-			[
 				"mi",
 				"min-height"
-			],
-			[
-				"bor",
-				"border-style"
 			],
 			[
 				"page",
@@ -70,10 +82,6 @@
 			[
 				"end",
 				"endif"
-			],
-			[
-				"pad",
-				"padding"
 			],
 			[
 				"min",
@@ -94,10 +102,6 @@
 			[
 				"fot",
 				"font-weight"
-			],
-			[
-				"margin",
-				"margin"
 			],
 			[
 				"bott",
@@ -510,23 +514,16 @@
 			[
 				"labe",
 				"label	<label>"
-			],
-			[
-				"la",
-				"label	<label> with <input>"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"contents": "Another wordpress themes using sage as base template\n\n## installation for test purpose\n* copy themes to wordpress themes folder.\n* run npm install > bower install > gulp.\n* if on development process run gulp watch\n* import data test from tools > import > wordpress\n* open wp dashboard, edit themes\n* open costumize menu\n* add 2 menu set: header menu, footer menu\n* at customize, set main header in menu option\n* for footer can be added at widget part, add custom menu, add text for copyright\n* set frontpage as static page\n\n## adding share button support\n* install JETPACK plugin\n* activate shared buttons\n* edit functions and css to change it position on post\n\n## adding popular post support\n* install plugin WordPress Popular Posts on news single page\n\n## allowing registration\n* go to setting > tick membership > set new user default role\n\n--------\naDMIN:rahasia\n",
 			"file": "README.md",
-			"file_size": 865,
-			"file_write_time": 130921305680474243,
 			"settings":
 			{
-				"buffer_size": 866,
+				"buffer_size": 1002,
 				"line_ending": "Windows"
 			}
 		},
@@ -534,15 +531,23 @@
 			"file": "assets/styles/layouts/_pages.scss",
 			"settings":
 			{
-				"buffer_size": 960,
+				"buffer_size": 1230,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "assets/styles/common/_global.scss",
+			"file": "assets/styles/layouts/_posts.scss",
 			"settings":
 			{
-				"buffer_size": 133,
+				"buffer_size": 3068,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "templates/format/format-news.php",
+			"settings":
+			{
+				"buffer_size": 5243,
 				"line_ending": "Windows"
 			}
 		},
@@ -550,7 +555,7 @@
 			"file": "templates/header.php",
 			"settings":
 			{
-				"buffer_size": 2367,
+				"buffer_size": 3314,
 				"line_ending": "Windows"
 			}
 		},
@@ -558,7 +563,7 @@
 			"file": "assets/styles/layouts/_header.scss",
 			"settings":
 			{
-				"buffer_size": 805,
+				"buffer_size": 1035,
 				"line_ending": "Windows"
 			}
 		},
@@ -566,23 +571,7 @@
 			"file": "functions.php",
 			"settings":
 			{
-				"buffer_size": 2108,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "template-custom-signup.php",
-			"settings":
-			{
-				"buffer_size": 6609,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "template-custom-login.php",
-			"settings":
-			{
-				"buffer_size": 2773,
+				"buffer_size": 2110,
 				"line_ending": "Windows"
 			}
 		}
@@ -638,12 +627,17 @@
 	[
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets",
-		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/styles"
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/styles",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/styles/layouts",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/templates",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/templates/format"
 	],
 	"file_history":
 	[
-		"/C/Users/Nunu/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/styles/layouts/_posts.scss",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/template-custom-login.php",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/template-custom-signup.php",
+		"/C/Users/Nunu/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/node_modules/tar-stream/headers.js",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/manifest.json",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/styles/main.scss",
@@ -652,7 +646,6 @@
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/lib/setup.php",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/lib/wrapper.php",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/bower.json",
-		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/template-custom-login.php",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/templates/format/format-news.php",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/template-custom.php",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/styles/layouts/_footer.scss",
@@ -777,6 +770,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"border-ra",
+			"admin",
 			"\"../",
 			"width-min",
 			"count",
@@ -820,7 +815,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -829,15 +824,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 866,
+						"buffer_size": 1002,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								841,
-								841
+								977,
+								977
 							]
 						],
 						"settings":
@@ -848,7 +843,7 @@
 						"translation.y": 114.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -857,15 +852,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 960,
+						"buffer_size": 1230,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								821,
-								821
+								267,
+								267
 							]
 						],
 						"settings":
@@ -877,29 +872,30 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "assets/styles/common/_global.scss",
-					"semi_transient": true,
+					"file": "assets/styles/layouts/_posts.scss",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 133,
+						"buffer_size": 3068,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								145,
+								145
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -910,26 +906,25 @@
 				},
 				{
 					"buffer": 3,
-					"file": "templates/header.php",
+					"file": "templates/format/format-news.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2367,
+						"buffer_size": 5243,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1812,
-								1812
+								287,
+								287
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -940,48 +935,19 @@
 				},
 				{
 					"buffer": 4,
-					"file": "assets/styles/layouts/_header.scss",
+					"file": "templates/header.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 805,
+						"buffer_size": 3314,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 450.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "functions.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2108,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2107,
-								2107
+								3166,
+								3166
 							]
 						],
 						"settings":
@@ -991,68 +957,69 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 404.0,
+						"translation.y": 675.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "assets/styles/layouts/_header.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1035,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								728,
+								728
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 450.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 6,
-					"file": "template-custom-signup.php",
+					"file": "functions.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6609,
+						"buffer_size": 2110,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4436,
-								4436
+								1417,
+								1417
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1015.0,
+						"translation.y": 494.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "template-custom-login.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2773,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								45,
-								45
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 450.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]

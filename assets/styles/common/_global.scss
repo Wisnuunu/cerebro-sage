@@ -7,3 +7,9 @@ body {
 	margin-bottom: $footer-height;
 	background-color: rgba(232, 232, 232, 1);
 }
+
+@media (min-width: 1200px) {
+	.container {
+		max-width: 970px;
+	}
+}

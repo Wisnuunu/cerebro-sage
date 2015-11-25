@@ -24,16 +24,14 @@ use Roots\Sage\Wrapper;
 
       <div class="container">
         <div class="row">
-          <?php 
-          // manage layout if post format is standard (for news usage)
-          if (!get_post_format()) { ?> 
+
+          <!-- define current post format that will have single page without sidebar widget -->
+          <?php if ( !get_post_format() || get_post_format() === 'video'): ?> 
             <main>
               <?php include Wrapper\template_path(); ?>
             </main><!-- /.main -->
-          <?php }
-
-
-          else { ?> 
+         
+          <?php else : ?> 
             <!-- for other article -->
 
             <div class="col-md-8"> <!-- main post -->
@@ -41,15 +39,16 @@ use Roots\Sage\Wrapper;
                 <?php include Wrapper\template_path(); ?>
               </main><!-- /.main -->
             </div>
+
             <div class="col-md-4"> <!-- side bar -->
-              <?php if (Setup\display_sidebar()) { ?>
+              <?php if (Setup\display_sidebar()):  ?>
                 <aside>
                   <?php include Wrapper\sidebar_path(); ?>
                 </aside>
-              <?php  } ?>  
+              <?php  endif; ?>  
             </div>     
-          <?php } ?>      
 
+          <?php endif; ?>      
 
         </div>
       </div>

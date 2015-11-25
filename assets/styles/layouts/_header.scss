@@ -1,23 +1,29 @@
 #navigation {
 	background-color: rgba(251, 189, 86, 1);
 	margin-bottom: 10px;
+	text-align: center;
+
+	.nav-container {
+		margin: 0 auto !important;
+		@media screen and (min-width: 1200px){
+			width: 1040px;
+		}
+	}
 
 	.navbar {
 		border-radius: 0;
 		border: none;
 		background-color: transparent;
 
-		margin: 5px auto;
-
-		text-align: center;
 		text-transform: uppercase;
 	 	color: rgba(210, 18,14, 1);
 	}
 
 	.navbar-form {
+
 		input[type='search'] {
 			width-min: 124px;
-			background: none;
+			// background: none;
 			border: none;
 			box-shadow: none;
 		}
@@ -36,18 +42,42 @@
 
 #login-status {
 	min-height: 100px;
+	margin: 0px auto !important;
+
+	// .container-fluid {
+	// 	padding-left: 0px;
+	// }
 
 	.logo {
 		padding-left: 0px;
+		margin-bottom: 10px;
 	}
 
 	.buttons-stat {
 		padding-right: 0px;
+		text-align: right;
+
+		.row {
+			width: 200px;
+		}
+
+		#avatar {
+			padding-right: 10px;
+		}
+
+		#right-group {
+			padding-left: 0px;
+		}
+
+		img {
+			border-radius: 50%;
+			background-color: #DD0000;
+		}
 	}
 
 	.btn {
 		margin: 5px;
-		background-color: red;
+		background-color: #DD0000;
 		font-weight: 600;
 		min-width: 90px;
 		border-radius: 0px;

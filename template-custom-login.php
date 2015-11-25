@@ -29,7 +29,7 @@
 		        <p class="checkbox login-remember">
 		        	<label>
 		        		<input class="checkbox" id="rememberme" type="checkbox" value="forever" name="rememberme"></input>
-		        		Remember Me		        		
+		        		Remember Me
 		        	</label>
 		        </p>
 		        <p class="login-submit">
@@ -39,14 +39,14 @@
 	    </div>
 
 	    <div id="more-info">
-    		<p class="forgot-password col-xs-6">Forgot password? <a href="#">Click Here</a></p>
+    		<p class="forgot-password col-xs-6">Forgot password? <a href="<?php echo wp_lostpassword_url(); ?>">Click Here</a></p>
     		<p class="sign-up col-xs-6">Dont have account? <a href="<?php echo get_home_url().'/signup'; ?>">Sign up here</a> </p>
     	</div>
-	   
+
 	</div>
 
-	<div class="login-form-error">	
-			
+	<div class="login-form-error">
+
 			<?php
 				// $args = array(
 				// 	'redirect' => home_url()
@@ -59,7 +59,7 @@
 				// wp_login_form( $args );
 
 				$login  = (isset($_GET['login']) ) ? $_GET['login'] : 0;
-				
+
 				if ($login != '') {
 					echo '<div class="alert alert-danger" role="alert">';
 					echo '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>';
@@ -78,7 +78,7 @@
 				}
 			?>
 	</div>
-	
+
 </div>
 
 <?php //get_footer(); ?>

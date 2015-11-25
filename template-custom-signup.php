@@ -12,7 +12,8 @@
 <!-- <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" />  -->
 <link href="http://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/v4.0.0/build/css/bootstrap-datetimepicker.css" rel="stylesheet" />
 
-<div class="container">
+<div class="container">	
+
 	<div class="signup-form">
 
 		<h3 id="title">Sign Up</h3>
@@ -130,17 +131,30 @@
 
 	<!--display error/success message-->
     <div id="message">
+    	
         <?php 
             if(!empty($err) ) :
-                echo '<p class="error">'.$err.'';
+            	echo'<div class="alert alert-danger">';
+                echo '<p class="error"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">&nbsp</span>'.$err.'</p>';
+                echo '</div>';
             endif;
         ?>
         
+        
         <?php 
-            if(! empty($success) ) :
-                echo '<p class="error">'.$success.'';
-            endif;
-        ?>
+            if(! empty($success) ) : ?>
+            	<div class="alert alert-success">
+                	<p class="error"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">&nbsp</span> You're successfully registered</p>
+                	<p>page will be automatically redirect in <span id="timer">10</span> sec</p>
+                </div>
+                <script type="text/javascript">
+					var url ='<?php echo get_home_url()."/login"; ?>';
+					var delay = 10;
+					var d = delay * 1000;
+					window.setTimeout ('parent.location.replace(url)', d);
+				</script>
+        <?php   endif; ?>
+
     </div>
 
     
