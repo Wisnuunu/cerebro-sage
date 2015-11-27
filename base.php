@@ -35,6 +35,7 @@ use Roots\Sage\Wrapper;
             <!-- for other article -->
 
             <div class="col-md-8"> <!-- main post -->
+              
                <main>
                 <?php include Wrapper\template_path(); ?>
               </main><!-- /.main -->
@@ -60,5 +61,17 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/footer');
       wp_footer();
     ?>
+
+    <section id="visit-menu">
+      <ul>
+        <li>anu</li>
+        <li>facebook</li>
+        <li>twitter</li>
+        <li>youtube</li>
+        <li>smartforum</li>
+        <li>ask an expert</li>
+      </ul>
+    </section>
+
   </body>
 </html>
