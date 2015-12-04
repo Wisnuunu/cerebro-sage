@@ -4,20 +4,64 @@
 		"selected_items":
 		[
 			[
+				"rg",
+				"right"
+			],
+			[
+				"txt",
+				"text-align"
+			],
+			[
+				"inline",
+				"inline"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"marg",
+				"margin-right"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
 				"mar",
-				"margin-bottom"
+				"margin"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"a",
+				"a"
 			],
 			[
 				"margin",
-				"margin-bottom"
+				"margin"
+			],
+			[
+				"incl",
+				"include"
+			],
+			[
+				"post",
+				"post_format"
+			],
+			[
+				"arra",
+				"array"
+			],
+			[
+				"ar",
+				"array"
 			],
 			[
 				"tet",
 				"text-align"
-			],
-			[
-				"pad",
-				"padding-left"
 			],
 			[
 				"bor",
@@ -84,14 +128,6 @@
 				"endif"
 			],
 			[
-				"min",
-				"min-width"
-			],
-			[
-				"rg",
-				"rgba()"
-			],
-			[
 				"fotn",
 				"font-size"
 			],
@@ -116,10 +152,6 @@
 				"inline"
 			],
 			[
-				"marg",
-				"margin"
-			],
-			[
 				"backg",
 				"background-color"
 			],
@@ -136,16 +168,8 @@
 				"comment_args"
 			],
 			[
-				"back",
-				"background-color"
-			],
-			[
 				"style",
 				"style_color"
-			],
-			[
-				"inline",
-				"inline-block"
 			],
 			[
 				"img",
@@ -316,10 +340,6 @@
 				"iN"
 			],
 			[
-				"ar",
-				"arr_result"
-			],
-			[
 				"str",
 				"StringToInt"
 			],
@@ -362,10 +382,6 @@
 			[
 				"New",
 				"newN"
-			],
-			[
-				"a",
-				"a"
 			],
 			[
 				"string",
@@ -498,80 +514,67 @@
 			[
 				"mysql_num",
 				"mysql_num_rows"
-			],
-			[
-				"act",
-				"action"
-			],
-			[
-				"laeb",
-				"label	Tag"
-			],
-			[
-				"inp",
-				"inputt	input - text"
-			],
-			[
-				"labe",
-				"label	<label>"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
+			"contents": "Another wordpress themes using sage as base template\n\n## installation for test purpose\n* copy themes to wordpress themes folder.\n* run npm install > bower install > gulp.\n* if on development process run gulp watch\n* import data test from tools > import > wordpress\n* open wp dashboard, edit themes\n* open costumize menu\n* add 2 menu set: header menu, footer menu\n* at customize, set main header in menu option\n* for footer can be added at widget part, add custom menu, add text for copyright\n* set frontpage as static page\n\n## adding share button support\n* install JETPACK plugin\n* activate shared buttons\n* edit functions and css to change it position on post\n\n## adding popular post support\n* install plugin WordPress Popular Posts on news single page\n\n## allowing registration\n* go to setting > tick membership > set new user default role\n* add custom page for login\n* add custom page for registration\n* adding plugin: WP User Avatar 2.0.3\n* redirect to new login page and register page\n\n## add post format video\n* install plugin Featured Video Plus\n\n--------\naDMIN:rahasia\n",
 			"file": "README.md",
+			"file_size": 997,
+			"file_write_time": 130928132530171895,
 			"settings":
 			{
-				"buffer_size": 1002,
+				"buffer_size": 1077,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "assets/styles/layouts/_pages.scss",
+			"file": "templates/format/format-video.php",
 			"settings":
 			{
-				"buffer_size": 1230,
+				"buffer_size": 5663,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "assets/styles/layouts/_posts.scss",
+			"file": "templates/page-header.php",
 			"settings":
 			{
-				"buffer_size": 3068,
+				"buffer_size": 100,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "templates/format/format-news.php",
+			"file": "base.php",
 			"settings":
 			{
-				"buffer_size": 5243,
+				"buffer_size": 2018,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "templates/header.php",
+			"file": "templates/comments-news.php",
 			"settings":
 			{
-				"buffer_size": 3314,
+				"buffer_size": 1966,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "assets/styles/layouts/_header.scss",
+			"file": "assets/styles/common/_global.scss",
 			"settings":
 			{
-				"buffer_size": 1035,
+				"buffer_size": 491,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "functions.php",
+			"file": "template-custom-home.php",
 			"settings":
 			{
-				"buffer_size": 2110,
+				"buffer_size": 256,
 				"line_ending": "Windows"
 			}
 		}
@@ -583,16 +586,12 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 219.0,
-		"last_filter": "insta",
+		"height": 375.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
-				"insta",
-				"Package Control: Install Package"
-			],
-			[
-				"Package Control: install",
+				"instal",
 				"Package Control: Install Package"
 			],
 			[
@@ -600,17 +599,23 @@
 				"Package Control: Install Package"
 			],
 			[
-				"instal",
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: install",
 				"Package Control: Install Package"
 			]
 		],
-		"width": 400.0
+		"width": 890.0
 	},
 	"console":
 	{
 		"height": 126.0,
 		"history":
 		[
+			"cmd",
+			"ping 8.8.8.8",
 			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
 		]
 	},
@@ -625,9 +630,9 @@
 	},
 	"expanded_folders":
 	[
-		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/styles",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/styles/common",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/styles/layouts",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/templates",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/templates/format"
@@ -636,21 +641,28 @@
 	[
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/styles/layouts/_posts.scss",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/template-custom-login.php",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/template-custom-home.php",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/templates/header.php",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/styles/layouts/_header.scss",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/functions.php",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/templates/content-page.php",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/base.php",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/styles/common/_variables.scss",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/templates/content-single.php",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/templates/format/format-news.php",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/styles/layouts/_pages.scss",
+		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/templates/content.php",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/template-custom-signup.php",
 		"/C/Users/Nunu/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/node_modules/tar-stream/headers.js",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/manifest.json",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/styles/main.scss",
-		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/styles/layouts/_pages.scss",
-		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/styles/layouts/_header.scss",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/lib/setup.php",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/lib/wrapper.php",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/bower.json",
-		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/templates/format/format-news.php",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/template-custom.php",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/assets/styles/layouts/_footer.scss",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/templates/comments-news.php",
-		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/functions.php",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/cerebro-sage/templates/comments.php",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/sage/templates/header.php",
 		"/C/xampp/htdocs/cerebro/wp-content/themes/sage/page.php",
@@ -761,6 +773,7 @@
 		"height": 90.0,
 		"where_history":
 		[
+			"C:\\xampp\\htdocs\\cerebro\\wp-content\\themes\\cerebro-sage",
 			"width-min,C:\\xampp\\htdocs\\cerebro\\wp-content\\themes\\cerebro-sage",
 			"width-min"
 		]
@@ -770,6 +783,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"$wrapper-width",
+			"image",
+			"for other article",
+			"for other",
+			"other",
+			"for other article",
+			"News",
 			"border-ra",
 			"admin",
 			"\"../",
@@ -815,7 +835,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -824,15 +844,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1002,
+						"buffer_size": 1077,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								977,
-								977
+								1052,
+								1052
 							]
 						],
 						"settings":
@@ -840,91 +860,61 @@
 							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 114.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "assets/styles/layouts/_pages.scss",
+					"file": "templates/format/format-video.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1230,
+						"buffer_size": 5663,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								267,
-								267
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "assets/styles/layouts/_posts.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3068,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								145,
-								145
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "templates/format/format-news.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5243,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								287,
-								287
+								1745,
+								1745
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1210.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "templates/page-header.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 100,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -934,20 +924,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "templates/header.php",
+					"buffer": 3,
+					"file": "base.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3314,
+						"buffer_size": 2018,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3166,
-								3166
+								1126,
+								1126
 							]
 						],
 						"settings":
@@ -957,56 +947,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 675.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "assets/styles/layouts/_header.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1035,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								728,
-								728
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 450.0,
+						"translation.y": 315.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "functions.php",
+					"buffer": 4,
+					"file": "templates/comments-news.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2110,
+						"buffer_size": 1966,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1417,
-								1417
+								653,
+								653
 							]
 						],
 						"settings":
@@ -1016,10 +977,66 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 494.0,
+						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "assets/styles/common/_global.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 491,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								159,
+								159
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "template-custom-home.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 256,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								152,
+								152
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1068,7 +1085,7 @@
 	"project": "cerebro-sage.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1078,12 +1095,36 @@
 		"selected_items":
 		[
 			[
-				"pagesc",
-				"assets\\styles\\layouts\\_pages.scss"
+				"base",
+				"base.php"
+			],
+			[
+				"func",
+				"functions.php"
+			],
+			[
+				"header.sc",
+				"assets\\styles\\layouts\\_header.scss"
+			],
+			[
+				"_head",
+				"assets\\styles\\layouts\\_header.scss"
 			],
 			[
 				"header",
 				"assets\\styles\\layouts\\_header.scss"
+			],
+			[
+				"_pst",
+				"assets\\styles\\layouts\\_posts.scss"
+			],
+			[
+				"_page",
+				"assets\\styles\\layouts\\_pages.scss"
+			],
+			[
+				"pagesc",
+				"assets\\styles\\layouts\\_pages.scss"
 			],
 			[
 				"setup",
@@ -1100,10 +1141,6 @@
 			[
 				"manife",
 				"assets\\manifest.json"
-			],
-			[
-				"func",
-				"functions.php"
 			],
 			[
 				"page.",
@@ -1194,7 +1231,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 220.0,
+	"side_bar_width": 196.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
