@@ -1,3 +1,14 @@
+//define colors
+$red: #cc1111;
+$orange: #f8b750;
+
+//define fonts
+@font-face {
+  font-family: 'CurseCasualRegular';
+  src: url('../fonts/Curse Casual.ttf');
+}
+
+
 html{
 	position: relative;
 	min-height: 100%;
@@ -6,7 +17,12 @@ html{
 body {
 	margin-bottom: $footer-height;
 	background-color: rgba(232, 232, 232, 1);
+	background-image: url('../images/cb_main-bg.png');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
+
+
 
 main {
 	margin: 0px 10px;
@@ -24,7 +40,7 @@ main {
 		position: fixed;
 		text-align: right;
 		top: 200px;
-		right: 10px;
+		right: 0px;
 
 		ul {
 			list-style: none;

@@ -1,6 +1,8 @@
 #navigation {
-	background-color: rgba(251, 189, 86, 1);
-	margin-bottom: 10px;
+	//background-color: rgba(251, 189, 86, 1);
+	background-color: #ccc;
+	background: url('../images/cb_header-bg.png');
+	//margin-bottom: 10px;
 	text-align: center;
 
 	.nav-container {
@@ -10,23 +12,60 @@
 		}
 	}
 
+	a {
+		color: $red;
+		font-family: 'CurseCasualRegular';
+		letter-spacing: 1px;
+		min-width: 80px;
+		font-size: 16px;
+	}
+
+	a:hover {
+		background-color: rgba(211, 17, 17, 0.8);;
+		color: $orange;
+	}
+
 	.navbar {
 		border-radius: 0;
 		border: none;
 		background-color: transparent;
-
+		margin-bottom: 5px;
 		text-transform: uppercase;
-	 	color: rgba(210, 18,14, 1);
 	}
 
 	.navbar-form {
+		margin: 0px;
+		padding: 10px;
+		display: inline-block;
+
+		@media screen and (min-width: 1200px) {
+			//padding-right: 200px;
+		}
 
 		input[type='search'] {
+			height: 30px;
 			width-min: 124px;
-			// background: none;
+			background: none;
 			border: none;
 			box-shadow: none;
+
+			font-family: 'CurseCasualRegular';
+			color: $red;
+			letter-spacing: 1px;
+			font-size: 14px;
+
+			border-right: 2px solid $red;
+			border-radius: 0px;
 		}
+
+		.glyphicon{
+			color: $red;
+		}
+
+		input[type='search']::-webkit-input-placeholder { color:$red; }
+		input[type='search']::-moz-placeholder { color:$red; } /* firefox 19+ */
+		input[type='search']:-ms-input-placeholder { color:$red; } /* ie */
+		input[type='search']:-moz-placeholder { color:$red; }
 
 		#submit-btn {
 			background-color: transparent;
@@ -43,6 +82,9 @@
 #login-status {
 	min-height: 100px;
 	margin: 0px auto !important;
+	font-family: 'CurseCasualRegular';
+	letter-spacing: 2px;
+	font-size: 11px;
 
 	// .container-fluid {
 	// 	padding-left: 0px;
@@ -51,6 +93,7 @@
 	.logo {
 		padding-left: 0px;
 		margin-bottom: 10px;
+		margin-top: 20px;
 	}
 
 	.buttons-stat {
@@ -67,17 +110,24 @@
 
 		#right-group {
 			padding-left: 0px;
+
+			#user {
+				font-size: 14px;
+				a {
+					color: $red;
+				}
+			}
 		}
 
 		img {
 			border-radius: 50%;
-			background-color: #DD0000;
+			background-color: $red;
 		}
 	}
 
 	.btn {
 		margin: 5px;
-		background-color: #DD0000;
+		background-color: $red;
 		font-weight: 600;
 		min-width: 90px;
 		border-radius: 0px;

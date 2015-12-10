@@ -17,23 +17,23 @@
             <?php
             if (has_nav_menu('primary_navigation')) :
               wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav']);
-            endif;   
+            endif;
             ?>
-             <form class="navbar-form navbar-right" role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+             <form class="navbar-form" role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
               <input type="search" class="form-control" placeholder="<?php echo esc_attr_x( 'SEARCH', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
-              <input type="submit" id="submit-btn" class="btn btn-default" value="&nbsp" />  
+              <input type="submit" id="submit-btn" class="btn btn-default" value="&nbsp" />
               <i class="glyphicon glyphicon-search"></i>
-            </form> 
+            </form>
           </div>
-        </div> <!-- end navbar-collapse -->       
+        </div> <!-- end navbar-collapse -->
 
       </div> <!-- end container -->
-      
+
     </nav>
 </header>
 
 
-<?php 
+<?php
   $pageID = get_the_ID();
   $title = get_the_title($pageID);
   //register button is not presented on Login page
@@ -44,9 +44,10 @@
 <?php else: ?>
 
     <section id="login-status">
-      <div class="container" >      
+      <div class="container" >
         <div class="col-md-6 logo">
-          <b>Cerebrovit Logo</b>
+          <b class="sr-only">Cerebrovit Logo</b>
+          <img class="img img-responsive" src="<?php bloginfo('template_url'); ?>/assets/images/cb_header-logo.png" alt="cerebrovit logo" />
         </div>
         <?php if(! is_user_logged_in()): ?>
 
@@ -62,12 +63,12 @@
           <div class="row pull-right">
             <div class="col-xs-6" id="avatar">
               <?php
-                if ( has_wp_user_avatar($current_user->ID) ) {
+                //if ( has_wp_user_avatar($current_user->ID) ) {
                   echo get_wp_user_avatar($current_user->ID, 60);
-                } else {
-                  echo '<img src="my-alternate-image.jpg" />';
-                }
-              ?>            
+              //  } else {
+                //  echo '<img src="../images/cb_mystery-man-avatar.jpg/" />';
+                //}
+              ?>
             </div>
             <div class="col-xs-6" id="right-group">
               <div id="user">Hello, <span id="username"><a href="<?php echo get_home_url().'/wp-admin'; ?>"><?php echo $current_user->user_login; ?></a></span></div>

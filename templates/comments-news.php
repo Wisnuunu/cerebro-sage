@@ -19,18 +19,18 @@ if (post_password_required()) {
     </span>
   </div>
 
-  <?php 
+  <?php
   $comment_args = array(
     'label_submit'=>'Send',
     'title_reply'=>'',
     'comment_field' =>  '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Write your comment here...">' .
     '</textarea></p>'
   );
-  comment_form($comment_args); 
+  comment_form($comment_args);
 
   ?>
 
-  <div class="container" id="comment-main">
+  <div class="container-fluid" id="comment-main">
     <?php if (have_comments()) : ?>
       <!-- <h2><?php printf(_nx('One response to &ldquo;%2$s&rdquo;', '%1$s responses to &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'sage'), number_format_i18n(get_comments_number()), '<span>' . get_the_title() . '</span>'); ?></h2> -->
 

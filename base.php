@@ -26,16 +26,16 @@ use Roots\Sage\Wrapper;
         <div class="row">
 
           <!-- define current post format that will have single page without sidebar widget -->
-          <?php if ( !get_post_format() || get_post_format() === 'video'): ?> 
+          <?php if ( !get_post_format() || get_post_format() === 'video'): ?>
             <main>
               <?php include Wrapper\template_path(); ?>
             </main><!-- /.main -->
-         
-          <?php else : ?> 
+
+          <?php else : ?>
             <!-- for other article -->
 
             <div class="col-md-8"> <!-- main post -->
-              
+
                <main>
                 <?php include Wrapper\template_path(); ?>
               </main><!-- /.main -->
@@ -46,14 +46,14 @@ use Roots\Sage\Wrapper;
                 <aside>
                   <?php include Wrapper\sidebar_path(); ?>
                 </aside>
-              <?php  endif; ?>  
-            </div>     
+              <?php  endif; ?>
+            </div>
 
-          <?php endif; ?>      
+          <?php endif; ?>
 
         </div>
       </div>
-      
+
       </div><!-- /.content -->
     </div><!-- /.wrap -->
     <?php
@@ -62,14 +62,12 @@ use Roots\Sage\Wrapper;
       wp_footer();
     ?>
 
-    <section id="visit-menu">
+    <section class="widget" id="visit-menu">
       <ul>
-        <li>anu</li>
-        <li>facebook</li>
-        <li>twitter</li>
-        <li>youtube</li>
-        <li>smartforum</li>
-        <li>ask an expert</li>
+        <li><a href="#"><img src="<?php bloginfo('template_url'); ?>/assets/images/widget/cb_widget_01.png" alt="askfm" /></a></li>
+        <li><a href="#"><img src="<?php bloginfo('template_url'); ?>/assets/images/widget/cb_widget_02.png" alt="askfm" /></a></li>
+        <li><a href="#"><img src="<?php bloginfo('template_url'); ?>/assets/images/widget/cb_widget_03.png" alt="askfm" /></a></li>
+        <li><a href="#"><img src="<?php bloginfo('template_url'); ?>/assets/images/widget/cb_widget_04.png" alt="askfm" /></a></li>
       </ul>
     </section>
 

@@ -2,14 +2,33 @@
 
 	<div class="container-fluid">
 		<section id="prev-next">
-			<div class="row">			
-				<div class="col-md-5" id="prev-link">
-					<span class=""><?php previous_post_link('&laquo; %link', '%title', TRUE); ?>&nbsp</span>
+			<div class="row">
+				<?php if (strlen(get_previous_post(TRUE)->post_title) > 0) : ?>
+				<div class="col-md-6" id="prev-link">
+					<span class="">
+						<?php
+						$trimmed_word = wp_trim_words(get_previous_post(TRUE)->post_title, 8);
+						//echo $trimmed_word;
+						previous_post_link('&laquo; %link', /*'%title'*/$trimmed_word, TRUE); ?>&nbsp
+					</span>
 				</div>
-				<div class="col-md-2">&nbsp</div>
-				<div class="col-md-5" id="next-link">
-					<span class=""><?php next_post_link('%link &raquo;', '%title', TRUE); ?>&nbsp</span>
-				</div>
+				<?php else: ?>
+					<div class="col-md-6">&nbsp</div>
+				<?php endif; ?>
+
+				<!-- <div class="col-md-2">&nbsp</div> -->
+
+				<?php if (strlen(get_next_post(TRUE)->post_title) > 0) : ?>
+					<div class="col-md-6 pull-right" id="next-link">
+						<span class="">
+							<?php
+							$trimmed_word = wp_trim_words(get_next_post(TRUE)->post_title, 8);
+							next_post_link('%link &raquo;', /*'%title'*/$trimmed_word, TRUE); ?>&nbsp
+						</span>
+					</div>
+				<?php else: ?>
+					<div class="col-md-6">&nbsp</div>
+				<?php endif; ?>
 			</div>
 		</section>
 	</div>
@@ -45,17 +64,17 @@
 					echo '<div class="bg-image" style="background-image:url('.$thumb_url.')"></div>';
 				}
 			?>
-		</div> 		
+		</div>
 	</section>
 
-	<div class="entry-content container">
+	<div class="entry-content container-fluid">
 		<div class="col-md-1" id="post-meta">
 			<i><b><?php the_date('d M Y'); ?></b></i> <br />
 			<i><b>Author:&nbsp</b></i>
 			<?php echo get_the_author(); ?> <br />
 			<i><b>Posted under:</b></i>
-			<?php 
-				$format = get_post_format(); 
+			<?php
+				$format = get_post_format();
 				if (false === $format) {
 					$format = 'News';
 				}
@@ -82,10 +101,10 @@
 					  			$style_color = 'red';
 					  		else
 					  			$style_color = 'rgba(250,156,42,1)';
-					    	
+
 					    	echo '<li style="background-color:'.$style_color.';"><a href="'.get_tag_link($tag->term_id).'">'. $tag->name.'</a></li>';
 
-					    	$count++; 
+					    	$count++;
 					  	}
 					  	echo '</ul>';
 					}
@@ -100,8 +119,8 @@
   		</div>
 	</div>
 
-	<section id="comment">	
-		<?php comments_template('/templates/comments-news.php'); ?> 
+	<section id="comment">
+		<?php comments_template('/templates/comments-news.php'); ?>
 	</section>
 
 	<section id="popular-post">
@@ -133,7 +152,7 @@
 	function view_related_post(){
 		$max_articles = 3;
 		$cnt = 0;
-		
+
 		echo "<ul>";
 
 		$article_tags = get_the_tags();
@@ -160,18 +179,18 @@
 		    // Only if there's not enough tag related articles,
     		// we add some from the same category
     		if ($cnt < $max_articles) {
-        
+
 		        $article_categories = get_the_category($post->ID);
 		        $category_string = '';
-		        foreach($article_categories as $category) { 
+		        foreach($article_categories as $category) {
 		            $category_string .= $category->cat_ID . ',';
 		        }
-		        
+
 		        $cat_related_posts = get_posts('exclude=' . $post->ID . '&numberposts=' . $max_articles . '&category=' . $category_string);
-		        
+
 		        if ($cat_related_posts) {
 		            foreach ($cat_related_posts as $related_post) {
-		                $cnt++; 
+		                $cnt++;
 		                if ($cnt > $max_articles) break;
 		                echo '<li class="child-' . $cnt . '">';
 		                echo '<a href="' . get_permalink($related_post->ID) . '">';
@@ -179,7 +198,7 @@
 		            }
 		        }
 		    }
-		    
+
 		    echo '</ul>';
 
 	}
