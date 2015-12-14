@@ -1,4 +1,4 @@
-/* LOGIN PAGE */
+/* LOGIN FORM PAGE */
 
 .login-form{
 
@@ -8,11 +8,16 @@
 		text-align: center;
 	}
 
+	.login-wrapper {
+		background-color: rgba(255, 255, 255, .6);
+		padding-bottom: 10px;
+	}
+
 	.login-form-container {
-		max-width: 400px;
+		max-width: 500px;
 		margin: 30px auto 0 !important;
 		padding: 5px 20px 10px 20px;
-		background-color: white;
+		//background-color: white;
 		min-height: 340px;
 
 		border-radius: 5px;
@@ -21,7 +26,39 @@
 			text-align: center;
 			margin-bottom: 30px;
 		}
-	 	
+
+		.control-label {
+			text-align: left;
+		}
+
+		#user_login, #user_pass {
+			border-radius: 0px;
+			box-shadow: none;
+		}
+
+		.login-username, .login-password {
+			margin-bottom: 0px;
+		}
+
+		.login-remember {
+			margin-top: -5px;
+			font-size: 12px;
+			font-style: italic;
+			input[type="checkbox"] {
+				transform: scale(.8);
+				margin-top: 2px;
+			}
+		}
+
+		.login-forgot {
+			margin-top: 5px;
+			font-size: 12px;
+			font-style: italic;
+			a {
+				color: black;
+			}
+		}
+
 	 	input[type="submit"] {
 	 		min-width: 120px;
 	 		border-radius: 0px;
@@ -46,12 +83,64 @@
 		}
 
 		.login-submit {
-			text-align: right;
+			padding: 0 15px;
+
+			.btn {
+				background-color: $red;
+				border: none;
+
+				color: white;
+				font-weight: bold;
+			}
+
+			.btn-fb {
+				background-color: #49639f;
+				border-radius: 0px;
+			}
 		}
+
+		.divider {
+			p {
+			  position: relative;
+			  overflow: hidden;
+			  text-align: center;
+				font-size: 11px;
+				font-weight: bold;
+				color: rgba(0, 0, 0, .6);
+			}
+
+			p span {
+			  display: inline-block;
+			  vertical-align: baseline;
+			  zoom: 1;
+			  *display: inline;
+			  *vertical-align: auto;
+			  position: relative;
+			  padding: 0 10px;
+			}
+
+			p span:before, p span:after {
+			  content: '';
+			  display: block;
+			  width: 1000px;
+			  position: absolute;
+			  top: 0.73em;
+			  border-top: 1.5px solid rgba(0, 0, 0, .2);;
+			}
+
+			p span:before {
+			  right: 100%;
+			}
+
+			p span:after {
+			  left: 100%;
+			}
+		}
+
 	}
 }
 
-/* SIGN UP FORM */
+/* SIGN UP FORM PAGE */
 .signup-form {
 	max-width: 500px;
 	margin: 20px auto !important;

@@ -6,12 +6,12 @@
 	width: 100%;
 	height: $footer-height;
 
-	background-color: rgba(251, 189, 86, 1);	
+	background-color: rgba(251, 189, 86, 1);
 
 	.container-fluid {
 		background-color: rgba(251, 189, 86, 1);
 	}
-	
+
 	#menu-footer {
 		display: block;
 		list-style: none;
@@ -21,26 +21,37 @@
 
 		li {
 			display: inline;
-			margin: 5px 10px;
+			//margin: 5px 10px;
 			text-align: center;
+			//border-left: solid 2px $red;
+		}
+
+		li + li:before {
+				content: " | ";
+				color: $red;
 		}
 
 		// li:before {
-		// 	content: " | ";
 		// }
 
 		// li:first-child:before {
-		// 	content: none;		
+		// 	content: none;
 		// }
 
 		a {
-	 		color: rgba(200,0,0,1);
+	 		color: $red;
 	 		font-weight: 600;
 	 		font-size: 11px;
 	 		text-transform: uppercase;
+			margin-left: 5px;
+			margin-right: 5px;
+			font-family: 'CurseCasualRegular';
+			letter-spacing: 2px;
+			font-size: 13px;
+			font-weight: normal;
 		}
 
-		
+
 	}
 
 	.textwidget {

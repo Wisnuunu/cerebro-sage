@@ -7,8 +7,9 @@
 
 	.nav-container {
 		margin: 0 auto !important;
+
 		@media screen and (min-width: 1200px){
-			width: 1040px;
+			width: 970px;
 		}
 	}
 
@@ -53,88 +54,89 @@
 			color: $red;
 			letter-spacing: 1px;
 			font-size: 14px;
-
-			border-right: 2px solid $red;
+			@media screen and (min-width: 1200px){
+				border-right: 2px solid $red;
+			}
 			border-radius: 0px;
 		}
 
-		.glyphicon{
-			color: $red;
-		}
+			.glyphicon{
+				color: $red;
+			}
 
-		input[type='search']::-webkit-input-placeholder { color:$red; }
-		input[type='search']::-moz-placeholder { color:$red; } /* firefox 19+ */
-		input[type='search']:-ms-input-placeholder { color:$red; } /* ie */
-		input[type='search']:-moz-placeholder { color:$red; }
+			input[type='search']::-webkit-input-placeholder { color:$red; }
+			input[type='search']::-moz-placeholder { color:$red; } /* firefox 19+ */
+			input[type='search']:-ms-input-placeholder { color:$red; } /* ie */
+			input[type='search']:-moz-placeholder { color:$red; }
 
-		#submit-btn {
-			background-color: transparent;
-			border: none;
-		}
+			#submit-btn {
+				background-color: transparent;
+				border: none;
+			}
 
-		i {
-			left: -25px;
-			top: 3px;
+			i {
+				left: -25px;
+				top: 3px;
+			}
 		}
 	}
-}
 
-#login-status {
-	min-height: 100px;
-	margin: 0px auto !important;
-	font-family: 'CurseCasualRegular';
-	letter-spacing: 2px;
-	font-size: 11px;
+	#login-status {
+		min-height: 100px;
+		margin: 0px auto !important;
+		font-family: 'CurseCasualRegular';
+		letter-spacing: 2px;
+		font-size: 11px;
 
-	// .container-fluid {
-	// 	padding-left: 0px;
-	// }
+		// .container-fluid {
+		// 	padding-left: 0px;
+		// }
 
-	.logo {
-		padding-left: 0px;
-		margin-bottom: 10px;
-		margin-top: 20px;
-	}
-
-	.buttons-stat {
-		padding-right: 0px;
-		text-align: right;
-
-		.row {
-			width: 200px;
-		}
-
-		#avatar {
-			padding-right: 10px;
-		}
-
-		#right-group {
+		.logo {
 			padding-left: 0px;
+			margin-bottom: 10px;
+			margin-top: 20px;
+		}
 
-			#user {
-				font-size: 14px;
-				a {
-					color: $red;
+		.buttons-stat {
+			padding-right: 0px;
+			text-align: right;
+
+			.row {
+				width: 200px;
+			}
+
+			#avatar {
+				padding-right: 10px;
+			}
+
+			#right-group {
+				padding-left: 0px;
+
+				#user {
+					font-size: 14px;
+					a {
+						color: $red;
+					}
 				}
+			}
+
+			img {
+				border-radius: 50%;
+				background-color: $red;
 			}
 		}
 
-		img {
-			border-radius: 50%;
+		.btn {
+			margin: 5px;
 			background-color: $red;
+			font-weight: 600;
+			min-width: 90px;
+			border-radius: 0px;
+			border-style: none;
+		}
+
+		button:hover {
+			background-color: gray;
 		}
 	}
-
-	.btn {
-		margin: 5px;
-		background-color: $red;
-		font-weight: 600;
-		min-width: 90px;
-		border-radius: 0px;
-		border-style: none;
-	}
-
-	button:hover {
-		background-color: gray;
-	}
-}

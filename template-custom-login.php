@@ -11,39 +11,76 @@
 
 
 <div class="container login-form">
+<div class="login-wrapper">
 
 	<div class="login-form-container">
 
 		<h3 id="title">Sign In</h3>
 		<?php //echo wp_login_url(); ?>
 		<div>
-		    <form class="form-signin" method="post" action="<?php echo wp_login_url(); ?>">
-		        <p class="login-username">
-		            <label class="sr-only" for="user_login"><?php _e( 'Email', 'personalize-login' ); ?></label>
-		            <input class="form-control" type="text" name="log" id="user_login" placeholder="Enter Username">
-		        </p>
-		        <p class="login-password">
-		            <label class="sr-only" for="user_pass"><?php _e( 'Password', 'personalize-login' ); ?></label>
-		            <input class="form-control" type="password" name="pwd" id="user_pass" placeholder="Enter password">
-		        </p>
-		        <p class="checkbox login-remember">
+		    <form class="form-signin form-horizontal" method="post" action="<?php echo wp_login_url(); ?>">
+
+            <div class="login-username form-group">
+		            <label class="control-label col-sm-2" for="user_login"><?php _e( 'Email', 'personalize-login' ); ?></label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="text" name="log" id="user_login" placeholder="Enter Username">
+                </div>
+		        </div>
+
+            <div class="login-remember form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="forever" name="rememberme"> Remember me
+                  </label>
+                </div>
+              </div>
+            </div>
+
+		        <div class="login-password form-group">
+		            <label class="control-label col-sm-2" for="user_pass"><?php _e( 'Password', 'personalize-login' ); ?></label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="password" name="pwd" id="user_pass" placeholder="Enter password">
+                </div>
+		        </div>
+
+            <div class="login-forgot form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <p>
+                  <a href="<?php echo wp_lostpassword_url(); ?>">Forgot Password?</a>
+                </p>
+              </div>
+            </div>
+
+		        <!-- <p class="checkbox login-remember">
 		        	<label>
 		        		<input class="checkbox" id="rememberme" type="checkbox" value="forever" name="rememberme"></input>
 		        		Remember Me
 		        	</label>
-		        </p>
-		        <p class="login-submit">
-		            <input class="btn btn-primary" type="submit" value="<?php _e( 'Sign In', 'personalize-login' ); ?>">
-		        </p>
+		        </p> -->
+		        <div class="login-submit form-group">
+		            <input class="btn btn-default col-sm-12" type="submit" value="<?php _e( 'Sign In', 'personalize-login' ); ?>">
+		        </div>
+
+            <div class="divider">
+              <p><span>OR</span></p>
+            </div>
+            <div class="login-submit form-group">
+		            <a href="#" class="btn btn-fb col-sm-12">
+                  <img src="<?php bloginfo('template_url'); ?>/assets/images/cb_fb-logo.png" alt="fb" /> Sign in With Facebook
+                </a>
+		        </div>
 		    </form>
 	    </div>
 
-	    <div id="more-info">
+	    <!-- <div id="more-info">
     		<p class="forgot-password col-xs-6">Forgot password? <a href="<?php echo wp_lostpassword_url(); ?>">Click Here</a></p>
     		<p class="sign-up col-xs-6">Dont have account? <a href="<?php echo get_home_url().'/signup'; ?>">Sign up here</a> </p>
-    	</div>
+    	</div> -->
 
-	</div>
+	 </div> <!--end login-form-container -->
+
+</div> <!-- end login-wrapper -->
 
 	<div class="login-form-error">
 
