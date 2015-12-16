@@ -36,19 +36,20 @@
 <?php
   $pageID = get_the_ID();
   $title = get_the_title($pageID);
-  //register button is not presented on Login page
-  if ($title == 'Login' || $title == 'Signup' ) : ?>
+?>
 
-  <div class="sr-only">Disable Header</div>
+<section id="login-status">
+  <div class="container" >
+    <?php // TODO: add breadcrumb ?>
+    <div class="col-md-6 logo">
+      <b class="sr-only">Cerebrovit Logo</b>
+      <img class="img img-responsive" src="<?php bloginfo('template_url'); ?>/assets/images/cb_header-logo.png" alt="cerebrovit logo" />
+    </div>
 
-<?php else: ?>
+    <?php if($title == 'Login' || $title == 'Signup'): ?>
+        <div class="sr-only">Disable Header buttons</div>
+    <?php else: ?>
 
-    <section id="login-status">
-      <div class="container" >
-        <div class="col-md-6 logo">
-          <b class="sr-only">Cerebrovit Logo</b>
-          <img class="img img-responsive" src="<?php bloginfo('template_url'); ?>/assets/images/cb_header-logo.png" alt="cerebrovit logo" />
-        </div>
         <?php if(! is_user_logged_in()): ?>
 
         <div class="col-md-6 buttons-stat">
@@ -78,12 +79,11 @@
             </div>
           </div>
         </div>
-
         <?php endif; ?>
-      </div>
-    </section>
 
-<?php endif; ?>
+    <?php endif; ?>
+  </div>
+</section>
 
 <section id="breadcrumb">
   <div class="container">

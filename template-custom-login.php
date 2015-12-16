@@ -26,6 +26,13 @@
                   <input class="form-control" type="text" name="log" id="user_login" placeholder="Enter Username">
                 </div>
 		        </div>
+            <br>
+		        <div class="login-password form-group">
+		            <label class="control-label col-sm-2" for="user_pass"><?php _e( 'Password', 'personalize-login' ); ?></label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="password" name="pwd" id="user_pass" placeholder="Enter password">
+                </div>
+		        </div>
 
             <div class="login-remember form-group">
               <div class="col-sm-offset-2 col-sm-10">
@@ -37,20 +44,13 @@
               </div>
             </div>
 
-		        <div class="login-password form-group">
-		            <label class="control-label col-sm-2" for="user_pass"><?php _e( 'Password', 'personalize-login' ); ?></label>
-                <div class="col-sm-10">
-                  <input class="form-control" type="password" name="pwd" id="user_pass" placeholder="Enter password">
-                </div>
-		        </div>
-
-            <div class="login-forgot form-group">
+            <!-- <div class="login-forgot form-group">
               <div class="col-sm-offset-2 col-sm-10">
                 <p>
                   <a href="<?php echo wp_lostpassword_url(); ?>">Forgot Password?</a>
                 </p>
               </div>
-            </div>
+            </div> -->
 
 		        <!-- <p class="checkbox login-remember">
 		        	<label>
@@ -67,16 +67,16 @@
             </div>
             <div class="login-submit form-group">
 		            <a href="#" class="btn btn-fb col-sm-12">
-                  <img src="<?php bloginfo('template_url'); ?>/assets/images/cb_fb-logo.png" alt="fb" /> Sign in With Facebook
+                  <img src="<?php bloginfo('template_url'); ?>/assets/images/cb_fb-logo.png" alt="fb" /> Sign In With Facebook
                 </a>
 		        </div>
 		    </form>
 	    </div>
 
-	    <!-- <div id="more-info">
+	    <div id="more-info">
     		<p class="forgot-password col-xs-6">Forgot password? <a href="<?php echo wp_lostpassword_url(); ?>">Click Here</a></p>
     		<p class="sign-up col-xs-6">Dont have account? <a href="<?php echo get_home_url().'/signup'; ?>">Sign up here</a> </p>
-    	</div> -->
+    	</div>
 
 	 </div> <!--end login-form-container -->
 
