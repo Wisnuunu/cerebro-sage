@@ -26,5 +26,57 @@ Another wordpress themes using sage as base template
 * add custom page for registration
 * adding plugin: WP User Avatar 2.0.3
 
+## contact-us page
+* add [WP Contact Form 7](http://contactform7.com)
+* create new contact form
+* copy code bellow
+'''
+<div class="row">
+<div class="form-group col-sm-5">
+[email* email01 class:input-email class:form-control placeholder "Email"]
+</div>
+</div>
+
+<div class="row">
+<div class="form-group col-sm-3">
+[text* username class:input-username class:form-control placeholder "Username"]
+</div>
+</div>
+
+<div class="row">
+<div class="form-group col-sm-3">
+[select* category id:category class:category class:form-control "cat1" "cat2" "cat3" "cat4"]
+</div>
+</div>
+
+<div class="row">
+<div class="form-group col-sm-5">
+[text* subject id:subject class:subject class:form-control placeholder "Subject"]
+</div>
+</div>
+
+<div class="row">
+<div class="form-group col-sm-7">
+<p>[textarea* message id:message class:message class:form-control placeholder "Message"]</p>
+</div>
+</div>
+
+<p><b>Attach File:</b></p>
+<ul id="attachment">
+<li>[file File-01]</li>
+<li>[file File-02]</li>
+<li>[file File-03]</li>
+<li>[file File-04]</li>
+<li>[file File-05]</li>
+</ul>
+
+<br>
+<p><b>Security Code: </b></p>
+[recaptcha id:recaptcha class:g-recaptcha size:normal]
+
+<div class="container-fluid buttons">   
+  <p>[submit class:btn class:btn-default id:submit"Send"] <a id="reset" class="btn btn-default" href="#">Reset</a></p>
+</div>
+'''
 --------
 aDMIN:rahasia

@@ -208,7 +208,7 @@ body {
 	background-color: #E8E8E8;
 }
 
-/* ABOUT PAGE */
+/* ABOUT PAGE Template */
 .about-wrapper {
 	background-color: rgba(255, 255, 255, .7);
 	padding: 20px 30px;
@@ -216,13 +216,69 @@ body {
 	margin-top: 20px;
 
 	img {
-		margin: 20px auto;
+		margin: 10px auto;
 	}
 
 	td {
 		font-size: 16px;
 		padding-top: 5px;
 	}
+}
 
+/* Contact Us Page */
+.contact-us {
+
+	.map {
+		margin: 10px 0;
+	}
+
+	ul {
+		list-style: none;
+		padding-left: 10px;
+	}
+
+	.content {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	.g-recaptcha {
+		@media screen and (max-height: 575px) {
+			transform: scale(.77);
+			transform-origin: 0 0;
+		}
+	}
+
+	input, select, textarea {
+		border-radius: 0px;
+		box-shadow: none;
+	}
+
+	.form-username {
+		padding-left: 0px;
+	}
+
+	a {
+		color: $red;
+	}
+
+	#message{
+		text-align: left;
+	}
+
+	.buttons {
+		text-align: center;
+		padding: 10px;
+
+		.btn {
+			background-color: $red;
+			min-width: 100px;
+			color: white;
+			font-weight: bold;
+			border: none;
+			border-radius: 0px;
+			margin: 5px 20px;
+		}
+	}
 
 }

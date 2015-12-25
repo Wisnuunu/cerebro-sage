@@ -10,4 +10,6 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
   <script src="http://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/v4.0.0/src/js/bootstrap-datetimepicker.js"></script>
 
+  <!-- google reCaptcha -->
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
