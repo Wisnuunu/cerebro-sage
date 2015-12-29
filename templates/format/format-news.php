@@ -98,7 +98,7 @@
 						echo '<ul>';
 					  	foreach($posttags as $tag) {
 					  		if ($count%2 == 0)
-					  			$style_color = 'red';
+					  			$style_color = '#cc1111';
 					  		else
 					  			$style_color = 'rgba(250,156,42,1)';
 

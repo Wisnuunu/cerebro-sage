@@ -282,3 +282,61 @@ body {
 	}
 
 }
+
+// Smart News Page
+#smart-news {
+
+	.news-highlight {
+		background-color: white;
+		padding: 15px;
+		margin: 20px 0;
+
+		.carousel-indicators {
+			bottom: -5px;
+			@media screen and (min-width: 1200px){
+				left: 93%;
+			}
+		}
+
+		@media screen and (min-width: 860px){
+			#description {
+				padding-right: 0px;
+
+				.title {
+					padding: 20px 20px 14px;
+
+					h1 {
+						margin-top: 0px;
+						color: $red;
+						font-family: 'CurseCasualRegular';
+					}
+
+					p {
+						font-size: 13px;
+						min-height: 235px;
+						max-height: 235px;
+					}
+
+				}
+			}
+		}
+
+		#image {
+			padding-left: 0px;
+		}
+
+		.headerfiller {
+			width: 100%;
+			line-height: 3;
+			background: url('../images/cb_header-bg.png');
+			height: 60px;
+			border-bottom: solid 2px white;
+		}
+
+		.title {
+				background-color: rgba(253,191,88,.8);
+				max-height: 250px;
+		}
+
+	}
+}

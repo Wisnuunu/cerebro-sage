@@ -13,24 +13,25 @@ Another wordpress themes using sage as base template
 * set frontpage as static page
 
 ## adding share button support
-* install JETPACK plugin
+* install [JETPACK](https://jetpack.me/) plugin
 * activate shared buttons
 * edit functions and css to change it position on post
 
 ## adding popular post support
-* install plugin WordPress Popular Posts on news single page
+* install plugin [WordPress Popular Posts](https://wordpress.org/plugins/wordpress-popular-posts/) on news single page
 
 ## allowing registration
 * go to setting > tick membership > set new user default role
 * add custom page for login
 * add custom page for registration
-* adding plugin: WP User Avatar 2.0.3
+* adding plugin: [WP User Avatar](https://wordpress.org/support/plugin/wp-user-avatar)
 
 ## contact-us page
 * add [WP Contact Form 7](http://contactform7.com)
 * create new contact form
 * copy code bellow
-'''
+
+'''html
 <div class="row">
 <div class="form-group col-sm-5">
 [email* email01 class:input-email class:form-control placeholder "Email"]
