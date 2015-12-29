@@ -30,10 +30,8 @@ Another wordpress themes using sage as base template
 * add [WP Contact Form 7](http://contactform7.com)
 * create new contact form
 * copy code bellow
-<<<<<<< HEAD
 
 ```html
->>>>>>> aacf142b98db4c63cabef467b15a4cbf58ee98d2
 <div class="row">
 <div class="form-group col-sm-5">
 [email* email01 class:input-email class:form-control placeholder "Email"]
