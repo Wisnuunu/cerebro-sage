@@ -127,7 +127,7 @@
 		<?php
 		    if (function_exists('wpp_get_mostpopular'))
 		        wpp_get_mostpopular( "
-		        	header='Popular Posts'&
+							header='Popular Posts'&
 		        	limit=4&
 		        	range=all&
 		        	post_type=post&

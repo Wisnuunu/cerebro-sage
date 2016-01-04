@@ -86,41 +86,142 @@
   </section>
 
   <section class="news-thumbnails">
-    <div class="col-md-10">
-      <div class="first-news-group">
-        news group 00
-      </div>
-      <div class="advertise-spave">
-        ads
-      </div>
-      <div class="second-news-group">
-        news group 01
-      </div>
+
+    <div class="smart-news-title">
+      <img class="img img-responsive" src="<?php bloginfo('template_url'); ?>/assets/images/smart-news/cb_news-smartnews.png" alt="smart-news" />
     </div>
-    <div class="col-md-2">
+
+    <!-- Post with pagination -->
+    <?php
+      $curPostCount = 1;
+      $maxPosts = 12;
+
+      $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+      $args = array(
+          'post_type' => 'post',
+          'category_name' => 'news',
+          'posts_per_page' => $maxPosts,
+          'paged' => $paged,
+      );
+
+      $the_query = new WP_Query($args); //initiate the wp query
+    ?>
+
+    <div class="col-md-9">
+
+    <?php if($the_query->have_posts()): ?>
+      <!-- pagination here -->
+      <div class="firts-news-group row">
+      <!-- the loop -->
+      <?php while( $the_query->have_posts()) : $the_query->the_post(); ?>
+
+        <!-- first row news thumbnails -->
+        <article class="">
+          <div class="news-thumbnail col-sm-4" id="news-<?php echo $post->ID; ?>">
+            <?php //get post thumbnail
+              //$imgURL = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+              $thumb_id = get_post_thumbnail_id();
+              $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'medium', true);
+              $thumb_url = $thumb_url_array[0];
+              $curPostCount++;
+            ?>
+            <div class="thumbnail-preview">
+              <a href="<?php the_permalink(); ?>">
+                <img class="img img-responsive" src="<?php echo $thumb_url; ?>" alt="thumb-<?php echo $post->ID; ?>" />
+              </a>
+            </div>
+            <div class="title">
+              <a href="<?php the_permalink(); ?>">
+                <h4><?php echo wp_trim_words(get_the_title(), 6, '...'); ?></h4>
+              </a>
+            </div>
+            <div class="description">
+              <?php echo get_the_excerpt(); ?>
+            </div>
+          </div>
+        </article>
+        <?php if ($curPostCount === 7): ?>
+          <div class="advertise-space col-md-12">
+            <!-- <div class="row"> -->
+              <img class="img img-responsive" src="<?php bloginfo('template_url')?>/assets/images/smart-news/cb_news-ads.png" alt="" />
+            <!-- </div> -->
+          </div>
+        <?php endif; ?>
+
+      <?php endwhile; ?>
+      <!-- end the loop -->
+      </div>
+
+      <?php wp_reset_postdata(); ?>
+    <?php else: ?>
+      <p>
+        <?php _e('Sorry, no posts matched your criteria.'); ?>
+      </p>
+    <?php endif; ?><!--  end post with pagination -->
+
+    <!-- Or pagination here -->
+    <div class="row">
+      <?php
+        if (function_exists(custom_pagination)) {
+          custom_pagination($the_query->max_num_pages,"",$paged);
+        }
+        else {
+          echo "function pagination not found";
+        }
+      ?>
+    </div>
+
+    </div>
+
+    <div class="sidemenu col-md-3">
       <div class="news-popular">
-        popular post list
+        <div class="title-image">
+          <img src="<?php bloginfo('template_url')?>/assets/images/smart-news/cb_news-popularpost.png" alt="" />
+        </div>
+        <div class="main-popular-title">
+          <?php
+            if (function_exists("wpp_get_mostpopular")) {
+                wpp_get_mostpopular( "
+                post_type=post&
+                range=all&
+                limit=6&
+                cat=3&
+                stats_date=1&
+                stats_date_format='j M Y'&
+                stats_views=0&
+                post_html='<li>{title}<br><span class=\"date\">{date}</span></li>' " );
+            }
+          ?>
+        </div>
       </div>
       <div class="news-topics">
-        topics
+        <div class="title-image">
+          <img src="<?php bloginfo('template_url')?>/assets/images/smart-news/cb_news-topics.png" alt="" />
+        </div>
+        <div class="main-topics">
+          <p>
+            <?php
+
+            //TODO: wordpress doesn't support tags based on category
+            if (function_exists('wp_tag_cloud')) {
+
+              $args = array(
+                'smallest'  => 10,
+                'largest'   => 10,
+                'separator' => " | ",
+                'exclude' => '24',
+                'number' => 20
+              );
+              wp_tag_cloud( $args );
+            }
+            ?>
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="page-numbers">
-    <nav>
-      <ul class="pagination">
-        <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-        <li class="active"><a href="#">1 </a></li>
-        <li class=""><a href="#">2 </a></li>
-        <li class=""><a href="#">3 </a></li>
-        <li class=""><a href="#">4 </a></li>
-        <li class=""><a href="#">5 </a></li>
-        <li class=""><a href="#">6 </a></li>
-        <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&raquo;</span></a></li>
-      </ul>
-    </nav>
-  </section>
-<?php endwhile; ?>
-
 </div>
+
+<?php endwhile; ?>
+<br><br>
