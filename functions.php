@@ -138,8 +138,124 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
 
 }
 
-// excerpts functions
+// EXCERPT FUNCTION: manage maximum length
 function custom_excerpt_length( $length ) {
 	return 15;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+//CUSTOM ADMIN HEAD
+function my_admin_head() {
+  //<!-- custom date time picker  -->
+  echo '<link href="http://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/v4.0.0/build/css/bootstrap-datetimepicker.css" rel="stylesheet" />';
+  echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>';
+  echo '<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>';
+  echo '<script src="http://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/v4.0.0/src/js/bootstrap-datetimepicker.js"></script>';
+}
+add_action('admin_head', 'my_admin_head');
+
+// ADD EXTRE FIELD ON USER INFORMATION
+add_action('show_user_profile', 'extra_user_profile_fields');
+add_action('edit_user_profile', 'extra_user_profile_fields');
+function extra_user_profile_fields($user)
+{ ?>
+  <hr>
+  <h3><?php _e("Extra profile information", "blank"); ?></h3>
+  <table class="form-table">
+    <!-- gender -->
+    <tr>
+      <th><label for="gender"><?php _e("Gender"); ?></label></th>
+      <td>
+        <?php
+        $cur_gender = esc_attr( get_the_author_meta( 'gender', $user->ID ) );
+        if (!isset($cur_gender)) {
+          echo '<input type="radio" name="gender" value="male">Male';
+          echo '<input type="radio" name="gender" value="female">Female';
+        }
+
+        if ($cur_gender === 'male'):
+        ?>
+          <input type="radio" name="gender" value="male" checked="true" >Male
+          <input type="radio" name="gender" value="female">Female
+        <?php else : ?>
+          <input type="radio" name="gender" value="male"  >Male
+          <input type="radio" name="gender" value="female" checked="true">Female
+        <?php endif; ?>
+        <br><span class="description"><?php _e("Select provided gender"); ?></span>
+      </td>
+    </tr>
+    <!-- date of birth -->
+    <tr>
+      <th><label for="birthday"><?php _e('Birthday'); ?></label></th>
+      <td>
+        <div class="input-group datetime datepicker" id="datetimepicker1">
+          <input class="form-control make-datepicker" type="text" name="birthday" id="leaving_time" placeholder="dd/mm/yyyy" value="<?php echo esc_attr( get_the_author_meta( 'birthday', $user->ID ) ); ?>" class="regular-text">
+          <span class="input-group-addon">
+            <i class="glyphicon glyphicon-calendar"></i>
+          </span>
+        </div>
+        <span class="description"><?php _e("Input date of birth") ?></span>
+      </td>
+    </tr>
+    <!-- address -->
+    <tr>
+      <th><label for="address"><?php _e('Address') ?></label></th>
+      <td>
+        <textarea name="address" rows="3" cols="40"><?php echo esc_attr( get_the_author_meta( 'address', $user->ID ) ); ?></textarea>
+        <br><span class="description">Insert address</span>
+      </td>
+    </tr>
+    <!-- phone -->
+    <tr>
+      <th><label for="phone"><?php _e('Phone') ?></label></th>
+      <td>
+        <input type="text" name="phone" placeholder="+62xxxxxxxx" value="<?php echo esc_attr( get_the_author_meta( 'phone', $user->ID ) ); ?>" class="regular-text">
+        <br><span class="description">Insert phone numbers</span>
+      </td>
+    </tr>
+    <!-- facebook(url) -->
+    <tr>
+      <th><label for="facebook"><?php _e('Facebook (URL)') ?></label></th>
+      <td>
+        <input type="url" name="facebook" value="<?php echo esc_attr( get_the_author_meta( 'facebook', $user->ID ) ); ?>" class="regular-text">
+        <br><span class="description">Link to facebook profile</span>
+      </td>
+    </tr>
+    <!-- twitter url -->
+    <tr>
+      <th><label for="twitter"><?php _e('Twitter') ?></label></th>
+      <td>
+        <input type="url" name="twitter" value="<?php echo esc_attr( get_the_author_meta( 'twitter', $user->ID ) ); ?>" class="regular-text">
+        <br><span class="description">Link to twitter profile</span>
+      </td>
+    </tr>
+    <!--  google+ -->
+    <tr>
+      <th><label for="googlep"><?php _e('Google+') ?></label></th>
+      <td>
+        <input type="text" name="googlep" value="<?php echo esc_attr( get_the_author_meta( 'googlep', $user->ID ) ); ?>" class="regular-text">
+        <br><span class="description">Link to Google+ profile</span>
+      </td>
+    </tr>
+  </table>
+
+  <hr>
+
+<?php }
+
+add_action('personal_options_update', 'save_extra_user_profile_fields');
+add_action('edit_user_profile_update', 'save_extra_user_profile_fields' );
+
+function save_extra_user_profile_fields($user_id)
+{
+  if (!current_user_can('edit_user', $user_id)) {return false;}
+
+  update_usermeta($user_id, 'gender', $_POST['gender']);
+  update_usermeta($user_id, 'birthday', $_POST['birthday']);
+  update_usermeta($user_id, 'address', $_POST['address']);
+  update_usermeta($user_id, 'phone', $_POST['phone']);
+  update_usermeta($user_id, 'facebook', $_POST['facebook']);
+  update_usermeta($user_id, 'twitter', $_POST['twitter']);
+  update_usermeta($user_id, 'googlep', $_POST['googlep']);
+}
+?>
