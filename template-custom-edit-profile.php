@@ -35,7 +35,7 @@
           ?>
         </div>
         <br>
-        <a class="btn btn-default" href="#">Edit Profile</a>
+        <a class="btn btn-default" href="<?php echo get_site_url();?>/user-dashboard/">Back to Profile</a>
       </div>
      </div><!-- end user info header -->
 
@@ -43,36 +43,221 @@
        <div class="col-md-9 ">
          <div class="container-fluid profile-detail">
 
-           <h4 class="title">Profile Detail</h4>
-           <dl class="dl-horizontal">
-             <div class="detail-group">
-               <dt>Name:</dt>          <dd><?php echo get_the_author_meta( 'first_name' ).' '.get_the_author_meta( 'last_name' ); ?></dd>
+           <!-- <div class="profile-group"> -->
+             <h4 class="title">Profile Detail</h4>
+
+             <div class="form-group">
+               <label for="profilepicture" class="col-sm-3 control-label">Profile Picture:</label>
+               <div class="col-sm-9">
+                 <?php echo "".do_shortcode('[avatar_upload]'); ?>
+               </div>
              </div>
-             <div class="detail-group">
-               <dt>Gender:</dt>        <dd><?php echo get_the_author_meta( 'gender' ); ?></dd>
-             </div>
-             <div class="detail-group">
-               <dt>Birthday:</dt>      <dd><?php echo get_the_author_meta( 'birthday' ); ?></dd>
-             </div>
-             <div class="detail-group">
-               <dt>Address:</dt>       <dd><?php echo nl2br(get_the_author_meta( 'address' )); ?></dd>
-             </div>
-             <div class="detail-group">
-               <dt>Phone:</dt>         <dd><?php echo get_the_author_meta( 'phone' ); ?></dd>
-             </div>
-             <div class="detail-group">
-               <dt>Email:</dt>         <dd><?php echo get_the_author_meta( 'user_email' ); ?></dd>
-             </div>
-             <div class="detail-group">
-               <dt>Facebook (url):</dt><dd><?php echo get_the_author_meta( 'facebook' ); ?></dd>
-             </div>
-             <div class="detail-group">
-               <dt>Twitter (url):</dt> <dd><?php echo get_the_author_meta( 'twitter' ); ?></dd>
-             </div>
-             <div class="detail-group">
-               <dt>Google+:</dt>       <dd><?php echo get_the_author_meta( 'googlep' ); ?></dd>
-             </div>
-           </dl>
+
+             <form class="form-horizontal" action="<?php the_permalink();?>" method="post">
+
+                 <div class="form-group">
+                   <label for="profilename" class="col-sm-3 control-label">Profile Name:</label>
+                   <div class="col-sm-9">
+                     <input class="form-control" type="text" name="profilename" value="<?php echo $userdata->display_name; ?>">
+                   </div>
+                 </div>
+
+                 <div class="form-group">
+                   <label for="fname" class="col-sm-3 control-label">Name:</label>
+                   <div class="col-sm-9">
+                     <input class="form-control" type="text" name="fname" value="<?php echo $userdata->first_name; ?>">
+                   </div>
+                 </div>
+
+                 <div class="form-group">
+                   <label for="gender" class="col-sm-3 control-label">Gender:</label>
+                   <div class="col-sm-9">
+                     <?php
+                      $cur_gender = $userdata->gender;
+                      if (isset($cur_gender)){
+                        if ($cur_gender === 'male') {
+                          echo '<label class="radio-inline">';
+                            echo '<input type="radio" name="gender" value="male" checked="true"> Male ';
+                          echo '</label>';
+                          echo '<label class="radio-inline">';
+                            echo '<input type="radio" name="gender" value="female" > Female ';
+                          echo '</label>';
+
+                        }
+                        elseif ($cur_gender === 'female') {
+                          echo '<label class="radio-inline">';
+                            echo '<input type="radio" name="gender" value="male"> Male ';
+                          echo '</label>';
+                          echo '<label class="radio-inline">';
+                            echo '<input type="radio" name="gender" value="female" checked="true"> Female ';
+                          echo '</label>';
+                        }
+                      }
+                      else {
+                        echo '<label class="radio-inline">';
+                          echo '<input type="radio" name="gender" value="male"> Male ';
+                        echo '</label>';
+                        echo '<label class="radio-inline">';
+                          echo '<input type="radio" name="gender" value="female"> Female ';
+                        echo '</label>';
+                      }
+                     ?>
+                   </div>
+                 </div>
+
+                 <div class="form-group">
+                   <label for="birthday" class="col-sm-3 control-label">Birthday:</label>
+                   <div class="col-sm-9">
+                     <div class="input-group datetime datepicker" id="datetimepicker1">
+                       <?php $bd = get_the_author_meta( 'birthday' );?>
+                       <input class="form-control make-datepicker" type="text" name="birthday" id="leaving_time" placeholder="<?php echo get_the_author_meta( 'birthday' ); ?>">
+                       <span class="input-group-addon">
+                         <i class="glyphicon glyphicon-calendar"></i>
+                       </span>
+                     </div>
+                   </div>
+                 </div>
+
+                 <div class="form-group">
+                   <label for="address" class="col-sm-3 control-label">Address:</label>
+                   <div class="col-sm-9">
+                     <textarea class="form-control" name="address" rows="3" cols="40"><?php echo esc_attr( get_the_author_meta( 'address', $userdata->ID ) ); ?>
+                     </textarea>
+                   </div>
+                 </div>
+
+                 <div class="form-group">
+                   <label for="phone" class="col-sm-3 control-label">Phone:</label>
+                   <div class="col-sm-9">
+                     <input class="form-control" type="text" name="phone" value="<?php echo get_the_author_meta( 'phone' ); ?>">
+                   </div>
+                 </div>
+
+                 <div class="form-group">
+                   <label for="facebook" class="col-sm-3 control-label">Facebook (url):</label>
+                   <div class="col-sm-9">
+                     <input class="form-control" type="text" name="facebook" value="<?php echo get_the_author_meta( 'facebook' ); ?>">
+                   </div>
+                 </div>
+
+                 <div class="form-group">
+                   <label for="twitter" class="col-sm-3 control-label">Twitter (url):</label>
+                   <div class="col-sm-9">
+                     <input class="form-control" type="text" name="twitter" value="<?php echo get_the_author_meta( 'twitter' ); ?>">
+                   </div>
+                 </div>
+
+                 <div class="form-group">
+                   <label for="googlep" class="col-sm-3 control-label">Google+:</label>
+                   <div class="col-sm-9">
+                     <input class="form-control" type="text" name="googlep" value="<?php echo get_the_author_meta( 'googlep' ); ?>">
+                   </div>
+                 </div>
+
+                <!-- </div> -->
+                <hr><br>
+                <div class="profile-group">
+                   <h4 class="title">Profile Detail</h4>
+
+                   <div class="form-group">
+                     <label for="curpass" class="col-sm-3 control-label">Current Password:</label>
+                     <div class="col-sm-9">
+                       <input class="form-control" type="password" name="curpass" value="">
+                       <a href="<?php echo wp_lostpassword_url(); ?>" class="forgot-pass">Forgot Password?</a>
+                     </div>
+                   </div>
+
+                   <div class="form-group">
+                     <label for="newpass" class="col-sm-3 control-label">New Password:</label>
+                     <div class="col-sm-9">
+                       <input class="form-control" type="password" name="newpass" value="">
+                     </div>
+                   </div>
+
+                   <div class="form-group">
+                     <label for="re-newpass" class="col-sm-3 control-label">Re-type New Password:</label>
+                     <div class="col-sm-9">
+                       <input class="form-control" type="password" name="re-newpass" value="">
+                     </div>
+                   </div>
+                 </div><!--  end profile group -->
+
+                 <hr><br>
+                <div class="form-group buttons">
+                  <input class="btn btn-primary" type="submit" name="save" value="Save">
+                  <button class="btn btn-primary" type="button" name="reset">Reset</button>
+                </div>
+
+           </form>
+
+           <?php
+
+           $err = "";
+           $suc = "";
+
+            if (isset($_POST['save'])) {
+              $userdatas = array();
+              //save initial variables
+              // --- update user
+              $userdatas['display_name']  = (isset($_POST['profilename'])) ? esc_attr($_POST['profilename']) : $userdata->display_name ;
+              $userdatas['first_name']    = (isset($_POST['fname'])) ? esc_attr($_POST['fname']) : $userdata->first_name ;
+              // --- update user meta
+              $userdatas['gender']        = (isset($_POST['gender'])) ? esc_attr($_POST['gender']) : $userdata->gender ;
+              $userdatas['birthday']      = (isset($_POST['birthday'])) ? esc_attr($_POST['birthday']) : get_the_author_meta( 'birthday' ) ;
+              $userdatas['address']       = (isset($_POST['address'])) ? esc_attr($_POST['address']) : get_the_author_meta( 'address') ;
+              $userdatas['phone']         = (isset($_POST['phone'])) ? esc_attr($_POST['phone']) : get_the_author_meta( 'phone' ) ;
+              $userdatas['facebook']      = (isset($_POST['facebook'])) ? esc_attr($_POST['facebook']) : get_the_author_meta( 'facebook' ) ;
+              $userdatas['twitter']       = (isset($_POST['twitter'])) ? esc_attr($_POST['twitter']) : get_the_author_meta( 'twitter' ) ;
+              $userdatas['googlep']       = (isset($_POST['googlep'])) ? esc_attr($_POST['googlep']) : get_the_author_meta( 'googlep' ) ;
+
+              //echo "arr length: ".count($userdatas)."<br>";
+              //print_r( array_values( $userdatas ));
+              //get updated variables & save everything
+              $args_user = array(
+                'ID' => $userdata->ID,
+                'display_name'  => $userdatas['display_name'],
+                'first_name'    => $userdatas['first_name'],
+              );
+              wp_update_user($args_user);
+
+              update_user_meta($userdata->ID, 'gender', $userdatas['gender']);
+              update_user_meta($userdata->ID, 'birthday', $userdatas['birthday']);
+              update_user_meta($userdata->ID, 'address', $userdatas['address']);
+              update_user_meta($userdata->ID, 'phone', $userdatas['phone']);
+              update_user_meta($userdata->ID, 'facebook', $userdatas['facebook']);
+              update_user_meta($userdata->ID, 'twitter', $userdatas['twitter']);
+              update_user_meta($userdata->ID, 'googlep', $userdatas['googlep']);
+
+              // pasword handle
+              if (isset($_POST['curpass']) && isset($_POST['newpass'])) {
+                //check if cur password is correct with the one which is saved in database
+                if(!wp_check_password($_POST['curpass'], $userdata->data->user_pass, $userdata->ID)) {
+                  $err .= " Current password is not match";
+                }
+                else {
+                  //check if new password and retype new pasword is session_name
+                  if ($_POST['newpass'] != $_POST['re-newpass']) {
+                    $err .= " New passwords are not match";
+                  }
+                  else {
+                    //save password
+                    wp_set_password(esc_attr($_POST['newpass']), $userdata->ID);
+                  }
+
+                }
+                //notify if the save is success
+                if ($err === "") {
+                  echo '<div class="alert alert-success" role="alert"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>&nbspPassword is updated</div>';
+                }
+                else {
+                  echo '<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>&nbsp'.$err.'</div>';
+                }
+              }
+
+              echo '<div class="alert alert-success" role="alert"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>&nbspNew user information is updated</div>';
+
+            }
+           ?>
 
           </div>
        </div>
@@ -140,3 +325,15 @@
 
  </div><!-- end container -->
 </div><!-- end user dashboard -->
+
+
+<!-- birthday script -->
+<script type="text/javascript">
+
+	$(function () {
+        $('#datetimepicker1').datetimepicker({
+        	format: 'DD/MM/YYYY',
+          defaultDate:  '<?php echo get_the_author_meta( 'birthday' );?>'
+        });
+    });
+</script>

@@ -72,7 +72,7 @@
               ?>
             </div>
             <div class="col-xs-6" id="right-group">
-              <div id="user">Hello, <span id="username"><a href="<?php echo get_home_url().'/wp-admin'; ?>"><?php echo $current_user->user_login; ?></a></span></div>
+              <div id="user">Hello, <span id="username"><a href="<?php echo get_home_url().'/user-dashboard'; ?>"><?php echo $current_user->user_login; ?></a></span></div>
               <div id="btn-logout">
                 <a class= "btn btn-primary" href="<?php echo wp_logout_url( get_permalink() ); ?>">Log Out</a>
               </div>

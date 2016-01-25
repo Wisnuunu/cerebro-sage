@@ -35,7 +35,7 @@
           ?>
         </div>
         <br>
-        <a class="btn btn-default" href="#">Edit Profile</a>
+        <a class="btn btn-default" href="<?php echo get_site_url();?>/user-dashboard-edit/">Edit Profile</a>
       </div>
      </div><!-- end user info header -->
 
