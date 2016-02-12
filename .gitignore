@@ -3,4 +3,9 @@
 #dist
 bower_components
 node_modules
+_backup data test
 npm-debug.log
+*.rar
+*.zip
+.sublime-project
+.sublime-workspace

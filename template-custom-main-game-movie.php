@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Custom Template Smart News
+ * Template Name: Custom Template Games and Movies
  */
 ?>
 
@@ -10,9 +10,31 @@
   <?php //get_template_part('templates/page', 'header'); ?>
   <?php //get_template_part('templates/content', 'page'); ?>
 
-  <section class="news-highlight">
+  <?php
+  // get post id for highlight section
+  $content = get_the_content('Read more');
+  $posts = explode('#', $content);
+  $pots = [];
+
+  for ($i=1; $i <= count($posts) -1 ; $i++) {
+    $the_slug = $posts[$i];
+    $args=array(
+    	'name'           => $the_slug,
+    	'post_type'      => 'post',
+    	'post_status'    => 'publish',
+    	'posts_per_page' => 1
+    );
+    $my_posts = get_posts( $args );
+    $pots[$i] = get_posts($args);
+    if( $my_posts ) {
+    	// echo $i.' ID:' . $my_posts[0]->ID;
+      // echo "<br>";
+    }
+  }
+  ?>
+  <section class="movie-highlight">
     <div id="news-carousel" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
+      <ol class="carousel-indicators sr-only">
         <li data-target="#news-carousel" data-slide-to="0" class="active"></li>
         <li data-target="#news-carousel" data-slide-to="1"></li>
         <li data-target="#news-carousel" data-slide-to="2"></li>
@@ -20,76 +42,57 @@
       </ol>
 
       <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <div class="col-sm-4" id="description">
-            <div class="headerfiller">&nbsp;</div>
-            <div class="title">
-              <h1>Kenapa hatiku cenat cenut tiap ada kamu</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              </p>
+        <?php foreach ($pots as $i => $cur_post): ?>
+          <?php
+          //echo $i."/".$cur_post[0]->ID;
+          //echo "/".$cur_post[0]->post_title;
+          //echo "/".wp_trim_words($cur_post[0]->post_content, 20, '...');
+          //echo "<br>";
+          $img_url = wp_get_attachment_url( get_post_thumbnail_id($cur_post[0]->ID) );
+          ?>
+          <div class="item <?php echo ($i == 1 ? 'active' : ''); ?>">
+            <div class="" id="image">
+              <div class="img img-responsive bg-image" style="background-image:url(<?php echo $img_url; ?>)" alt="img01"></div>
+              <div class="carousel-caption">
+               <!-- <h4>Metal Gear Solid V: Phantom Pain</h4> -->
+               <h4><?php echo $cur_post[0]->post_title; ?></h4>
+               <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p> -->
+               <p><?php echo wp_trim_words($cur_post[0]->post_content, 20, '...'); ?></p>
+             </div>
             </div>
           </div>
-          <div class="col-sm-8" id="image">
-            <img class="img-responsive" src="http://placehold.it/600x325" alt="img01">
-          </div>
-        </div>
 
-        <!-- <div class="item">
-          <div class="col-sm-4" id="description">
-            <h1>Title title 02</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-          </div>
-          <div class="col-sm-8" id="image">
-            <img class="img-responsive"  src="http://placehold.it/600x300" alt="img02">
-          </div>
-        </div>
+        <?php endforeach; ?>
 
-        <div class="item">
-          <div class="col-sm-4" id="description">
-            <h1>Title title 03</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-          </div>
-          <div class="col-sm-8" id="image">
-            <img class="img-responsive"  src="http://placehold.it/600x300" alt="img03">
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="col-sm-4" id="description">
-            <h1>Title title 04</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-          </div>
-          <div class="col-sm-8" id="image">
-            <img class="img-responsive"  src="http://placehold.it/600x300" alt="img03">
-          </div>
-        </div>
-      </div> -->
-
-    </div>
   </section>
 
   <section class="news-thumbnails">
 
-    <div class="smart-news-title">
+    <!-- <div class="smart-news-title">
       <img class="img img-responsive" src="<?php bloginfo('template_url'); ?>/assets/images/smart-news/cb_news-smartnews.png" alt="smart-news" />
+    </div> -->
+    <br>
+    <div class="row">
+      <!-- <div class="container-fluid"> -->
+        <div class="col-sm-2">
+          <form class="sort-by" method="post">
+            <div class="form-group">
+              <select class="form-control" name="sort" placeholder="sort-by" onchange="this.form.submit()">
+                <option value="0" disabled selected>Sort by:</option>
+                <option value="1" <?php selected( $_POST['sort'],'1', 1 ); ?> >Title: A - Z</option>
+                <option value="2" <?php selected( $_POST['sort'],'2', 1 ); ?> >Title: Z - A</option>
+                <option value="3" <?php selected( $_POST['sort'],'3', 1 ); ?> >Date: Newer - Older</option>
+                <option value="4" <?php selected( $_POST['sort'],'4', 1 ); ?> >Date: Older - Newer</option>
+                <option value="5" <?php selected( $_POST['sort'],'5', 1 ); ?> >Most Popular</option>
+                <!-- <option value="6" <?php selected( $_POST['sort'],'6', 1 ); ?> >Most View</option> -->
+              </select>
+            </div>
+          </form>
+        </div>
+
+      <!-- </div> -->
     </div>
+
 
     <!-- Post with pagination -->
     <?php
@@ -97,15 +100,53 @@
       $maxPosts = 12;
 
       //$category = get_post_field('post_content', $post->ID);
-      //$cat = get_the_content();
-
-      $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+      $sort_opt = null;
       $args = array(
           'post_type' => 'post',
-          'category_name' => 'news',
+          'category_name' => 'game-movie',
           'posts_per_page' => $maxPosts,
           'paged' => $paged,
       );
+      if (isset($_POST['sort'])) {
+        $sort_opt = $_POST['sort'];
+
+        switch ($sort_opt) {
+          case '1':
+            $args['orderby'] = 'title';
+            $args['order'] ='ASC';
+            break;
+
+          case '2':
+            $args['orderby'] = 'title';
+            $args['order'] ='DESC';
+            break;
+
+          case '3':
+            $args['orderby'] = 'date';
+            $args['order'] ='DESC';
+            break;
+
+          case '4':
+            $args['orderby'] = 'date';
+            $args['order'] ='ASC';
+            break;
+
+          case '5':
+            $args['orderby'] = 'comment_count';
+            break;
+
+          // case '6':
+          //   $args['orderby'] ='meta_value_num';
+          //   $args['meta_key'] = 'wpb_post_views_count';
+          //   break;
+
+          default:
+
+            break;
+        }
+      }
+
+      $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
       $the_query = new WP_Query($args); //initiate the wp query
     ?>

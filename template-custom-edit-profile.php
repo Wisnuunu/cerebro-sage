@@ -13,19 +13,26 @@
   <?php endwhile; ?>
 
   <?php if(is_user_logged_in()): ?>
-    <?php $cur_user = wp_get_current_user(); ?>
+    <?php
+      $cur_user = wp_get_current_user();
+    ?>
     <div class="row user-info-header">
       <div class="col-md-2 user-photo">
-        <?php echo get_avatar(get_the_author_meta('ID'), 'large'); ?>
+        <?php
+        if (function_exists("get_wp_user_avatar")) {
+          echo get_wp_user_avatar($cur_user->ID, 120);
+        }
+        ?>
       </div>
       <div class="col-md-10 user-meta">
         <h4 class="user-login"><?php echo "".$cur_user->user_login; ?></h4>
         <div class="info-group">
-            Member since: <?php echo date("d-m-Y", strtotime(get_userdata(get_current_user_id( ))->user_registered)); ?><br>
+            Member since: <?php echo date("d-m-Y", strtotime(get_userdata(get_current_user_id())->user_registered)); ?><br>
           <?php
             global $wpdb;
-            $user_id = $post->post_author;
-            $where = 'WHERE comment_approved = 1 AND user_id = ' . $user_id ;
+            //$user_id = $post->post_author;
+            //echo "u id:".$cur_user->ID."<br>";
+            $where = 'WHERE comment_approved = 1 AND user_id = ' . $cur_user->ID ;
             $comment_count = $wpdb->get_var(
                 "SELECT COUNT( * ) AS total
                   FROM {$wpdb->comments}
@@ -53,19 +60,19 @@
                </div>
              </div>
 
-             <form class="form-horizontal" action="<?php the_permalink();?>" method="post">
+             <form class="form-horizontal" action="" method="post">
 
                  <div class="form-group">
                    <label for="profilename" class="col-sm-3 control-label">Profile Name:</label>
                    <div class="col-sm-9">
-                     <input class="form-control" type="text" name="profilename" value="<?php echo $userdata->display_name; ?>">
+                     <input class="form-control" type="text" name="profilename" value="<?php echo $cur_user->user_login; ?>">
                    </div>
                  </div>
 
                  <div class="form-group">
                    <label for="fname" class="col-sm-3 control-label">Name:</label>
                    <div class="col-sm-9">
-                     <input class="form-control" type="text" name="fname" value="<?php echo $userdata->first_name; ?>">
+                     <input class="form-control" type="text" name="fname" value="<?php echo $cur_user->first_name." ".$cur_user->last_name; ?>">
                    </div>
                  </div>
 
@@ -73,7 +80,7 @@
                    <label for="gender" class="col-sm-3 control-label">Gender:</label>
                    <div class="col-sm-9">
                      <?php
-                      $cur_gender = $userdata->gender;
+                      $cur_gender = get_user_meta( $cur_user->ID, 'gender', true );
                       if (isset($cur_gender)){
                         if ($cur_gender === 'male') {
                           echo '<label class="radio-inline">';
@@ -110,7 +117,7 @@
                    <div class="col-sm-9">
                      <div class="input-group datetime datepicker" id="datetimepicker1">
                        <?php $bd = get_the_author_meta( 'birthday' );?>
-                       <input class="form-control make-datepicker" type="text" name="birthday" id="leaving_time" placeholder="<?php echo get_the_author_meta( 'birthday' ); ?>">
+                       <input class="form-control make-datepicker" type="text" name="birthday" id="leaving_time" placeholder="<?php echo get_user_meta( $cur_user->ID, 'birthday', true ); ?>">
                        <span class="input-group-addon">
                          <i class="glyphicon glyphicon-calendar"></i>
                        </span>
@@ -121,7 +128,7 @@
                  <div class="form-group">
                    <label for="address" class="col-sm-3 control-label">Address:</label>
                    <div class="col-sm-9">
-                     <textarea class="form-control" name="address" rows="3" cols="40"><?php echo esc_attr( get_the_author_meta( 'address', $userdata->ID ) ); ?>
+                     <textarea class="form-control" name="address" rows="3" cols="40"><?php echo strip_tags(get_user_meta( $cur_user->ID, 'address', true )); ?>
                      </textarea>
                    </div>
                  </div>
@@ -129,28 +136,28 @@
                  <div class="form-group">
                    <label for="phone" class="col-sm-3 control-label">Phone:</label>
                    <div class="col-sm-9">
-                     <input class="form-control" type="text" name="phone" value="<?php echo get_the_author_meta( 'phone' ); ?>">
+                     <input class="form-control" type="text" name="phone" value="<?php echo get_user_meta( $cur_user->ID, 'phone', true ); ?>">
                    </div>
                  </div>
 
                  <div class="form-group">
                    <label for="facebook" class="col-sm-3 control-label">Facebook (url):</label>
                    <div class="col-sm-9">
-                     <input class="form-control" type="text" name="facebook" value="<?php echo get_the_author_meta( 'facebook' ); ?>">
+                     <input class="form-control" type="text" name="facebook" value="<?php echo get_user_meta( $cur_user->ID, 'facebook', true ); ?>">
                    </div>
                  </div>
 
                  <div class="form-group">
                    <label for="twitter" class="col-sm-3 control-label">Twitter (url):</label>
                    <div class="col-sm-9">
-                     <input class="form-control" type="text" name="twitter" value="<?php echo get_the_author_meta( 'twitter' ); ?>">
+                     <input class="form-control" type="text" name="twitter" value="<?php echo get_user_meta( $cur_user->ID, 'twitter', true ); ?>">
                    </div>
                  </div>
 
                  <div class="form-group">
                    <label for="googlep" class="col-sm-3 control-label">Google+:</label>
                    <div class="col-sm-9">
-                     <input class="form-control" type="text" name="googlep" value="<?php echo get_the_author_meta( 'googlep' ); ?>">
+                     <input class="form-control" type="text" name="googlep" value="<?php echo get_user_meta( $cur_user->ID, 'googlep', true ); ?>">
                    </div>
                  </div>
 
@@ -199,39 +206,39 @@
               $userdatas = array();
               //save initial variables
               // --- update user
-              $userdatas['display_name']  = (isset($_POST['profilename'])) ? esc_attr($_POST['profilename']) : $userdata->display_name ;
-              $userdatas['first_name']    = (isset($_POST['fname'])) ? esc_attr($_POST['fname']) : $userdata->first_name ;
+              $userdatas['display_name']  = (isset($_POST['profilename'])) ? esc_attr($_POST['profilename']) : $cur_user->user_login ;
+              $userdatas['first_name']    = (isset($_POST['fname'])) ? esc_attr($_POST['fname']) : $cur_user->first_name ;
               // --- update user meta
-              $userdatas['gender']        = (isset($_POST['gender'])) ? esc_attr($_POST['gender']) : $userdata->gender ;
-              $userdatas['birthday']      = (isset($_POST['birthday'])) ? esc_attr($_POST['birthday']) : get_the_author_meta( 'birthday' ) ;
-              $userdatas['address']       = (isset($_POST['address'])) ? esc_attr($_POST['address']) : get_the_author_meta( 'address') ;
-              $userdatas['phone']         = (isset($_POST['phone'])) ? esc_attr($_POST['phone']) : get_the_author_meta( 'phone' ) ;
-              $userdatas['facebook']      = (isset($_POST['facebook'])) ? esc_attr($_POST['facebook']) : get_the_author_meta( 'facebook' ) ;
-              $userdatas['twitter']       = (isset($_POST['twitter'])) ? esc_attr($_POST['twitter']) : get_the_author_meta( 'twitter' ) ;
-              $userdatas['googlep']       = (isset($_POST['googlep'])) ? esc_attr($_POST['googlep']) : get_the_author_meta( 'googlep' ) ;
+              $userdatas['gender']        = (isset($_POST['gender'])) ? esc_attr($_POST['gender']) : get_user_meta($cur_user->ID, 'gender', true ) ;
+              $userdatas['birthday']      = (isset($_POST['birthday'])) ? esc_attr($_POST['birthday']) : get_user_meta($cur_user->ID, 'birthday', true ) ;
+              $userdatas['address']       = (isset($_POST['address'])) ? esc_attr($_POST['address']) : get_user_meta($cur_user->ID, 'address', true) ;
+              $userdatas['phone']         = (isset($_POST['phone'])) ? esc_attr($_POST['phone']) : get_user_meta($cur_user->ID, 'phone', true ) ;
+              $userdatas['facebook']      = (isset($_POST['facebook'])) ? esc_attr($_POST['facebook']) : get_user_meta($cur_user->ID, 'facebook', true ) ;
+              $userdatas['twitter']       = (isset($_POST['twitter'])) ? esc_attr($_POST['twitter']) : get_user_meta($cur_user->ID, 'twitter', true ) ;
+              $userdatas['googlep']       = (isset($_POST['googlep'])) ? esc_attr($_POST['googlep']) : get_user_meta($cur_user->ID, 'googlep', true ) ;
 
               //echo "arr length: ".count($userdatas)."<br>";
               //print_r( array_values( $userdatas ));
               //get updated variables & save everything
               $args_user = array(
-                'ID' => $userdata->ID,
+                'ID' => $cur_user->ID,
                 'display_name'  => $userdatas['display_name'],
                 'first_name'    => $userdatas['first_name'],
               );
               wp_update_user($args_user);
 
-              update_user_meta($userdata->ID, 'gender', $userdatas['gender']);
-              update_user_meta($userdata->ID, 'birthday', $userdatas['birthday']);
-              update_user_meta($userdata->ID, 'address', $userdatas['address']);
-              update_user_meta($userdata->ID, 'phone', $userdatas['phone']);
-              update_user_meta($userdata->ID, 'facebook', $userdatas['facebook']);
-              update_user_meta($userdata->ID, 'twitter', $userdatas['twitter']);
-              update_user_meta($userdata->ID, 'googlep', $userdatas['googlep']);
+              update_user_meta($cur_user->ID, 'gender', $userdatas['gender']);
+              update_user_meta($cur_user->ID, 'birthday', $userdatas['birthday']);
+              update_user_meta($cur_user->ID, 'address', $userdatas['address']);
+              update_user_meta($cur_user->ID, 'phone', $userdatas['phone']);
+              update_user_meta($cur_user->ID, 'facebook', $userdatas['facebook']);
+              update_user_meta($cur_user->ID, 'twitter', $userdatas['twitter']);
+              update_user_meta($cur_user->ID, 'googlep', $userdatas['googlep']);
 
               // pasword handle
               if (isset($_POST['curpass']) && isset($_POST['newpass'])) {
                 //check if cur password is correct with the one which is saved in database
-                if(!wp_check_password($_POST['curpass'], $userdata->data->user_pass, $userdata->ID)) {
+                if(!wp_check_password($_POST['curpass'], $cur_user->data->user_pass, $cur_user->ID)) {
                   $err .= " Current password is not match";
                 }
                 else {
@@ -241,7 +248,7 @@
                   }
                   else {
                     //save password
-                    wp_set_password(esc_attr($_POST['newpass']), $userdata->ID);
+                    wp_set_password(esc_attr($_POST['newpass']), $cur_user->ID);
                   }
 
                 }
@@ -253,10 +260,17 @@
                   echo '<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>&nbsp'.$err.'</div>';
                 }
               }
+              ?>
 
-              echo '<div class="alert alert-success" role="alert"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>&nbspNew user information is updated</div>';
+              <div class="alert alert-success" role="alert"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>&nbspNew user information is updated</div>
 
-            }
+              <script>
+                var url ='<?php echo get_home_url()."/user-dashboard"; ?>';
+                var delay = 3;
+                var d = delay * 1000;
+                window.setTimeout ('parent.location.replace(url)', d);
+              </script>;
+            <?php }
            ?>
 
           </div>
@@ -267,7 +281,7 @@
            <img class="img img-responsive" src="<?php bloginfo('template_url')?>/assets/images/user-dashboard/cb_user-lastcomment.png" alt="last comment" />
            <?php
             $args = array(
-            	'user_id' => 1, // use user_id
+            	'user_id' => $cur_user->ID, // use user_id
               'number' => 6, // max comment to display
             );
             $comments = get_comments($args);

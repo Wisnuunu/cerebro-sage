@@ -64,9 +64,9 @@
           <div class="row pull-right">
             <div class="col-xs-6" id="avatar">
               <?php
-                //if ( has_wp_user_avatar($current_user->ID) ) {
+                if ( function_exists('get_wp_user_avatar') ) {
                   echo get_wp_user_avatar($current_user->ID, 60);
-              //  } else {
+                } //else {
                 //  echo '<img src="../images/cb_mystery-man-avatar.jpg/" />';
                 //}
               ?>

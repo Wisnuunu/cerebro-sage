@@ -23,7 +23,7 @@ if (post_password_required()) {
   $comment_args = array(
     'label_submit'=>'Send',
     'title_reply'=>'',
-    'comment_field' =>  '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Write your comment here...">' .
+    'comment_field' =>  '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="4" aria-required="true" placeholder="Write your comment here...">' .
     '</textarea></p>'
   );
   comment_form($comment_args);

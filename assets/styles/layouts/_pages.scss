@@ -480,6 +480,65 @@ body {
 		}
 
 	}
+
+	.movie-highlight {
+		padding: 10px;
+		background-color: white;
+
+		// img {
+		// 	object-fit: none; /* Do not scale the image */
+		//   object-position: center; /* Center the image within the element */
+		//   height: 380px;
+		//   width: 1200px;
+		// }
+
+		.bg-image {
+			min-height: 380px;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover !important;
+		}
+
+		.carousel-caption {
+			background-color: rgba(255, 255, 255, .6);
+			padding: 5px;
+			text-align: left;
+			color: rgba(0, 0, 0, .7);;
+			text-shadow: none;
+			left: 10px;
+			bottom: 10px;
+			min-height: 80px;
+			width: 60%;
+			padding: 10px;
+		}
+
+		h4 {
+			font-weight: bold;
+			margin: 0px;
+			font-family: 'CurseCasualRegular';
+			letter-spacing: 2px;
+		}
+
+		p {
+			font-size: 12px;
+			margin-top: 3px;
+		}
+	}
+
+	.sort-by {
+		select {
+			-webkit-appearance: none;
+	    -moz-appearance: none;
+	    //text-indent: -4px;
+	    text-overflow: '';
+			border: none;
+			border-radius: 0px;
+			box-shadow: none;
+			color: $red;
+			background: $orange url("../images/cb-dropdown.png") no-repeat 98% 50%;
+		}
+	}
+
 }
 
 
@@ -632,7 +691,7 @@ body {
 			display: none;
 		}
 	}
-	
+
 	.buttons {
 		text-align: center;
 		.btn {

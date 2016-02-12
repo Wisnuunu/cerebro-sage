@@ -137,6 +137,11 @@ article {
 		margin-top: 10px;
 		line-height: 2;
 
+		a {
+			color: $red;
+			font-weight: bold;
+		}
+
 		span {
 			margin-left: 20px;
 		}
@@ -146,6 +151,11 @@ article {
 			color: white;
 			font-weight: 600;
 			margin-bottom: 10px;
+		}
+
+		textarea[id="comment"] {
+			border-radius: 0px;
+			box-shadow: none;
 		}
 
 		.form-submit {
@@ -165,11 +175,14 @@ article {
 			margin-bottom: 10px;
 			padding-top: 5px;
 
-			.byuser {
+			article {
 				border: solid 1px #cbcbcb;
 				margin: 10px auto;
 				padding: 10px;
-				border-radius: 5px;
+			}
+
+			p {
+				font-size: 12px;
 			}
 		}
 

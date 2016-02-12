@@ -16,7 +16,11 @@
     <?php $cur_user = wp_get_current_user(); ?>
     <div class="row user-info-header">
       <div class="col-md-2 user-photo">
-        <?php echo get_avatar(get_the_author_meta('ID'), 'large'); ?>
+        <?php
+        if (function_exists("get_wp_user_avatar")) {
+          echo get_wp_user_avatar($cur_user->ID, 120);
+        }
+        ?>
       </div>
       <div class="col-md-10 user-meta">
         <h4 class="user-login"><?php echo "".$cur_user->user_login; ?></h4>
@@ -25,7 +29,7 @@
           <?php
             global $wpdb;
             $user_id = $post->post_author;
-            $where = 'WHERE comment_approved = 1 AND user_id = ' . $user_id ;
+            $where = 'WHERE comment_approved = 1 AND user_id = ' . $cur_user->ID ;
             $comment_count = $wpdb->get_var(
                 "SELECT COUNT( * ) AS total
                   FROM {$wpdb->comments}
@@ -46,31 +50,31 @@
            <h4 class="title">Profile Detail</h4>
            <dl class="dl-horizontal">
              <div class="detail-group">
-               <dt>Name:</dt>          <dd><?php echo get_the_author_meta( 'first_name' ).' '.get_the_author_meta( 'last_name' ); ?></dd>
+               <dt>Name:</dt>          <dd><?php echo $cur_user->first_name.' '.$cur_user->last_name; ?></dd>
              </div>
              <div class="detail-group">
-               <dt>Gender:</dt>        <dd><?php echo get_the_author_meta( 'gender' ); ?></dd>
+               <dt>Gender:</dt>        <dd><?php echo get_user_meta( $cur_user->ID, 'gender', true ); ?></dd>
              </div>
              <div class="detail-group">
-               <dt>Birthday:</dt>      <dd><?php echo get_the_author_meta( 'birthday' ); ?></dd>
+               <dt>Birthday:</dt>      <dd><?php echo get_user_meta( $cur_user->ID, 'birthday', true ); ?></dd>
              </div>
              <div class="detail-group">
-               <dt>Address:</dt>       <dd><?php echo nl2br(get_the_author_meta( 'address' )); ?></dd>
+               <dt>Address:</dt>       <dd><?php echo nl2br(get_user_meta( $cur_user->ID, 'address', true )); ?></dd>
              </div>
              <div class="detail-group">
-               <dt>Phone:</dt>         <dd><?php echo get_the_author_meta( 'phone' ); ?></dd>
+               <dt>Phone:</dt>         <dd><?php echo get_user_meta( $cur_user->ID, 'phone', true ); ?></dd>
              </div>
              <div class="detail-group">
-               <dt>Email:</dt>         <dd><?php echo get_the_author_meta( 'user_email' ); ?></dd>
+               <dt>Email:</dt>         <dd><?php echo $cur_user->user_email; ?></dd>
              </div>
              <div class="detail-group">
-               <dt>Facebook (url):</dt><dd><?php echo get_the_author_meta( 'facebook' ); ?></dd>
+               <dt>Facebook (url):</dt><dd><?php echo get_user_meta( $cur_user->ID, 'facebook', true ); ?></dd>
              </div>
              <div class="detail-group">
-               <dt>Twitter (url):</dt> <dd><?php echo get_the_author_meta( 'twitter' ); ?></dd>
+               <dt>Twitter (url):</dt> <dd><?php echo get_user_meta( $cur_user->ID, 'twitter', true ); ?></dd>
              </div>
              <div class="detail-group">
-               <dt>Google+:</dt>       <dd><?php echo get_the_author_meta( 'googlep' ); ?></dd>
+               <dt>Google+:</dt>       <dd><?php echo get_user_meta( $cur_user->ID, 'googlep', true ); ?></dd>
              </div>
            </dl>
 
@@ -82,30 +86,36 @@
            <img class="img img-responsive" src="<?php bloginfo('template_url')?>/assets/images/user-dashboard/cb_user-lastcomment.png" alt="last comment" />
            <?php
             $args = array(
-            	'user_id' => 1, // use user_id
+            	'user_id' => $cur_user->ID, // use user_id
               'number' => 6, // max comment to display
             );
             $comments = get_comments($args);
             echo "<ul>";
-           foreach($comments as $comment) : ?>
-           <li>
-              <div class="comment">
-                <?php
-                  $postID = $comment->comment_post_ID;
-                  $postURL = get_post_permalink($postID);
+            if ($comments == 0) {
+              echo "";
+            }else {
+              foreach($comments as $comment) : ?>
+              <li>
+                <div class="comment">
+                  <?php
+                    $postID = $comment->comment_post_ID;
+                    $postURL = get_post_permalink($postID);
 
-                  if (function_exists('getExcerpt'))
-                    echo "<a href=".$postURL.">".getExcerpt($comment->comment_content)."</a>";
-                ?>
-              </div>
-              <div class="date">
-                  <?php echo comment_date('d M Y', $comment->comment_ID)  ?>
-              </div>
-            	<!-- echo($comment->comment_author . '<br />' . ); -->
-           </li>
-           <?php endforeach;
+                    if (function_exists('getExcerpt'))
+                      echo "<a href=".$postURL.">".getExcerpt($comment->comment_content)."</a>";
+                  ?>
+                </div>
+                <div class="date">
+                    <?php echo comment_date('d M Y', $comment->comment_ID)  ?>
+                </div>
+              	<!-- echo($comment->comment_author . '<br />' . ); -->
+              </li>
+
+            <?php endforeach;
+
+            }
             echo "</ul>";
-           ?>
+            ?>
        </div>
        </div>
      </div><!--  end main profile -->

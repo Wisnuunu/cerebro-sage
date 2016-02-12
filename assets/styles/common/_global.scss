@@ -1,13 +1,12 @@
 //define colors
 $red: #cc1111;
-$orange: #f8b750;
+$orange: #FBC25C;
 
 //define fonts
 @font-face {
   font-family: 'CurseCasualRegular';
   src: url('../fonts/Curse Casual.ttf');
 }
-
 
 html{
 	position: relative;
@@ -21,8 +20,6 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
-
-
 
 main {
 	margin: 0px 10px;
