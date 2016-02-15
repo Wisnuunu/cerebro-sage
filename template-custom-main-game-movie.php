@@ -169,11 +169,12 @@
               $thumb_url = $thumb_url_array[0];
               $curPostCount++;
             ?>
-            <div class="thumbnail-preview">
-              <a href="<?php the_permalink(); ?>">
-                <img class="img img-responsive" src="<?php echo $thumb_url; ?>" alt="thumb-<?php echo $post->ID; ?>" />
-              </a>
-            </div>
+            <!-- <div class="thumbnail-preview"> -->
+            <a href="<?php the_permalink(); ?>">
+              <!-- <img class="img img-responsive thumbnail-preview" src="<?php echo $thumb_url; ?>" alt="thumb-<?php echo $post->ID; ?>" /> -->
+              <div class="img img-responsive thumbnail-preview" style="background-image:url(<?php echo $thumb_url; ?>)"></div>
+            </a>
+            <!-- </div> -->
             <div class="title">
               <a href="<?php the_permalink(); ?>">
                 <h4><?php echo wp_trim_words(get_the_title(), 6, '...'); ?></h4>

@@ -360,7 +360,9 @@ body {
 
 			.thumbnail-preview {
 				min-height: 130px;
-				max-height: 130px;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: cover !important;
 			}
 
 			.title a {
