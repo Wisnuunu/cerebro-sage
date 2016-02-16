@@ -331,11 +331,29 @@ body {
 				background-color: rgba(253,191,88,.8);
 				max-height: 250px;
 
-				h1 {
+				h1, h2 {
 					margin-top: 0px;
 					color: $red;
 					font-family: 'CurseCasualRegular';
 				}
+
+				h2 {
+					font-size: 28px;
+				}
+		}
+
+		a {
+			color: rgba(0, 0, 0, .7);
+		}
+		a:hover {
+			text-decoration: none;
+		}
+
+		.img {
+			min-height: 313px;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover !important;
 		}
 	}	//end news-highlight
 

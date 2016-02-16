@@ -14,7 +14,7 @@
   // get post id for highlight section
   $content = get_the_content('Read more');
   $posts = explode('#', $content);
-  $pots = [];
+  // $pots = [];
 
   for ($i=1; $i <= count($posts) -1 ; $i++) {
     $the_slug = $posts[$i];
