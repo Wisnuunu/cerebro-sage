@@ -40,6 +40,7 @@
 	</header>
 
 	<section class="featured-image">
+		<!-- shared buttons -->
 		<div class="container-fluid">
 			<?php
 				if (function_exists('sharing_display')) {
@@ -52,17 +53,28 @@
 				}
 			?>
 		</div>
+		<!-- post's featured image   -->
 		<div class="container-fluid">
 			<?php
-				if( has_post_thumbnail( $post->ID )) {
-					$thumb_id = get_post_thumbnail_id();
-					$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
-					$thumb_url = $thumb_url_array[0];
-					//echo $thumb_url;
-					// echo '<img src="'.$thumb_url.'" alt="featured image">';
+			//echo ">> ".get_post_meta($post->ID, 'gallery_id', true);
+			if (function_exists('slideshow') && has_shortcode($post->post_content, 'tribulant_slideshow') ) {
+				slideshow(
+					$output = true,
+					$gallery_id = get_post_meta($post->ID, 'gallery_id', true),
+					$post_id = $post->ID,
+					$params = array()
+				);
+			}
+			else if( has_post_thumbnail( $post->ID )) {
+				$thumb_id = get_post_thumbnail_id();
+				$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+				$thumb_url = $thumb_url_array[0];
+				//echo $thumb_url;
+				// echo '<img src="'.$thumb_url.'" alt="featured image">';
 
-					echo '<div class="bg-image" style="background-image:url('.$thumb_url.')"></div>';
-				}
+				echo '<div class="bg-image" style="background-image:url('.$thumb_url.')"></div>';
+			}
+
 			?>
 		</div>
 	</section>
@@ -124,6 +136,7 @@
 	</section>
 
 	<section id="popular-post">
+		<img class="img img-responsive" src="<?php bloginfo('template_url')?>/assets/images/smart-news/cb_news-popularpost.png" alt="Popular Post" />
 		<?php
 		    if (function_exists('wpp_get_mostpopular'))
 		        wpp_get_mostpopular( "
@@ -163,43 +176,45 @@
 			}
 		}
 
-		    $tag_related_posts = get_posts('exclude=' . $post->ID . '&numberposts=' . $max_articles . '&tag=' . $tags_string);
+    $tag_related_posts = get_posts('exclude=' . get_the_ID() . '&numberposts=' . $max_articles . '&tag=' . $tags_string);
 
-		    if ($tag_related_posts) {
-		    	foreach ($tag_related_posts as $related_post) {
-		    		$cnt++;
-		    		echo '<li class="child-' . $cnt . '">';
-		    		$img_url = wp_get_attachment_url( get_post_thumbnail_id($related_post->ID) );
-		    		echo '<img class="img-responsive" alt="thumbnail" src="'.$img_url.'">';
-            		echo '<a href="' . get_permalink($related_post->ID) . '">';
-            		echo $related_post->post_title . '</a></li>';
-		    	}
-		    }
+    if ($tag_related_posts) {
+    	foreach ($tag_related_posts as $related_post) {
+    		$cnt++;
+    		echo '<li class="child-' . $cnt . '">';
+    		$img_url = wp_get_attachment_url( get_post_thumbnail_id($related_post->ID) );
+    		echo '<img class="img-responsive" alt="thumbnail" src="'.$img_url.'">';
+    		echo '<a href="' . get_permalink($related_post->ID) . '">';
+    		echo $related_post->post_title . '</a></li>';
+    	}
+    }
 
-		    // Only if there's not enough tag related articles,
-    		// we add some from the same category
-    		if ($cnt < $max_articles) {
+    // Only if there's not enough tag related articles,
+		// we add some from the same category
+		if ($cnt < $max_articles) {
 
-		        $article_categories = get_the_category($post->ID);
-		        $category_string = '';
-		        foreach($article_categories as $category) {
-		            $category_string .= $category->cat_ID . ',';
-		        }
+        $article_categories = get_the_category(get_the_ID());
+        $category_string = '';
+        foreach($article_categories as $category) {
+            $category_string .= $category->cat_ID . ',';
+        }
 
-		        $cat_related_posts = get_posts('exclude=' . $post->ID . '&numberposts=' . $max_articles . '&category=' . $category_string);
+        $cat_related_posts = get_posts('exclude=' . get_the_ID(). '&numberposts=' . $max_articles . '&category=' . $category_string);
 
-		        if ($cat_related_posts) {
-		            foreach ($cat_related_posts as $related_post) {
-		                $cnt++;
-		                if ($cnt > $max_articles) break;
-		                echo '<li class="child-' . $cnt . '">';
-		                echo '<a href="' . get_permalink($related_post->ID) . '">';
-		                echo $related_post->post_title . '</a></li>';
-		            }
-		        }
-		    }
+        if ($cat_related_posts) {
+            foreach ($cat_related_posts as $related_post) {
+                $cnt++;
+                if ($cnt > $max_articles) break;
+                echo '<li class="child-' . $cnt . '">';
+								$img_url = wp_get_attachment_url( get_post_thumbnail_id($related_post->ID) );
+				    		echo '<img class="img-responsive" alt="thumbnail" src="'.$img_url.'">';
+                echo '<a href="' . get_permalink($related_post->ID) . '">';
+                echo $related_post->post_title . '</a></li>';
+            }
+        }
+    }
 
-		    echo '</ul>';
+    echo '</ul>';
 
 	}
 ?>

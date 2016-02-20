@@ -12,10 +12,12 @@ Another wordpress themes using sage as base template
 * for footer can be added at widget part, add custom menu, add text for copyright
 * set frontpage as static page
 
-## adding share button support
-* install [JETPACK](https://jetpack.me/) plugin
-* activate shared buttons
-* edit functions and css to change it position on post
+
+## <del>adding share button support
+* <del>install [JETPACK](https://jetpack.me/) plugin</del>
+* <del> activate shared buttons </del>
+* <del> edit functions and css to change it position on post </del>
+* ** jetpack plugin incompatible, and made add media and tags become unusable  **
 
 ## adding popular post support
 * install plugin [WordPress Popular Posts](https://wordpress.org/plugins/wordpress-popular-posts/) on news single page
@@ -79,5 +81,12 @@ Another wordpress themes using sage as base template
   <p>[submit class:btn class:btn-default id:submit"Send"] <a id="reset" class="btn btn-default" href="#">Reset</a></p>
 </div>
 ```
+
+## slideshow gallery
+* adding [tribulant slideshow](https://wordpress.org/plugins/slideshow-gallery)
+* add image to slideshow-gallery > create gallery
+* paste the shortcode in post-edit
+* the shortcode must between tag, eg: `<div class="gallery-image"> [the_shortcode] </div>`. It will make the gallery dissapear from post. The image gallery will appear in featured image position.
+* add custom fields in page edit post, with id: "gallery_id" and the value is gallery id that have been created before
 --------
 aDMIN:rahasia

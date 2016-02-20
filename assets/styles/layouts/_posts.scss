@@ -30,6 +30,10 @@ article {
 		}
 	}
 
+	.slideshow-wrapper {
+		border: none;
+	}
+
 	#post-title{
 		background-color: white;
 		margin-top: 10px;
@@ -78,6 +82,10 @@ article {
 
 		#main {
 			margin-bottom: 10px;
+
+			.gallery-image {
+				display: none;
+			}
 
 			#tags {
 				margin-top: 20px;
@@ -173,7 +181,7 @@ article {
 		#comment-main {
 			background-color: white;
 			margin-bottom: 10px;
-			padding-top: 5px;
+			//padding-top: 5px;
 
 			article {
 				border: solid 1px #cbcbcb;
@@ -193,6 +201,7 @@ article {
 	 	margin-bottom: 10px;
 
 	 	h2 {
+			display: none;
 	 		background-color: rgba(254,192,91,1);
 	 		padding-left: 20px;
 	 		padding-top: 5px;

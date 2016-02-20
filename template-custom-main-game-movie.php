@@ -221,7 +221,7 @@
     <div class="sidemenu col-md-3">
       <div class="news-popular">
         <div class="title-image">
-          <img src="<?php bloginfo('template_url')?>/assets/images/smart-news/cb_news-popularpost.png" alt="" />
+          <img class="img img-responsive" src="<?php bloginfo('template_url')?>/assets/images/smart-news/cb_news-popularpost.png" alt="" />
         </div>
         <div class="main-popular-title">
           <?php

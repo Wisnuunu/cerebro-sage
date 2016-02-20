@@ -56,15 +56,14 @@
               <div class="headerfiller">&nbsp;</div>
               <div class="title">
                 <a href="<?php echo get_permalink($cur_post[0]->ID);?>">
-                <?php if (str_word_count($cur_post[0]->post_title) < 10): ?>
-                  <h1><?php echo $cur_post[0]->post_title; ?></h1>
-                <?php else: ?>
-                  <h2><?php echo $cur_post[0]->post_title; ?></h2>
-                <?php endif; ?>
-                <p>
-                  <?php echo wp_trim_words($cur_post[0]->post_content, 30, '...'); ?>
-                </p>
-
+                  <?php if (str_word_count($cur_post[0]->post_title) < 10): ?>
+                    <h1><?php echo $cur_post[0]->post_title; ?></h1>
+                  <?php else: ?>
+                    <h2><?php echo $cur_post[0]->post_title; ?></h2>
+                  <?php endif; ?>
+                  <p>
+                    <?php echo wp_trim_words($cur_post[0]->post_content, 30, '...'); ?>
+                  </p>
                 </a>
               </div>
             </div>

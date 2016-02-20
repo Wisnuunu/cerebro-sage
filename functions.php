@@ -36,6 +36,7 @@ function jptweak_remove_share() {
 }
 
 add_action( 'loop_start', 'jptweak_remove_share' );
+add_filter( 'jetpack_development_mode', '__return_true' );
 
 // CUSTOM LOGIN PAGE - make wp login page can be acessed by admin only
 function restrict_admin()
