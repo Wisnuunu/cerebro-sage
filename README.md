@@ -86,7 +86,7 @@ Another wordpress themes using sage as base template
 * adding [tribulant slideshow](https://wordpress.org/plugins/slideshow-gallery)
 * add image to slideshow-gallery > create gallery
 * paste the shortcode in post-edit
-* the shortcode must between tag, eg: `<div class="gallery-image"> [the_shortcode] </div>`. It will make the gallery dissapear from post. The image gallery will appear in featured image position.
+* the shortcode must between custom tag, eg: `[hide_gallery] [the_shortcode] [/hide_gallery]`. It will make the gallery dissapear from post. The image gallery will appear in featured image position.
 * add custom fields in page edit post, with id: "gallery_id" and the value is gallery id that have been created before
 --------
 aDMIN:rahasia

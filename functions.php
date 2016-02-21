@@ -306,4 +306,22 @@ function get_id_by_slug($page_slug) {
 		return null;
 	}
 }
+
+// add gallery into between galery-image class, by the css, it will hide the gallery which is called in post page
+function hide_gallery($atts, $content = null, $tag)
+{
+  return '<div class="gallery-image">'.$content.'</div>';
+}
+add_shortcode('hide_gallery', 'hide_gallery');
+
+function running_text($atts) {
+  $a = shortcode_atts( array(
+    'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  ), $atts);
+  $runtext = '';
+
+  return "".$runtext;
+}
+add_shortcode('running_text', 'running_text');
+
 ?>

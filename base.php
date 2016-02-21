@@ -8,6 +8,7 @@ use Roots\Sage\Wrapper;
 <!doctype html>
 <html <?php language_attributes(); ?>>
   <?php get_template_part('templates/head'); ?>
+
   <body <?php body_class(); ?>>
     <!--[if lt IE 9]>
       <div class="alert alert-warning">
@@ -18,11 +19,11 @@ use Roots\Sage\Wrapper;
       do_action('get_header');
       get_template_part('templates/header');
     ?>
-    <div class="wrap container" role="document">
+
+    <div class="wrap container-fluid" role="document">
       <div class="content row">
 
-
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
 
           <!-- define current post format that will have single page without sidebar widget -->
@@ -56,6 +57,8 @@ use Roots\Sage\Wrapper;
 
       </div><!-- /.content -->
     </div><!-- /.wrap -->
+
+
     <?php
       do_action('get_footer');
       get_template_part('templates/footer');

@@ -1,81 +1,90 @@
+<div class="container">
+
 <article <?php post_class(); ?>>
 
-	<div class="container-fluid">
-		<section id="prev-next">
-			<div class="row">
-				<?php if (strlen(get_previous_post(TRUE)->post_title) > 0) : ?>
-				<div class="col-md-6" id="prev-link">
-					<span class="">
-						<?php
-						$trimmed_word = wp_trim_words(get_previous_post(TRUE)->post_title, 8);
-						//echo $trimmed_word;
-						previous_post_link('&laquo; %link', /*'%title'*/$trimmed_word, TRUE); ?>&nbsp
-					</span>
-				</div>
-				<?php else: ?>
-					<div class="col-md-6">&nbsp</div>
-				<?php endif; ?>
+	<div class="container-nav">
 
-				<!-- <div class="col-md-2">&nbsp</div> -->
-
-				<?php if (strlen(get_next_post(TRUE)->post_title) > 0) : ?>
-					<div class="col-md-6 pull-right" id="next-link">
+		<div class="container-fluid">
+			<section id="prev-next">
+				<div class="">
+					<?php if (strlen(get_previous_post(TRUE)->post_title) > 0) : ?>
+					<div class="col-md-6" id="prev-link">
 						<span class="">
 							<?php
-							$trimmed_word = wp_trim_words(get_next_post(TRUE)->post_title, 8);
-							next_post_link('%link &raquo;', /*'%title'*/$trimmed_word, TRUE); ?>&nbsp
+							$trimmed_word = wp_trim_words(get_previous_post(TRUE)->post_title, 8);
+							//echo $trimmed_word;
+							previous_post_link('&laquo; %link', /*'%title'*/$trimmed_word, TRUE); ?>&nbsp
 						</span>
 					</div>
-				<?php else: ?>
-					<div class="col-md-6">&nbsp</div>
-				<?php endif; ?>
-			</div>
-		</section>
+					<?php else: ?>
+						<div class="col-md-6">&nbsp</div>
+					<?php endif; ?>
+
+					<!-- <div class="col-md-2">&nbsp</div> -->
+
+					<?php if (strlen(get_next_post(TRUE)->post_title) > 0) : ?>
+						<div class="col-md-6 pull-right" id="next-link">
+							<span class="">
+								<?php
+								$trimmed_word = wp_trim_words(get_next_post(TRUE)->post_title, 8);
+								next_post_link('%link &raquo;', /*'%title'*/$trimmed_word, TRUE); ?>&nbsp
+							</span>
+						</div>
+					<?php else: ?>
+						<div class="col-md-6">&nbsp</div>
+					<?php endif; ?>
+				</div>
+			</section>
+		</div>
+
 	</div>
 
 	<header>
 		<div class="container-fluid" id="post-title">
-		  <h1 class="entry-title"><?php the_title(); ?></h1>
+			<div class="container">
+			  <h1 class="entry-title"><?php the_title(); ?></h1>
+			</div>
 		</div>
 	</header>
 
 	<section class="featured-image">
 		<!-- shared buttons -->
 		<div class="container-fluid">
-			<?php
-				if (function_exists('sharing_display')) {
-					sharing_display('',true);
-				}
+				<?php
+					if (function_exists('sharing_display')) {
+						sharing_display('',true);
+					}
 
-				if (class_exists('Jetpack_Likes')) {
-					$custom_likes = new Jetpack_Likes;
-					echo $custom_likes->post_likes('');
-				}
-			?>
+					if (class_exists('Jetpack_Likes')) {
+						$custom_likes = new Jetpack_Likes;
+						echo $custom_likes->post_likes('');
+					}
+				?>
 		</div>
 		<!-- post's featured image   -->
 		<div class="container-fluid">
-			<?php
-			//echo ">> ".get_post_meta($post->ID, 'gallery_id', true);
-			if (function_exists('slideshow') && has_shortcode($post->post_content, 'tribulant_slideshow') ) {
-				slideshow(
-					$output = true,
-					$gallery_id = get_post_meta($post->ID, 'gallery_id', true),
-					$post_id = $post->ID,
-					$params = array()
-				);
-			}
-			else if( has_post_thumbnail( $post->ID )) {
-				$thumb_id = get_post_thumbnail_id();
-				$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
-				$thumb_url = $thumb_url_array[0];
-				//echo $thumb_url;
-				// echo '<img src="'.$thumb_url.'" alt="featured image">';
+			<div class="featured">
+				<?php
+				//echo ">> ".get_post_meta($post->ID, 'gallery_id', true);
+				if (function_exists('slideshow') && has_shortcode($post->post_content, 'tribulant_slideshow') ) {
+					slideshow(
+						$output = true,
+						$gallery_id = get_post_meta($post->ID, 'gallery_id', true),
+						$post_id = $post->ID,
+						$params = array()
+					);
+				}
+				else if( has_post_thumbnail( $post->ID )) {
+					$thumb_id = get_post_thumbnail_id();
+					$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+					$thumb_url = $thumb_url_array[0];
+					//echo $thumb_url;
+					// echo '<img src="'.$thumb_url.'" alt="featured image">';
 
-				echo '<div class="bg-image" style="background-image:url('.$thumb_url.')"></div>';
-			}
-
-			?>
+					echo '<div class="bg-image" style="background-image:url('.$thumb_url.')"></div>';
+				}
+				?>
+			</div>
 		</div>
 	</section>
 
@@ -218,3 +227,5 @@
 
 	}
 ?>
+
+</div>

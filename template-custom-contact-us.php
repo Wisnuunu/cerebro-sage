@@ -10,7 +10,7 @@
     <?php //get_template_part('templates/page', 'header'); ?>
 
 
-  <div class="container-fluid content">
+  <div class="container content">
     <div class="row" style="background-color:rgba(255,255,255,.9)">
       <div class="col-md-4">
         <div class="head-office">

@@ -1,8 +1,8 @@
 <article <?php post_class(); ?>>
 
-	<div class="container-fluid">
+	<div class="container">
 		<section id="prev-next">
-			<div class="row">			
+			<div class="row">
 				<div class="col-md-5" id="prev-link">
 					<span class=""><?php previous_post_link('&laquo; %link', '%title', TRUE); ?>&nbsp</span>
 				</div>
@@ -59,7 +59,7 @@
 					}
 				}
 			?>
-		</div> 		
+		</div>
 	</section>
 
 	<!-- main content -->
@@ -70,8 +70,8 @@
 			<i><b>Author:&nbsp</b></i>
 			<?php echo get_the_author(); ?> <br />
 			<i><b>Posted under:</b></i>
-			<?php 
-				$format = get_post_format(); 
+			<?php
+				$format = get_post_format();
 				if (false === $format) {
 					$format = 'News';
 				}
@@ -100,10 +100,10 @@
 					  			$style_color = 'red';
 					  		else
 					  			$style_color = 'rgba(250,156,42,1)';
-					    	
+
 					    	echo '<li style="background-color:'.$style_color.';"><a href="'.get_tag_link($tag->term_id).'">'. $tag->name.'</a></li>';
 
-					    	$count++; 
+					    	$count++;
 					  	}
 					  	echo '</ul>';
 					}
@@ -120,8 +120,8 @@
   		</div>
 	</div>
 
-	<section id="comment">	
-		<?php comments_template('/templates/comments-news.php'); ?> 
+	<section id="comment">
+		<?php comments_template('/templates/comments-news.php'); ?>
 	</section>
 
 	<section id="popular-post">
@@ -153,7 +153,7 @@
 	function view_related_post(){
 		$max_articles = 3;
 		$cnt = 0;
-		
+
 		echo "<ul>";
 
 		$article_tags = get_the_tags();
@@ -180,18 +180,18 @@
 		    // Only if there's not enough tag related articles,
     		// we add some from the same category
     		if ($cnt < $max_articles) {
-        
+
 		        $article_categories = get_the_category($post->ID);
 		        $category_string = '';
-		        foreach($article_categories as $category) { 
+		        foreach($article_categories as $category) {
 		            $category_string .= $category->cat_ID . ',';
 		        }
-		        
+
 		        $cat_related_posts = get_posts('exclude=' . $post->ID . '&numberposts=' . $max_articles . '&category=' . $category_string);
-		        
+
 		        if ($cat_related_posts) {
 		            foreach ($cat_related_posts as $related_post) {
-		                $cnt++; 
+		                $cnt++;
 		                if ($cnt > $max_articles) break;
 		                echo '<li class="child-' . $cnt . '">';
 		                echo '<a href="' . get_permalink($related_post->ID) . '">';
@@ -199,7 +199,7 @@
 		            }
 		        }
 		    }
-		    
+
 		    echo '</ul>';
 
 	}
