@@ -274,6 +274,7 @@
 
       <div class="col-md-6">
         <div class="event-calendar">
+          <a href="<?php get_home_url()?>/event-calendar">
           <img class="img img-responsive img-title" src="<?php bloginfo('template_url'); ?>/assets/images/home/cb-event_calendar.png" alt="Event Calendar" />
           <div class="content">
             <!-- display thumbnails  -->
@@ -314,6 +315,7 @@
 
       <div class="col-md-6">
         <div class="tips-asik">
+          <a href="<?php get_home_url()?>/tips-asik">
           <img class="img img-responsive img-title" src="<?php bloginfo('template_url'); ?>/assets/images/home/cb-tips_asik.png" alt="" />
           <div class="content">
             <div class="row">
