@@ -48,6 +48,10 @@
       </div>
 
     </div><!-- end row -->
+    <!-- the content -->
+    <div class="row">      
+      <?php get_template_part('templates/content', 'page'); ?>
+    </div>
 
    </div> <!--end container -->
 
@@ -123,7 +127,6 @@
         <a id="reset" class="btn btn-default" href="#">Reset</a>
       </div> -->
 
-      <?php get_template_part('templates/content', 'page'); ?>
     <?php endwhile; ?>
 
 </div>
