@@ -87,6 +87,17 @@ Another wordpress themes using sage as base template
 * add image to slideshow-gallery > create gallery
 * paste the shortcode in post-edit
 * the shortcode must between custom tag, eg: `[hide_gallery] [the_shortcode] [/hide_gallery]`. It will make the gallery dissapear from post. The image gallery will appear in featured image position.
-* add custom fields in page edit post, with id: "gallery_id" and the value is gallery id that have been created before
+* add custom fields in page edit post, with id: "gallery_id" and the value is gallery id that have been created
+
+## editable carousel header
+* can be used on each main page
+* add slug divided by ``#`` symbol in page content editor. eg:
+``#this-is-1st-slug
+#this-is-2nd-slug``
+* it will get title, excerpt, and featured image to be displayed on carousel section.
+
+## running text feature
+* add new custom field ``running_text`` in main homepage
+* add the running text value
 --------
 aDMIN:rahasia
