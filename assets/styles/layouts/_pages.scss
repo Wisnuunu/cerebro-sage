@@ -428,7 +428,8 @@ body {
 			}
 
 			img {
-				margin: 0 auto;
+				margin: 0 auto !important;
+
 			}
 		}
 
@@ -502,6 +503,10 @@ body {
 
 			.title-image {
 				text-align: center;
+
+				img {
+					margin: 0px auto !important;
+				}
 			}
 
 			ul {
@@ -806,10 +811,12 @@ body {
 	text-align: center;
 	color: white;
 
+	img {
+		margin: 0px auto !important;
+	}
+
 	@media screen and (min-width: 1200px) {
-		img {
-			//margin-left: -220px;
-		}
+
 	}
 }
 
@@ -826,23 +833,34 @@ body {
 	}
 
 	.img-thumbn {
-		margin-top: 20px;
+		margin-top: 13px;
+
+		min-height: 180px;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover !important;
 	}
 
 	.content {
-		min-height: 380px;
+		min-height: 410px;
 
 		p {
 			font-size: 11px;
 		}
 
 		.title {
-			margin-bottom: 0px;
+			margin-bottom: 5px;
+			font-weight: bold;
+
+			a {
+				color: rgba(0, 0, 0, .8);
+			}
 		}
 
 		.location {
 			margin-top: 0px;
 			font-weight: bold;
+			color: rgba(0, 0, 0, .7);
 		}
 	}
 
@@ -864,6 +882,11 @@ body {
 .tips-asik {
 	.img-thumbn {
 		margin-top: 10px;
+
+		min-height: 100px;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover !important;
 	}
 
 	.content p {
@@ -876,7 +899,6 @@ body {
 	margin: 20px 0;
 	padding: 20px 0;
 	text-align: center;
-	color: $red;
 	font-family: 'CurseCasualRegular';
 	text-transform: uppercase;
 
@@ -884,6 +906,7 @@ body {
 		margin-top: 10px;
 		margin-bottom: 20px;
 		letter-spacing: 1.5px;
+		color: $red;
 	}
 
 	.read-more p {
@@ -897,9 +920,40 @@ body {
 		text-transform: none;
 	}
 
+	.pv-category {
+		@media screen and (min-width: 1200px) {
+			position: absolute;
+			right: 15px;
+			bottom: 10px;
+		}
+	}
+
 	.carousel-control {
 		width: auto !important;
+		background-image: none;
+		opacity: 1;
+
+		img {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.glyphicon {
+				color: $red;
+				opacity: .7;
+		}
 	}
+
+	.img-tmb {
+		min-height: 200px;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover !important;
+		margin-bottom: 10px;
+	}
+
+
 }
 
 .social-feed {
@@ -912,7 +966,7 @@ body {
 		text-transform: uppercase;
 		letter-spacing: 1.5px;
 	}
-	
+
 	img {
 		margin: 5px auto;
 	}

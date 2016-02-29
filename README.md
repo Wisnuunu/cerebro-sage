@@ -99,5 +99,24 @@ Another wordpress themes using sage as base template
 ## running text feature
 * add new custom field ``running_text`` in main homepage
 * add the running text value
+
+## share button
+* add plugin [Shareaholic](https://wordpress.org/plugins/shareaholic/)
+* un-check everything on Shareholic dashboard
+* do user registration
+* customize share button on post section
+* set share button style, remove unused button, check share counter, check total share counter
+* copy the shortcode > paste on ``format-news.php`` at ``shared-buttons`` section
+
+## Event location
+* add custom field ``event_location`` and its value on post page everytime event post category is created
+* the main home page will add extra information for event location
+
+## youtube playlist
+* on post with video category, add custom field ``youtube_playlist``
+* create a playlist on youtube if u have none, or get other youtube playlist.
+* on youtube playlist page, press ``share`` > copy link address
+* on video post, paste on custom field ``youtube_playlist``
+
 --------
 aDMIN:rahasia

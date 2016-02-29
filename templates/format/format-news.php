@@ -60,6 +60,7 @@
 						echo $custom_likes->post_likes('');
 					}
 				?>
+				<?php echo do_shortcode('[shareaholic app="share_buttons" id="23875665"]'); ?>
 		</div>
 		<!-- post's featured image   -->
 		<div class="container-fluid">
@@ -73,6 +74,13 @@
 						$post_id = $post->ID,
 						$params = array()
 					);
+				}
+				else if (get_post_meta(get_the_ID(), 'youtube_playlist', true)) {
+					//<!-- 16:9 aspect ratio -->
+					echo '<div class="embed-responsive embed-responsive-16by9">';
+					$yplaylist = get_post_meta(get_the_ID(), 'youtube_playlist', true);
+					  	echo '<iframe class="embed-responsive-item" src="'.$yplaylist.'"></iframe>';
+					echo '</div>';
 				}
 				else if( has_post_thumbnail( $post->ID )) {
 					$thumb_id = get_post_thumbnail_id();

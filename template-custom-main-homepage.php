@@ -80,7 +80,7 @@
   </section>
 
   <section id="running-text">
-    <div class="container-fluid">      
+    <div class="container-fluid">
       <div class="marquee-wrapper">
         <div class="marquee">
           <p>
@@ -153,13 +153,6 @@
             </div>
           </div>
         </article>
-        <?php if ($curPostCount === 7): ?>
-          <div class="advertise-space col-md-12">
-            <!-- <div class="row"> -->
-              <img class="img img-responsive" src="<?php bloginfo('template_url')?>/assets/images/smart-news/cb_news-ads.png" alt="" />
-            <!-- </div> -->
-          </div>
-        <?php endif; ?>
 
       <?php endwhile; ?>
       <!-- end the loop -->
@@ -237,14 +230,6 @@
           </div>
         </div>
 
-        <?php if ($curPostCount === 7): ?>
-          <!-- <div class="advertise-space col-md-12"> -->
-            <!-- <div class="row"> -->
-              <!-- <img class="img img-responsive" src="<?php bloginfo('template_url')?>/assets/images/smart-news/cb_news-ads.png" alt="" /> -->
-            <!-- </div> -->
-          <!-- </div> -->
-        <?php endif; ?>
-
       <?php endwhile; ?>
       <!-- end the loop -->
       </div>
@@ -275,34 +260,50 @@
       <div class="col-md-6">
         <div class="event-calendar">
           <a href="<?php get_home_url()?>/event-calendar">
-          <img class="img img-responsive img-title" src="<?php bloginfo('template_url'); ?>/assets/images/home/cb-event_calendar.png" alt="Event Calendar" />
+            <img class="img img-responsive img-title" src="<?php bloginfo('template_url'); ?>/assets/images/home/cb-event_calendar.png" alt="Event Calendar" />
+          </a>
           <div class="content">
-            <!-- display thumbnails  -->
-            <div class="row">
-              <div class="col-sm-6">
-                <img class="img img-responsive img-thumbn" src="http://placehold.it/200x150" alt="" />
-              </div>
-              <div class="col-sm-6">
-                <h3 class="title">Title</h3>
-                <h5 class="location">event location</h5>
-                <p class="description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-                </p>
-              </div>
-            </div>
+            <?php
+            $curPostCount = 1;
+            $maxPosts = 2;
 
-            <div class="row">
-              <div class="col-sm-6">
-                <img class="img img-responsive img-thumbn" src="http://placehold.it/200x150" alt="" />
-              </div>
-              <div class="col-sm-6">
-                <h3 class="title">Title</h3>
-                <h5 class="location">event location</h5>
-                <p class="description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-                </p>
-              </div>
-            </div>
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            $args = array(
+                'post_type' => 'post',
+                'category_name' => 'event',
+                'posts_per_page' => $maxPosts,
+                'paged' => $paged,
+            );
+
+            $the_query = new WP_Query($args); //initiate the wp query
+            ?>
+
+            <?php if ($the_query->have_posts()): ?>
+              <?php while($the_query->have_posts()) : $the_query->the_post(); ?>
+                <!-- display thumbnails  -->
+                <div class="row">
+                  <div class="col-sm-6">
+                    <?php
+                      $thumb_id = get_post_thumbnail_id();
+                      $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'medium', true);
+                      $thumb_url = $thumb_url_array[0];
+                    ?>
+                    <a href="<?php the_permalink(); ?>">
+                      <div class="img img-responsive img-thumbn" style="background-image:url(<?php echo $thumb_url; ?>)">
+                        <!-- <img class="img img-responsive img-thumbn" src="<?php echo $thumb_url; ?>" alt="" /> -->
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-sm-6">
+                    <h4 class="title"><a href="<?php the_permalink(); ?>"><?php echo "".get_the_title(); ?></a></h4>
+                      <h5 class="location"><?php echo get_post_meta(get_the_ID(), 'event_location', true); ?></h5>
+                    <p class="description">
+                      <?php echo "".get_the_excerpt(); ?>
+                    </p>
+                  </div>
+                </div>
+              <?php endwhile; ?>
+            <?php endif; ?>
 
           </div>
           <div class="show-more">
@@ -316,48 +317,51 @@
       <div class="col-md-6">
         <div class="tips-asik">
           <a href="<?php get_home_url()?>/tips-asik">
-          <img class="img img-responsive img-title" src="<?php bloginfo('template_url'); ?>/assets/images/home/cb-tips_asik.png" alt="" />
+            <img class="img img-responsive img-title" src="<?php bloginfo('template_url'); ?>/assets/images/home/cb-tips_asik.png" alt="" />
+          </a>
           <div class="content">
-            <div class="row">
-              <div class="col-sm-5">
-                <img class="img img-responsive img-thumbn" src="http://placehold.it/140x100" alt="" />
-              </div>
-              <div class="col-sm-7">
-                <h4 class="title">Title</h4>
-                <p class="description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </div>
+            <?php
+            $curPostCount = 1;
+            $maxPosts = 3;
 
-            <div class="row">
-              <div class="col-sm-5">
-                <img class="img img-responsive img-thumbn" src="http://placehold.it/140x100" alt="" />
-              </div>
-              <div class="col-sm-7">
-                <h4 class="title">Title</h4>
-                <p class="description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </div>
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            $args = array(
+                'post_type' => 'post',
+                'category_name' => 'tips',
+                'posts_per_page' => $maxPosts,
+                'paged' => $paged,
+            );
 
-            <div class="row">
-              <div class="col-sm-5">
-                <img class="img img-responsive img-thumbn" src="http://placehold.it/140x100" alt="" />
-              </div>
-              <div class="col-sm-7">
-                <h4 class="title">Title</h4>
-                <p class="description">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="show-more">
-            <div class="btn">
-              Show More
-            </div>
+            $the_query = new WP_Query($args); //initiate the wp query
+            ?>
+            <?php if ($the_query->have_posts()): ?>
+              <?php while($the_query->have_posts()) : $the_query->the_post(); ?>
+                <div class="row">
+                  <div class="col-sm-5">
+                    <?php
+                      $thumb_id = get_post_thumbnail_id();
+                      $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'medium', true);
+                      $thumb_url = $thumb_url_array[0];
+                    ?>
+                    <a href="<?php the_permalink(); ?>">
+                      <div class="img img-responsive img-thumbn" style="background-image:url(<?php echo $thumb_url; ?>)">
+                      </div>
+                    </a>
+                    <!-- <img class="img img-responsive img-thumbn" src="http://placehold.it/140x100" alt="" /> -->
+                  </div>
+                  <div class="col-sm-7">
+                    <h4 class="title"><a href="<?php the_permalink();?>"><?php echo "".get_the_title(); ?></a></h4>
+                    <p class="description">
+                      <?php echo "".get_the_excerpt(); ?>
+                    </p>
+                  </div>
+                </div>
+              <?php endwhile;?>
+            <?php endif; ?>
+        </div>
+        <div class="show-more">
+          <div class="btn">
+            Show More
           </div>
         </div>
       </div>
@@ -373,33 +377,128 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <div class="col-md-4">
-            <img class="img img-responsive center-block" src="http://lorempixel.com/240/200/animals/1" alt="Chania">
-          </div>
+        <?php
+        $curPostCount = 0;
+        $maxPosts = 9;
 
-          <div class="col-md-4">
-            <img class="img img-responsive center-block" src="http://lorempixel.com/240/200/animals/2" alt="Chania">
-          </div>
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        $args = array(
+            'post_type' => 'post',
+            'category_name' => 'foto-video',
+            'posts_per_page' => $maxPosts,
+            'paged' => $paged,
+        );
 
-          <div class="col-md-4">
-            <img class="img img-responsive center-block" src="http://lorempixel.com/240/200/animals/3" alt="Chania">
-          </div>
+        $the_query = new WP_Query($args); //initiate the wp query
+        $pv_post_id = [];
+        $pv_post_thumb_url = [];
+        ?>
 
-        </div>
-        <div class="item">
-          <div class="col-md-4">
-            <img class="img img-responsive center-block" src="http://lorempixel.com/240/200/animals/4" alt="Chania">
-          </div>
+        <?php if ($the_query->have_posts()): ?>
+          <?php while($the_query->have_posts()) : $the_query->the_post(); ?>
+            <?php
+              //add every photo and video post id to array
+              $pv_post_id[$curPostCount] = get_the_ID();
+              //add every photo and video post url to array
+              $thumb_id = get_post_thumbnail_id();
+              $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'medium', true);
+              $thumb_url = $thumb_url_array[0];
+              $pv_post_thumb_url[$curPostCount] = $thumb_url;
 
-          <div class="col-md-4">
-            <img class="img img-responsive center-block" src="http://lorempixel.com/240/200/animals/5" alt="Chania">
-          </div>
+              $curPostCount++;
+            ?>
+          <?php endwhile; ?>
+        <?php endif;
+          //echo ">>".count($pv_post_thumb_url);
+        ?>
 
-          <div class="col-md-4">
-            <img class="img img-responsive center-block" src="http://lorempixel.com/240/200/animals/6" alt="Chania">
+        <?php if (count($pv_post_thumb_url) > 0): ?>
+          <div class="item active"> <!-- 1st image slider group -->
+            <?php for ($i = 0; $i < 3; $i++): ?>
+              <div class="col-md-4">
+                <a href="<?php echo get_post_permalink($pv_post_id[$i]); ?>">
+                  <div class="img img-responsive img-tmb" style="background-image:url(<?php echo $pv_post_thumb_url[$i]; ?>)">
+                    <!-- image badge photo or video  -->
+                    <?php
+                    $post_categories = wp_get_post_categories( $pv_post_id[$i] );
+                    $cats = array();
+
+                    foreach($post_categories as $c){
+                        $cat = get_category( $c );
+                        $cats[] = array( 'name' => $cat->name, 'slug' => $cat->slug );
+                    }
+                    //print_r($cats[1]['name']);
+                    ?>
+                    <?php if (strtolower($cats[1]['name']) == 'photo'): ?>
+                      <img class="pv-category" src="<?php bloginfo('template_url'); ?>/assets/images/home/cb-ico_photo.png" alt="" />
+                    <?php elseif (strtolower($cats[1]['name']) == 'video'): ?>
+                      <img class="pv-category" src="<?php bloginfo('template_url'); ?>/assets/images/home/cb-ico_video.png" alt="" />
+                    <?php endif; ?>
+                  </div>
+                </a>
+                <!-- <img class="img img-responsive center-block" src="<?php echo $pv_post_thumb_url[0]; ?>" alt="Chania"> -->
+              </div>
+            <?php endfor; ?>
+         </div>
+        <?php endif; ?>
+
+        <?php if (count($pv_post_thumb_url) > 3): ?>
+          <div class="item">  <!-- 2nd image slider group -->
+            <?php for ($i = 3; $i < 6; $i++): ?>
+              <div class="col-md-4">
+                <a href="<?php echo get_post_permalink($pv_post_id[$i]); ?>">
+                  <div class="img img-responsive img-tmb" style="background-image:url(<?php echo $pv_post_thumb_url[$i]; ?>)">
+                    <!-- image badge photo or video  -->
+                    <?php
+                    $post_categories = wp_get_post_categories( $pv_post_id[$i] );
+                    $cats = array();
+
+                    foreach($post_categories as $c){
+                        $cat = get_category( $c );
+                        $cats[] = array( 'name' => $cat->name, 'slug' => $cat->slug );
+                    }
+                    //print_r($cats[1]['name']);
+                    ?>
+                    <?php if (strtolower($cats[1]['name']) == 'photo'): ?>
+                      <img class="pv-category" src="<?php bloginfo('template_url'); ?>/assets/images/home/cb-ico_photo.png" alt="" />
+                    <?php elseif (strtolower($cats[1]['name']) == 'video'): ?>
+                      <img class="pv-category" src="<?php bloginfo('template_url'); ?>/assets/images/home/cb-ico_video.png" alt="" />
+                    <?php endif; ?>
+                  </div>
+                </a>
+              </div>
+            <?php endfor; ?>
           </div>
-        </div>
+        <?php endif; ?>
+
+        <?php if (count($pv_post_thumb_url) > 6): ?>
+          <div class="item">  <!-- 3rd image slider group -->
+            <?php for ($i = 6; $i < 9; $i++): ?>
+              <div class="col-md-4">
+                <a href="<?php echo get_post_permalink($pv_post_id[$i]); ?>">
+                  <div class="img img-responsive img-tmb" style="background-image:url(<?php echo $pv_post_thumb_url[$i]; ?>)">
+                    <!-- image badge photo or video  -->
+                    <?php
+                    $post_categories = wp_get_post_categories( $pv_post_id[$i] );
+                    $cats = array();
+
+                    foreach($post_categories as $c){
+                        $cat = get_category( $c );
+                        $cats[] = array( 'name' => $cat->name, 'slug' => $cat->slug );
+                    }
+                    //print_r($cats[1]['name']);
+                    ?>
+                    <?php if (strtolower($cats[1]['name']) == 'photo'): ?>
+                      <img class="pv-category" src="<?php bloginfo('template_url'); ?>/assets/images/home/cb-ico_photo.png" alt="" />
+                    <?php elseif (strtolower($cats[1]['name']) == 'video'): ?>
+                      <img class="pv-category" src="<?php bloginfo('template_url'); ?>/assets/images/home/cb-ico_video.png" alt="" />
+                    <?php endif; ?>
+                  </div>
+                </a>
+              </div>
+            <?php endfor; ?>
+          </div>
+        <?php endif; ?>
 
       </div>
 
@@ -407,6 +506,7 @@
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
+        <!-- <img src="<?php bloginfo('template_url'); ?>/assets/images/home/cb-btn_left.png" alt="<" /> -->
       </a>
       <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
