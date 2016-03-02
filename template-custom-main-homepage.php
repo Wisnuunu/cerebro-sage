@@ -25,7 +25,7 @@
     	'posts_per_page' => 1
     );
     $my_posts = get_posts( $args );
-    $pots[$i] = get_posts($args);
+    $pots[$i] = get_posts( $args );
     if( $my_posts ) {
     	// echo $i.' ID:' . $my_posts[0]->ID;
       // echo "<br>";
@@ -416,7 +416,7 @@
           <div class="item active"> <!-- 1st image slider group -->
             <?php for ($i = 0; $i < 3; $i++): ?>
               <div class="col-md-4">
-                <a href="<?php echo get_post_permalink($pv_post_id[$i]); ?>">
+                <a data-toggle="tooltip" title="<?php echo get_the_title($pv_post_id[$i]); ?>" href="<?php echo get_post_permalink($pv_post_id[$i]); ?>">
                   <div class="img img-responsive img-tmb" style="background-image:url(<?php echo $pv_post_thumb_url[$i]; ?>)">
                     <!-- image badge photo or video  -->
                     <?php
@@ -446,7 +446,7 @@
           <div class="item">  <!-- 2nd image slider group -->
             <?php for ($i = 3; $i < 6; $i++): ?>
               <div class="col-md-4">
-                <a href="<?php echo get_post_permalink($pv_post_id[$i]); ?>">
+                <a data-toggle="tooltip" title="<?php echo get_the_title($pv_post_id[$i]); ?>" href="<?php echo get_post_permalink($pv_post_id[$i]); ?>">
                   <div class="img img-responsive img-tmb" style="background-image:url(<?php echo $pv_post_thumb_url[$i]; ?>)">
                     <!-- image badge photo or video  -->
                     <?php
@@ -475,7 +475,7 @@
           <div class="item">  <!-- 3rd image slider group -->
             <?php for ($i = 6; $i < 9; $i++): ?>
               <div class="col-md-4">
-                <a href="<?php echo get_post_permalink($pv_post_id[$i]); ?>">
+                <a data-toggle="tooltip" title="<?php echo get_the_title($pv_post_id[$i]); ?>" href="<?php echo get_post_permalink($pv_post_id[$i]); ?>">
                   <div class="img img-responsive img-tmb" style="background-image:url(<?php echo $pv_post_thumb_url[$i]; ?>)">
                     <!-- image badge photo or video  -->
                     <?php

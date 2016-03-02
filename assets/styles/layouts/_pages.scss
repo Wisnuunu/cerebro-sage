@@ -971,3 +971,175 @@ body {
 		margin: 5px auto;
 	}
 }
+
+#smart-cool {
+
+	#highlight {
+		background-color: rgba(255, 255, 255, .8);
+		margin-bottom: 20px;
+
+		.img-highlight {
+			min-height: 340px;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover !important;
+			margin: 10px 0px;
+		}
+
+		@media screen and (min-width: 1200px) {
+			.col-md-8 {
+				padding-right: 0px;
+			}
+			.col-md-12 {
+
+			}
+		}
+
+		.col-md-12 {
+				margin-top: 10px;
+				padding-left: 0px;
+				padding-right: 0px;
+		}
+
+		.img-highlight-small {
+			min-height: 165px;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover !important;
+		}
+
+		.description {
+			width:  85%;
+			min-height: 55px;
+			position: absolute;
+			bottom: 10px;
+			left: 50%;
+			transform: translateX(-50%);
+			margin-bottom: 5px;
+			padding: 2px 12px;
+			background-color: rgba(255, 255, 255, .7);
+			border: 1px solid white;
+
+			.title {
+				font-size: 18px;
+				font-weight: bold;
+				margin: 2px 0px;
+			}
+
+			.excerpt {
+				font-size: 11px;
+				margin-bottom: 2px
+			}
+		}
+	}
+
+	#event-calendar {
+		.img-title {
+				margin-bottom: 15px;
+		}
+
+		.col-md-6 {
+			padding: 5px;
+		}
+
+		.event-summary {
+			background-color: rgba(255, 255, 255, .8);
+			padding: 5px;
+			//margin: 10px 5px;
+			min-height: 200px;
+		}
+
+		.img-thumbn {
+			min-height: 130px;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover !important;
+			margin-top: 5px;
+		}
+
+	 .title {
+		 margin-top: 5px;
+		 margin-bottom: 2px;
+		 font-weight: bold;
+
+		 a {
+		 color: rgba(0, 0, 0, .8);
+		 }
+	 }
+
+	 .location {
+		 font-weight: bold;
+		 color: rgba(0, 0, 0, .6);
+
+		 margin-top: 2px;
+	 }
+
+	 .description {
+		 font-size: 11px;
+	 }
+
+	 .show-more {
+		 padding: 0 5px;
+	 }
+
+	 .btn {
+		 width: 100%;
+		 background-color: $red;
+		 color: white;
+		 font-weight: bold;
+		 border-radius: 0px;
+		 font-size: 13px;
+
+		 margin: 10px 0 20px;
+	 }
+
+	}
+
+	#games-and-movie {
+		// .col-sm-4 {
+		// 	@media screen and (min-width: 1200px){
+		// 		width: 32%;
+		// 		margin: 0px 6px !important;
+		// 		padding: 3px;
+		// 	}
+		// }
+
+		.col-sm-4 {
+				margin-bottom: 10px;
+		}
+
+		.smart-news-title {
+			margin-bottom: 10px;
+		}
+
+		.news-summary {
+			padding: 3px;
+		}
+
+		.news-thumbnail {
+			background-color: rgba(255, 255, 255, .9);
+			min-height: 240px;
+			padding: 0px;
+
+			.thumbnail-preview {
+				min-height: 180px;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: cover !important;
+			}
+		}
+
+		.title {
+			padding: 0px 10px;
+
+			a {
+				color: rgba(0, 0, 0, .9);
+
+			}
+			h4 {
+				//font-weight: bold;
+				font-size: 14px;
+			}
+		}
+	}
+}

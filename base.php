@@ -24,7 +24,7 @@ use Roots\Sage\Wrapper;
       <div class="content row">
 
       <div class="container-fluid">
-        <div class="row">
+        <div class="">
 
           <!-- define current post format that will have single page without sidebar widget -->
           <?php if ( !get_post_format() || get_post_format() === 'video'): ?>
