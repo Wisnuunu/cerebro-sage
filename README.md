@@ -117,6 +117,13 @@ Another wordpress themes using sage as base template
 * create a playlist on youtube if u have none, or get other youtube playlist.
 * on youtube playlist page, press ``share`` > copy link address
 * on video post, paste on custom field ``youtube_playlist``
+ 
+## disqus comment
+* In the left panel of your Wordpress admin, select Plugins > Add New
+* Search for "Disqus" and find the plugin provided by "Disqus".
+* Select Install Now > Activate Plugin
+* Proceed with the onscreen install instructions.
+* Log into your Disqus account, then choose the forum shortname you would like to install.
 
 --------
 aDMIN:rahasia
