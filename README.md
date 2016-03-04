@@ -118,5 +118,31 @@ Another wordpress themes using sage as base template
 * on youtube playlist page, press ``share`` > copy link address
 * on video post, paste on custom field ``youtube_playlist``
 
+## Beasiswa post
+* added new layout if post category is ``Beasiswa``
+* there were custom field in here: Details and Link Buttons, just add this section for template after the main articles
+```html
+<div class="details row" style="background-color: #cc1111; color: white; margin: 5px 10px;">
+<div class="title" style="padding: 10px;"><b><u>Details</u></b></div>
+<div class="col-md-6 left-side">
+<ul style="list-style: none;">
+  <li><b>Jenjang:</b><br>Pascasarjana</li>
+  <li><b>Study Date:</b><br>September 2016</li>
+  <li><b>Deadline Submit:</b><br>30 April 2016</li>
+  <li><b>Beasiswa:</b><br>S$23.300.000 (Rp 23.961.542) per tahun</li>
+</ul>
+</div>
+<div class="col-md-6 right-side">
+<ul style="list-style: none;">
+  <li><b>Phone:</b><br>+6200000000</li>
+  <li><b>Email:</b><br>email@email.com</li>
+  <li><b>Place:</b><br>Singapore University of Technology and Design <br> 20 Dover Drive, 1230912, Singapore</li>
+  <li><b>Ambassador:</b><br>Jl. Kemerdekaan no.1 Jakarta Utara</li>
+</ul>
+</div>
+</div>
+```
+* for link buttons, add custom field ``goto_url`` and ``download_url``, and insert the details there
+
 --------
 aDMIN:rahasia

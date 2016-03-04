@@ -1,3 +1,7 @@
+<?php
+	$beasiswa = 'Beasiswa';
+?>
+
 <div class="container">
 
 <article <?php post_class(); ?>>
@@ -96,56 +100,80 @@
 		</div>
 	</section>
 
+	<!-- The Main Content  -->
 	<div class="entry-content container-fluid">
-		<div class="col-md-1" id="post-meta">
-			<i><b><?php the_date('d M Y'); ?></b></i> <br />
-			<i><b>Author:&nbsp</b></i>
-			<?php echo get_the_author(); ?> <br />
-			<i><b>Posted under:</b></i>
-			<?php
-				$format = get_post_format();
-				if (false === $format) {
-					$format = 'News';
-				}
-				echo $format;
-			?><br />
-			<i><b>Shortlink:&nbsp</b></i>
-			<?php echo wp_get_shortlink(); ?>
-		</div>
-		<div class="col-md-8" id="main">
-			<div id="content">
-	  			<?php the_content(); ?>
+		<?php
+			$cat = get_the_category();
+			// 	print_r($cat);
+			// 	echo "<br>".$cat[0]->name;
+	 	?>
+		<?php if ($cat[0]->name == $beasiswa): ?>
+			<div class="container-fluid">
+				<div class="post-content">
+					<?php
+					the_content();
+					$goto = get_post_meta(get_the_ID(), 'goto_url', true);
+					$download = get_post_meta(get_the_ID(), 'download_url', true);
+					//echo $download." << >> ".$goto;
+					?>
+					<div class="links">
+						<a class="btn btn-default link-btn" href="<?php echo $goto;?>">Go To Link </a>
+						<a class="btn btn-default link-btn" href="<?php echo $download;?>">Download Link</a>
+					</div>
+				</div>
 			</div>
-			<div id="tags">
-				<b>Tags:</b>
+		<?php else: ?>
+			<div class="col-md-1" id="post-meta">
+				<i><b><?php the_date('d M Y'); ?></b></i> <br />
+				<i><b>Author:&nbsp</b></i>
+				<?php echo get_the_author(); ?> <br />
+				<i><b>Posted under:</b></i>
 				<?php
-					$posttags = get_the_tags();
-
-					$count = 0;
-
-					if ($posttags) {
-						echo '<ul>';
-					  	foreach($posttags as $tag) {
-					  		if ($count%2 == 0)
-					  			$style_color = '#cc1111';
-					  		else
-					  			$style_color = 'rgba(250,156,42,1)';
-
-					    	echo '<li style="background-color:'.$style_color.';"><a href="'.get_tag_link($tag->term_id).'">'. $tag->name.'</a></li>';
-
-					    	$count++;
-					  	}
-					  	echo '</ul>';
+					$format = get_post_format();
+					if (false === $format) {
+						$format = 'News';
 					}
-				?>
+					echo $format;
+				?><br />
+				<i><b>Shortlink:&nbsp</b></i>
+				<?php echo wp_get_shortlink(); ?>
 			</div>
-  		</div>
-  		<div class="col-md-3" id="rel-post">
-  			<h5 id="title">Related Post</h5>
-  			<div id="rel-content">
-  				<?php view_related_post(); ?>
-  			</div>
-  		</div>
+			<div class="col-md-8" id="main">
+				<div id="content">
+		  			<?php the_content(); ?>
+				</div>
+				<div id="tags">
+					<b>Tags:</b>
+					<?php
+						$posttags = get_the_tags();
+
+						$count = 0;
+
+						if ($posttags) {
+							echo '<ul>';
+						  	foreach($posttags as $tag) {
+						  		if ($count%2 == 0)
+						  			$style_color = '#cc1111';
+						  		else
+						  			$style_color = 'rgba(250,156,42,1)';
+
+						    	echo '<li style="background-color:'.$style_color.';"><a href="'.get_tag_link($tag->term_id).'">'. $tag->name.'</a></li>';
+
+						    	$count++;
+						  	}
+						  	echo '</ul>';
+						}
+					?>
+				</div>
+			</div>
+
+			<div class="col-md-3" id="rel-post">
+				<h5 id="title">Related Post</h5>
+				<div id="rel-content">
+					<?php view_related_post(); ?>
+				</div>
+			</div>
+		<?php endif; ?>
 	</div>
 
 	<section id="comment">

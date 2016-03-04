@@ -245,5 +245,30 @@ article {
 		}
 	 }
 
+	//  special case for Beasiswa Page
+	.post-content {
+		padding: 20px;
+
+		.links {
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		.btn {
+			min-width: 128px;
+			background-color: #ffad2b;
+			color: white;
+			font-weight: bold;
+			border-radius: 0px;
+			border: none;
+			margin: 0px 20px;
+		}
+
+		p {
+			text-align: justify;
+		}
+
+	}
+
 
 }
