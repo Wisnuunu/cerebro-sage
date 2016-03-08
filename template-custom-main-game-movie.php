@@ -107,6 +107,7 @@
           'posts_per_page' => $maxPosts,
           'paged' => $paged,
       );
+
       if (isset($_POST['sort'])) {
         $sort_opt = $_POST['sort'];
 
@@ -185,6 +186,7 @@
             </div>
           </div>
         </article>
+
         <?php if ($curPostCount === 7): ?>
           <div class="advertise-space col-md-12">
             <!-- <div class="row"> -->

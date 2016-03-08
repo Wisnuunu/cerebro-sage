@@ -110,15 +110,33 @@
 		<?php if ($cat[0]->name == $beasiswa): ?>
 			<div class="container-fluid">
 				<div class="post-content">
-					<?php
-					the_content();
-					$goto = get_post_meta(get_the_ID(), 'goto_url', true);
-					$download = get_post_meta(get_the_ID(), 'download_url', true);
-					//echo $download." << >> ".$goto;
-					?>
+					<?php the_content(); ?>
+					<div class="details row" style="background-color: #cc1111; color: white; margin: 5px 10px;">
+						<div class="title" style="padding: 10px;"><b><u>Details</u></b></div>
+						<div class="col-md-6 left-side">
+							<ul style="list-style: none;">
+								<li><b>Jenjang:</b><br> <?php echo CFS()->get( 'jenjang' ); ?></li>
+								<li><b>Study Date:</b><br> <?php echo CFS()->get( 'study_date' ); ?></li>
+								<li><b>Deadline Submit:</b><br> <?php echo CFS()->get( 'deadline_submit' ); ?></li>
+								<li><b>Beasiswa:</b><br> <?php echo CFS()->get( 'beasiswa' ); ?></li>
+							</ul>
+						</div>
+						<div class="col-md-6 right-side">
+							<ul style="list-style: none;">
+								<li><b>Phone:</b><br> <?php echo CFS()->get( 'phone' ); ?></li>
+								<li><b>Email:</b><br> <?php echo CFS()->get( 'email' ); ?></li>
+								<li><b>Place:</b><br> <?php echo CFS()->get( 'place' ); ?></li>
+								<li><b>Ambassador:</b><br> <?php echo CFS()->get( 'ambassador' ); ?></li>
+							</ul>
+						</div>
+					</div>
 					<div class="links">
+						<?php
+						$goto = CFS()->get( 'go_to_link' );
+						$download = CFS()->get( 'download_link' );
+						?>
 						<a class="btn btn-default link-btn" href="<?php echo $goto;?>">Go To Link </a>
-						<a class="btn btn-default link-btn" href="<?php echo $download;?>">Download Link</a>
+						<a class="btn btn-default link-btn" href="<?php echo $download;?>">Download PDF</a>
 					</div>
 				</div>
 			</div>

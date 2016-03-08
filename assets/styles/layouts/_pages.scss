@@ -1143,3 +1143,117 @@ body {
 		}
 	}
 }
+
+#beasiswa-page {
+	#sort-by {
+		background-color: $red;
+		min-height: 160px;
+		padding: 10px;
+		margin: 20px 0 10px;
+	}
+
+	.title {
+		color: white;
+		font-family: 'CurseCasualRegular'
+	}
+
+	.form-control {
+		border-radius: 0px;
+		background-color: #f5f5f5;
+		font-style: italic;
+		option {
+			font-style: normal;
+		}
+	}
+
+	.btn-search {
+		color: $red;
+		font-weight: bold;
+
+		width: 100px;
+		background-color: $orange;
+		border-radius: 0px;
+		border: none;
+	}
+
+	#main-content {
+		margin-bottom: 20px;
+
+		.beasiswa-thumbnail {
+			min-height: 120px;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover !important;
+		}
+
+		.beasiswa-info {
+			background-color: white;
+			min-height: 120px;
+			padding: 5px;
+
+			a {
+				color: rgba(0, 0, 0, .7);
+			}
+			h4 {
+				margin: 5px 0;
+			}
+		}
+
+		.deadline-share {
+			text-align: center;
+
+			p {
+				font-size: 12px;
+				margin-bottom: 0px;
+			}
+
+			.shareaholic-canvas {
+				transform: scale(.9);
+			}
+		}
+		.col-md-2 {
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+
+		.beasiswa-buttons {
+			text-align: center;
+			padding: 10px 0;
+
+			.bs-btn {
+				min-width: 100px;
+				background-color: #ffad2b;
+				color: white;
+				font-size: 11px;
+				font-weight: bold;
+				border-radius: 0px;
+				border: none;
+				margin: 5px 0;
+			}
+		}
+
+		.custom-pagination {
+			text-align: center;
+			margin-top: 20px;
+
+			.page-numbers {
+					color: white;
+					background-color: $red;
+					display: inline-block;
+					min-width: 25px;
+					font-weight: bold;
+					padding: 5px;
+					font-size: 11px;
+			}
+
+			.current {
+				text-decoration: underline;
+			}
+
+			.page-num {
+				display: none;
+			}
+		}
+
+	} // end main content
+} // end beasiswa page
