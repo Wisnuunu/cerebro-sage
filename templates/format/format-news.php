@@ -1,5 +1,6 @@
 <?php
 	$beasiswa = 'Beasiswa';
+	$cat = get_the_category();
 ?>
 
 <div class="container">
@@ -51,6 +52,7 @@
 		</div>
 	</header>
 
+
 	<section class="featured-image">
 		<!-- shared buttons -->
 		<div class="container-fluid">
@@ -68,42 +70,46 @@
 		</div>
 		<!-- post's featured image   -->
 		<div class="container-fluid">
-			<div class="featured">
-				<?php
-				//echo ">> ".get_post_meta($post->ID, 'gallery_id', true);
-				if (function_exists('slideshow') && has_shortcode($post->post_content, 'tribulant_slideshow') ) {
-					slideshow(
-						$output = true,
-						$gallery_id = get_post_meta($post->ID, 'gallery_id', true),
-						$post_id = $post->ID,
-						$params = array()
-					);
-				}
-				else if (get_post_meta(get_the_ID(), 'youtube_playlist', true)) {
-					//<!-- 16:9 aspect ratio -->
-					echo '<div class="embed-responsive embed-responsive-16by9">';
-					$yplaylist = get_post_meta(get_the_ID(), 'youtube_playlist', true);
-					  	echo '<iframe class="embed-responsive-item" src="'.$yplaylist.'"></iframe>';
-					echo '</div>';
-				}
-				else if( has_post_thumbnail( $post->ID )) {
-					$thumb_id = get_post_thumbnail_id();
-					$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
-					$thumb_url = $thumb_url_array[0];
-					//echo $thumb_url;
-					// echo '<img src="'.$thumb_url.'" alt="featured image">';
+			<!-- show featured image only if category isn't Beasiswa -->
+			<?php if ($cat[0]->name != $beasiswa): ?>
+				<div class="featured">
+					<?php
+					//echo ">> ".get_post_meta($post->ID, 'gallery_id', true);
+					if (function_exists('slideshow') && has_shortcode($post->post_content, 'tribulant_slideshow') ) {
+						slideshow(
+							$output = true,
+							$gallery_id = get_post_meta($post->ID, 'gallery_id', true),
+							$post_id = $post->ID,
+							$params = array()
+						);
+					}
+					else if (get_post_meta(get_the_ID(), 'youtube_playlist', true)) {
+						//<!-- 16:9 aspect ratio -->
+						echo '<div class="embed-responsive embed-responsive-16by9">';
+						$yplaylist = get_post_meta(get_the_ID(), 'youtube_playlist', true);
+						  	echo '<iframe class="embed-responsive-item" src="'.$yplaylist.'"></iframe>';
+						echo '</div>';
+					}
+					else if( has_post_thumbnail( $post->ID )) {
+						$thumb_id = get_post_thumbnail_id();
+						$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+						$thumb_url = $thumb_url_array[0];
+						//echo $thumb_url;
+						// echo '<img src="'.$thumb_url.'" alt="featured image">';
 
-					echo '<div class="bg-image" style="background-image:url('.$thumb_url.')"></div>';
-				}
-				?>
-			</div>
+						echo '<div class="bg-image" style="background-image:url('.$thumb_url.')"></div>';
+					}
+					?>
+				</div>
+			<?php endif; ?>
+
 		</div>
 	</section>
 
 	<!-- The Main Content  -->
 	<div class="entry-content container-fluid">
 		<?php
-			$cat = get_the_category();
+
 			// 	print_r($cat);
 			// 	echo "<br>".$cat[0]->name;
 	 	?>
