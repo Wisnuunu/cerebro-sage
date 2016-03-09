@@ -1257,3 +1257,62 @@ body {
 
 	} // end main content
 } // end beasiswa page
+
+
+#search-result {
+
+
+	.search-thumbnail {
+		min-height: 120px;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover !important;
+	}
+
+	.search-summary {
+		min-height: 120px;
+		padding: 10px;
+		margin: 0 auto 20px;
+	}
+
+	.entry-title {
+		margin-top: 0px;
+	}
+
+	.search-summary {
+		background-color: white;
+	}
+
+	.btn-cat {
+		border: none;
+		border-radius: 0px;
+		background-color: #FF963D;
+		color: white;
+		font-weight: bold;
+		min-width: 120px;
+
+		margin-right: 10px;
+	}
+
+	a {
+		color: rgba(0, 0, 0, .7);
+		font-weight: bold;
+	}
+}
+
+.search-nav {
+	text-align: center;
+
+	.page-numbers {
+		display: inline-block;
+		background-color: $red;
+		color: white;
+		padding: 3px;
+		min-width: 26px
+	}
+
+	.current {
+		font-weight: bolder;
+		text-decoration: underline;
+	}
+}

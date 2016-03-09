@@ -21,13 +21,15 @@ use Roots\Sage\Wrapper;
     ?>
 
     <div class="wrap container-fluid" role="document">
-      <div class="content row">
+      <div class="content">
 
       <div class="container-fluid">
         <div class="">
 
           <!-- define current post format that will have single page without sidebar widget -->
           <?php if ( !get_post_format() || get_post_format() === 'video'): ?>
+
+            <!-- single page without sidebar -->
             <main>
               <?php include Wrapper\template_path(); ?>
             </main><!-- /.main -->

@@ -248,10 +248,13 @@
   </section>
 </div>
 
-<div class="container-full">
-  <!-- <h2>[advertise-space]</h2> -->
-  <img class="img img-responsive" src="<?php bloginfo('template_url'); ?>/assets/images/home/cb-ad_space.png" alt="ads" />
+<div class="container-fluid">
+  <div class="container-full">
+    <!-- <h2>[advertise-space]</h2> -->
+    <img class="img img-responsive" src="<?php bloginfo('template_url'); ?>/assets/images/home/cb-ad_space.png" alt="ads" />
+  </div>
 </div>
+
 
 <section class="event-tips">
 

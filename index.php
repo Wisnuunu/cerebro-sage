@@ -1,4 +1,11 @@
-<?php get_template_part('templates/page', 'header'); ?>
+<!--
+surprisingly, this is the main page of for pages
+who load all post such as category, or tags etc
+-->
+
+<div class="container">  
+  <?php get_template_part('templates/page', 'header'); ?>
+</div>
 
 <?php if (!have_posts()) : ?>
   <div class="alert alert-warning">
@@ -11,4 +18,6 @@
   <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
 <?php endwhile; ?>
 
-<?php the_posts_navigation(); ?>
+<div class="container">
+  <?php the_posts_navigation(); ?>
+</div>
