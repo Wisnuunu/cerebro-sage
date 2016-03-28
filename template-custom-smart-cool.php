@@ -293,10 +293,11 @@
             </div>
           <?php endwhile; ?>
         <?php endif; ?>
-        <div class="show-more container">
-          <div class="btn">
-            Show More
-          </div>
+
+      </div>
+      <div class="show-more container-fuid">
+        <div class="btn">
+          Show More
         </div>
       </div>
     </div>

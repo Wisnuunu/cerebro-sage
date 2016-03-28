@@ -155,5 +155,9 @@ download link   | download_link   | text
 * **Warning!** need more test on share buttons
 * for test purpose, it will paginated each `3` post, need to change `posts_per_page` in .php file to `10` on publish
 
+## Smart Articles
+* set how much result will be viewed each for pagination. On `Beasiswa` section, open `template-custom-smart-article.php` > go to section `main-content` in section `sort-by` > change `post_per_page` value
+* set rumus cepat badge for each thumbnails. Create category `Rumus Cepat` with slug `rumus`, add sub category with `Photo` and `Video`
+
 --------
 aDMIN:rahasia

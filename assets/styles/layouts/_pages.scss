@@ -972,7 +972,7 @@ body {
 	}
 }
 
-#smart-cool {
+#smart-cool, #smart-articles {
 
 	#highlight {
 		background-color: rgba(255, 255, 255, .8);
@@ -984,6 +984,7 @@ body {
 			background-repeat: no-repeat;
 			background-size: cover !important;
 			margin: 10px 0px;
+
 		}
 
 		@media screen and (min-width: 1200px) {
@@ -1024,11 +1025,15 @@ body {
 				font-size: 18px;
 				font-weight: bold;
 				margin: 2px 0px;
+
+				font-family: "CurseCasualRegular";
+				color: rgba(0, 0, 0, .8);
 			}
 
 			.excerpt {
 				font-size: 11px;
-				margin-bottom: 2px
+				margin-bottom: 2px;
+				color: black;
 			}
 		}
 	}
@@ -1144,7 +1149,8 @@ body {
 	}
 }
 
-#beasiswa-page {
+#beasiswa-page, #smart-articles {
+
 	#sort-by {
 		background-color: $red;
 		min-height: 160px;
@@ -1261,7 +1267,6 @@ body {
 
 #search-result {
 
-
 	.search-thumbnail {
 		min-height: 120px;
 		background-position: center center;
@@ -1315,4 +1320,121 @@ body {
 		font-weight: bolder;
 		text-decoration: underline;
 	}
+}
+
+#smart-articles {
+
+	#highlight {
+
+	}
+
+	#img-beasiswa {
+		margin-top: 20px;
+	}
+
+	#advertise-space {
+		margin: 20px 0;
+	}
+
+	#tips-asik {
+
+		.container {
+			margin-top: 10px;
+			margin-bottom: 10px;
+			padding-top: 20px;
+			padding-bottom: 10px;
+
+			background: white;
+		}
+
+		.btn {
+			background-color: $red;
+			color: white;
+			width: 100%;
+			border: none;
+			border-radius: 0px;
+			margin: 10px 0;
+			font-weight: bold;
+		}
+
+		a {
+			color: rgba(0, 0, 0, .8);
+		}
+
+		.description {
+			font-size: 12px;
+			a {
+				font-weight: bold;
+			}
+		}
+
+		.img-thumbn {
+			background-size: cover;
+			min-height: 140px;
+			background-position: center center;
+			background-repeat: no-repeat;
+		}
+
+		.col-md-6 {
+			margin-bottom: 10px;
+			margin-top: 10px;
+		}
+	}
+
+	#rumus-cepat {
+		.container-fluid {
+			background-color: $red;
+			margin: 20px auto;
+		}
+
+	 .title {
+		 text-align: center;
+		 color: $orange;
+	 }
+
+	 .read-more {
+	 	 text-align: right;
+	 	 font-style: italic;
+	 	 margin-top: 20px;
+		 a {
+			color: $orange;
+			font-weight: bold;
+			text-decoration: none;
+			}
+	 }
+
+	 .img-tmb {
+		 background-size: cover;
+		 min-height: 170px;
+		 background-position: center center;
+		 background-repeat: no-repeat;
+	 }
+
+	 .pv-category {
+ 		@media screen and (min-width: 1200px) {
+ 			position: absolute;
+ 			right: 14px;
+ 			bottom: 0px;
+ 		}
+ 	 }
+
+	.carousel-control {
+		width: auto !important;
+		background-image: none;
+		opacity: 1;
+
+		img {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.glyphicon {
+				color: white;
+				opacity: .7;
+				// transform: scale(1,3);
+		}
+	}
+
+ }
 }

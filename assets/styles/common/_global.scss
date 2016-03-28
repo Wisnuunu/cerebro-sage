@@ -19,11 +19,14 @@ body {
 	background-image: url('../images/cb_main-bg.png');
 	background-repeat: repeat;
 	background-attachment: fixed;
+
+  iframe {
+    display: none;
+  }
 }
 
 main {
 	//margin: 0px 10px;
-  
 }
 
 @media (min-width: 1200px) {
