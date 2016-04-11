@@ -11,7 +11,7 @@
 
 
   <div class="container content">
-    <div class="row" style="background-color:rgba(255,255,255,.9)">
+    <div class="address">
       <div class="col-md-4">
         <div class="head-office">
           <h4>Head Office:</h4>
@@ -48,12 +48,15 @@
       </div>
 
     </div><!-- end row -->
-    <!-- the content -->
-    <div class="row">      
-      <?php get_template_part('templates/content', 'page'); ?>
-    </div>
 
    </div> <!--end container -->
+
+   <!-- the content -->
+   <div class="container">
+     <div class="contact-form">       
+       <?php get_template_part('templates/content', 'page'); ?>
+     </div>
+   </div>
 
 <!--
      <form class="contact-us" id="contact-us" action="<?php the_permalink();?>" method="post">
