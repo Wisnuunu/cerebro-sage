@@ -863,7 +863,7 @@ body {
 
 .event-calendar, .tips-asik {
 	background-color: rgba(255, 255, 255, .8);
-	// padding: 20px 15px;
+	padding: 20px 15px;
 
 	.img-title {
 		margin-bottom: 10px;
@@ -1479,7 +1479,7 @@ body {
 
 //  --------- link forum and ask at highlight
 
-.movie-highlight, #highlight, #smart-news {
+.movie-highlight, #highlight, #smart-news, .news-highlight {
 	@include desktop {
 		position: relative;
 
@@ -1508,6 +1508,14 @@ body {
 	@include mobile {
 		.menu-forum-ask {
 			display: none;
+		}
+	}
+}
+
+.news-highlight {
+	@include desktop {
+		.menu-forum-ask {
+			right: -120px;
 		}
 	}
 }
