@@ -2,6 +2,9 @@
 /**
  * Template Name: Custom Template Smart Articles
  */
+
+ $url_forum = get_site_url()."/#";
+ $url_ask   = get_site_url()."/#";
 ?>
 
 <section id="smart-articles">
@@ -12,6 +15,19 @@
 
   <div class="container">
     <section id="highlight">
+
+      <div class="menu-forum-ask">
+        <div class="btn-forum">
+          <a href="<?php echo $url_forum; ?>">
+            <img src="<?= bloginfo('template_url')?>/assets/images/home/cb-the_forum-1.png" alt="the forum" />
+          </a>
+        </div>
+        <div class="btn-ask">
+          <a href="<?php echo $url_ask; ?>">
+            <img src="<?= bloginfo('template_url')?>/assets/images/home/cb-ask-1.png" alt="ask" />
+          </a>
+        </div>
+      </div>
 
       <div class="container-fluid">
         <?php
