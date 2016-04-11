@@ -212,7 +212,7 @@
       $args = array(
         'post_type' => 'post',
         'category_name' => 'beasiswa',
-        'posts_per_page' => 3,
+        'posts_per_page' => 7,
         'paged' => $paged,
 
         'meta_query' => array(
