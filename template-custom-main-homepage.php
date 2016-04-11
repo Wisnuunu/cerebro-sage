@@ -2,6 +2,11 @@
 /**
  * Template Name: Custom Template Main Homepage
  */
+
+ $url_forum = get_site_url()."/#";
+ $url_ask   = get_site_url()."/#";
+ $url_photo_video = get_site_url()."/#";
+
 ?>
 
 <div class="container" id="smart-news">
@@ -34,6 +39,20 @@
   ?>
 
   <section class="news-highlight">
+
+    <div class="menu-forum-ask">
+      <div class="btn-forum">
+        <a href="<?php echo $url_forum; ?>">
+          <img src="<?= bloginfo('template_url')?>/assets/images/home/cb-the_forum-1.png" alt="the forum" />
+        </a>
+      </div>
+      <div class="btn-ask">
+        <a href="<?php echo $url_ask; ?>">
+          <img src="<?= bloginfo('template_url')?>/assets/images/home/cb-ask-1.png" alt="ask" />
+        </a>
+      </div>
+    </div>
+
     <div id="news-carousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <?php
@@ -519,7 +538,7 @@
   </div>
   <div class="container read-more">
     <p>
-      <a href="#">read more</a>
+      <a href="<?php echo $url_photo_video; ?>"><i>read more</i></a>
     </p>
   </div>
 </section>

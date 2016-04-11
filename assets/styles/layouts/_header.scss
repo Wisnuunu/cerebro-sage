@@ -5,6 +5,12 @@
 	//margin-bottom: 10px;
 	text-align: center;
 
+	@include mobile {
+		.navbar-toggle {
+			right: 10px;
+		}
+	};
+
 	.nav-container {
 		margin: 0 auto !important;
 
@@ -39,10 +45,6 @@
 		padding: 10px;
 		display: inline-block;
 
-		@media screen and (min-width: 1200px) {
-			//padding-right: 200px;
-		}
-
 		input[type='search'] {
 			height: 30px;
 			width-min: 124px;
@@ -54,30 +56,43 @@
 			color: $red;
 			letter-spacing: 1px;
 			font-size: 14px;
-			@media screen and (min-width: 1200px){
+			@include desktop {
 				border-right: 2px solid $red;
 			}
 			border-radius: 0px;
+
+			@include mobile {
+				text-align: center;
+			}
 		}
 
-			.glyphicon{
-				color: $red;
-			}
+		.btn-search {
+			border-radius: 0px;
+			border: none;
+			padding: 5px 7px;
+			background-color: transparent;
+		}
 
-			input[type='search']::-webkit-input-placeholder { color:$red; }
-			input[type='search']::-moz-placeholder { color:$red; } /* firefox 19+ */
-			input[type='search']:-ms-input-placeholder { color:$red; } /* ie */
-			input[type='search']:-moz-placeholder { color:$red; }
+		.glyphicon{
+			color: $red;
+			font-size: 16px;
+			font-weight: bold;
+		}
 
-			#submit-btn {
-				background-color: transparent;
-				border: none;
-			}
+		input[type='search']::-webkit-input-placeholder { color:$red; }
+		input[type='search']::-moz-placeholder { color:$red; } /* firefox 19+ */
+		input[type='search']:-ms-input-placeholder { color:$red; } /* ie */
+		input[type='search']:-moz-placeholder { color:$red; }
 
-			i {
-				left: -25px;
-				top: 3px;
-			}
+		#submit-btn {
+			background-color: transparent;
+			border: none;
+		}
+
+			// i {
+			// 	left: -25px;
+			// 	top: 3px;
+			// }
 		}
 	}
 

@@ -19,10 +19,11 @@
               wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav']);
             endif;
             ?>
-             <form class="navbar-form" role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+            <form class="navbar-form" role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
               <input type="search" class="form-control" placeholder="<?php echo esc_attr_x( 'SEARCH', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
-              <input type="submit" id="submit-btn" class="btn btn-default" value="&nbsp" />
-              <i class="glyphicon glyphicon-search"></i>
+              <!-- <input type="submit" id="submit-btn" class="btn btn-default" value="&nbsp" /> -->
+
+              <button class="btn btn-default btn-search" type="submit" name="button" ><i class="glyphicon glyphicon-search" ></i></button>
             </form>
           </div>
         </div> <!-- end navbar-collapse -->

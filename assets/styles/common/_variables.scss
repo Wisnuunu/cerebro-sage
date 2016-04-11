@@ -6,8 +6,22 @@ $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
 
 // Colors
-$brand-primary:         #27ae60;
+// $brand-primary:         #27ae60;
+$brand-primary:         #cc1111;
+$gray:                  #D7D7D7;
 
 
 $footer-height:	80px;
 $wrapper-width: 900px;
+
+@mixin mobile {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}

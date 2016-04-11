@@ -1,9 +1,10 @@
 <?php
 /**
- * Template Name: Custom Template Smart News
+ * Template Name: Custom Template Photo And Video
  */
  $url_forum = get_site_url()."/#";
  $url_ask   = get_site_url()."/#";
+ $url_submit_fotovideo = get_site_url()."/#";
 ?>
 
 <div class="container" id="smart-news">
@@ -16,7 +17,7 @@
   // get post id for highlight section
   $content = get_the_content('Read more');
   $posts = explode('#', $content);
-  $pots = [];
+  // $pots = [];
 
   for ($i=1; $i <= count($posts) -1 ; $i++) {
     $the_slug = $posts[$i];
@@ -34,71 +35,90 @@
     }
   }
   ?>
-
-  <section class="news-highlight">
-
+  <section class="movie-highlight">
     <div class="menu-forum-ask">
       <div class="btn-forum">
         <a href="<?php echo $url_forum; ?>">
-          <img src="<?= bloginfo('template_url')?>/assets/images/home/cb-the_forum-1.png" alt="the forum" />
+          <img src="<?= bloginfo('template_url')?>/assets/images/home/cb-the_forum1-1.png" alt="the forum" />
         </a>
       </div>
       <div class="btn-ask">
         <a href="<?php echo $url_ask; ?>">
-          <img src="<?= bloginfo('template_url')?>/assets/images/home/cb-ask-1.png" alt="ask" />
+          <img src="<?= bloginfo('template_url')?>/assets/images/home/cb-ask1-1.png" alt="ask" />
         </a>
       </div>
     </div>
 
     <div id="news-carousel" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <?php
-          for ($i=0; $i < count($pots) ; $i++) {
-            if ($i == 0) {
-              echo '<li data-target="#news-carousel" data-slide-to="'.$i.'" class="active"></li>';
-            }
-            else {
-              echo '<li data-target="#news-carousel" data-slide-to="'.$i.'"></li>';
-            }
-          }
-        ?>
+      <ol class="carousel-indicators sr-only">
+        <li data-target="#news-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#news-carousel" data-slide-to="1"></li>
+        <li data-target="#news-carousel" data-slide-to="2"></li>
+        <li data-target="#news-carousel" data-slide-to="3"></li>
       </ol>
 
       <div class="carousel-inner" role="listbox">
-
         <?php foreach ($pots as $i => $cur_post): ?>
+          <?php
+          //echo $i."/".$cur_post[0]->ID;
+          //echo "/".$cur_post[0]->post_title;
+          //echo "/".wp_trim_words($cur_post[0]->post_content, 20, '...');
+          //echo "<br>";
+          $img_url = wp_get_attachment_url( get_post_thumbnail_id($cur_post[0]->ID) );
+          ?>
           <div class="item <?php echo ($i == 1 ? 'active' : ''); ?>">
-            <div class="col-sm-4" id="description">
-              <div class="headerfiller">&nbsp;</div>
-              <div class="title">
-                <a href="<?php echo get_permalink($cur_post[0]->ID);?>">
-                  <?php if (str_word_count($cur_post[0]->post_title) < 10): ?>
-                    <h1><?php echo $cur_post[0]->post_title; ?></h1>
-                  <?php else: ?>
-                    <h2><?php echo $cur_post[0]->post_title; ?></h2>
-                  <?php endif; ?>
-                  <p>
-                    <?php echo wp_trim_words($cur_post[0]->post_content, 30, '...'); ?>
-                  </p>
-                </a>
+            <div class="" id="image">
+              <div class="post-date">
+                <?php
+                  $date = get_the_date( 'j', $cur_post[0]->ID);
+                  $month = get_the_date( 'M', $cur_post[0]->ID);
+                ?>
+                <p>
+                  <?php echo $date; ?><br><?php echo $month; ?>
+                </p>
               </div>
-            </div>
-            <div class="col-sm-8" id="image">
-              <?php
-              $img_url = wp_get_attachment_url( get_post_thumbnail_id($cur_post[0]->ID) );
-              ?>
-              <div class="img img-responsive" style="background-image:url(<?php echo $img_url; ?>)" src="http://placehold.it/600x325" alt="img01"></div>
+              <div class="img img-responsive bg-image" style="background-image:url(<?php echo $img_url; ?>)" alt="img01"></div>
+              <div class="carousel-caption">
+               <!-- <h4>Metal Gear Solid V: Phantom Pain</h4> -->
+               <h4><?php echo $cur_post[0]->post_title; ?></h4>
+               <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p> -->
+               <p><?php echo wp_trim_words($cur_post[0]->post_content, 20, '...'); ?></p>
+             </div>
             </div>
           </div>
+
         <?php endforeach; ?>
-    </div>
+
   </section>
 
   <section class="news-thumbnails">
 
-    <div class="smart-news-title">
+    <!-- <div class="smart-news-title">
       <img class="img img-responsive" src="<?php bloginfo('template_url'); ?>/assets/images/smart-news/cb_news-smartnews.png" alt="smart-news" />
+    </div> -->
+    <br>
+    <br>
+    <div class="row">
+      <!-- <div class="container-fluid"> -->
+        <div class="col-sm-2">
+          <form class="sort-by" method="post">
+            <div class="form-group">
+              <select class="form-control" name="sort" placeholder="sort-by" onchange="this.form.submit()">
+                <option value="0" disabled selected>Sort by:</option>
+                <option value="1" <?php selected( $_POST['sort'],'1', 1 ); ?> >Title: A - Z</option>
+                <option value="2" <?php selected( $_POST['sort'],'2', 1 ); ?> >Title: Z - A</option>
+                <option value="3" <?php selected( $_POST['sort'],'3', 1 ); ?> >Date: Newer - Older</option>
+                <option value="4" <?php selected( $_POST['sort'],'4', 1 ); ?> >Date: Older - Newer</option>
+                <option value="5" <?php selected( $_POST['sort'],'5', 1 ); ?> >Most Popular</option>
+                <!-- <option value="6" <?php selected( $_POST['sort'],'6', 1 ); ?> >Most View</option> -->
+              </select>
+            </div>
+          </form>
+        </div>
+
+      <!-- </div> -->
     </div>
+
 
     <!-- Post with pagination -->
     <?php
@@ -106,15 +126,54 @@
       $maxPosts = 12;
 
       //$category = get_post_field('post_content', $post->ID);
-      //$cat = get_the_content();
-
-      $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+      $sort_opt = null;
       $args = array(
           'post_type' => 'post',
-          'category_name' => 'news',
+          'category_name' => 'foto-video',
           'posts_per_page' => $maxPosts,
           'paged' => $paged,
       );
+
+      if (isset($_POST['sort'])) {
+        $sort_opt = $_POST['sort'];
+
+        switch ($sort_opt) {
+          case '1':
+            $args['orderby'] = 'title';
+            $args['order'] ='ASC';
+            break;
+
+          case '2':
+            $args['orderby'] = 'title';
+            $args['order'] ='DESC';
+            break;
+
+          case '3':
+            $args['orderby'] = 'date';
+            $args['order'] ='DESC';
+            break;
+
+          case '4':
+            $args['orderby'] = 'date';
+            $args['order'] ='ASC';
+            break;
+
+          case '5':
+            $args['orderby'] = 'comment_count';
+            break;
+
+          // case '6':
+          //   $args['orderby'] ='meta_value_num';
+          //   $args['meta_key'] = 'wpb_post_views_count';
+          //   break;
+
+          default:
+
+            break;
+        }
+      }
+
+      $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
       $the_query = new WP_Query($args); //initiate the wp query
     ?>
@@ -137,9 +196,26 @@
               $thumb_url = $thumb_url_array[0];
               $curPostCount++;
             ?>
+            <!-- <div class="thumbnail-preview"> -->
             <a href="<?php the_permalink(); ?>">
-              <div class="img img-responsive thumbnail-preview" style="background-image:url(<?php echo $thumb_url; ?>)"></div>
+              <div class="img img-responsive thumbnail-preview" style="background-image:url(<?php echo $thumb_url; ?>)">
+                <div class="post-marker">
+                  <?php //get post category
+                    $cat = wp_get_post_categories($post->ID);
+                    //print_r($cat[0]);
+                    $cname = get_cat_name($cat[1]);
+                    if (!strcmp($cname, "Video")) {
+                      echo '<span class="glyphicon glyphicon-facetime-video"></span>';
+                    }
+                    else if (!strcmp($cname, "Photo")) {
+                      echo '<span class="glyphicon glyphicon-camera"></span>';
+                    }
+                  ?>
+
+                </div>
+              </div>
             </a>
+            <!-- </div> -->
             <div class="title">
               <a href="<?php the_permalink(); ?>">
                 <h4><?php echo wp_trim_words(get_the_title(), 6, '...'); ?></h4>
@@ -150,6 +226,7 @@
             </div>
           </div>
         </article>
+
         <?php if ($curPostCount === 7): ?>
           <div class="advertise-space col-md-12">
             <!-- <div class="row"> -->
@@ -184,9 +261,16 @@
     </div>
 
     <div class="sidemenu col-md-3">
+
+      <div class="btn-rekomendasi">
+        <a href="<?php echo $url_submit_fotovideo; ?>">
+          <img class="img img-responsive center-block" src="<?php bloginfo('template_url')?>/assets/images/home/cb-submit_fotovideo.png" alt="Submit Foto & Video" />
+        </a>
+      </div>
+
       <div class="news-popular">
         <div class="title-image">
-          <img src="<?php bloginfo('template_url')?>/assets/images/smart-news/cb_news-popularpost.png" alt="" />
+          <img class="img img-responsive" src="<?php bloginfo('template_url')?>/assets/images/smart-news/cb_news-popularpost.png" alt="" />
         </div>
         <div class="main-popular-title">
           <?php

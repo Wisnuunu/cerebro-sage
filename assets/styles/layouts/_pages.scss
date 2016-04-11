@@ -319,6 +319,20 @@ body {
 
 		}
 
+		@include mobile {
+			padding: 10px 0px;
+
+			.title {
+				padding: 3px 5px;
+				margin-bottom: 10px;
+				min-height: 250px;
+
+				p {
+					font-size: 12px;
+				}
+			}
+		}
+
 		.headerfiller {
 			width: 100%;
 			line-height: 3;
@@ -546,6 +560,10 @@ body {
 			}
 		}
 
+		.btn-rekomendasi {
+			margin-bottom: 15px;
+		}
+
 	}
 
 	.movie-highlight {
@@ -589,6 +607,25 @@ body {
 		p {
 			font-size: 12px;
 			margin-top: 3px;
+		}
+
+		.post-date {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+
+			width: 50px;
+			height: 50px;
+			background-color: $red;
+			color: white;
+			text-align: center;
+			font-weight: bold;
+			p {
+				font-size: 18px;
+				line-height: 1;
+				font-family: 'CurseCasualRegular';
+				letter-spacing:2px;
+			}
 		}
 	}
 
@@ -826,7 +863,7 @@ body {
 
 .event-calendar, .tips-asik {
 	background-color: rgba(255, 255, 255, .8);
-	padding: 20px 15px;
+	// padding: 20px 15px;
 
 	.img-title {
 		margin-bottom: 10px;
@@ -1437,4 +1474,52 @@ body {
 	}
 
  }
+}
+
+
+//  --------- link forum and ask at highlight
+
+.movie-highlight, #highlight, #smart-news {
+	@include desktop {
+		position: relative;
+
+		.menu-forum-ask {
+			position: absolute;
+			right: -135px;
+			top: 40px;
+			// z-index: -1;
+
+			a {
+				display: block;
+				border-left: 3px solid $gray;
+				transition: border-left .2s;
+			}
+
+			a:hover {
+				border-left: 3px solid $red;
+			}
+
+			.btn-ask {
+				margin-top: 10px;
+			}
+		}
+	}
+
+	@include mobile {
+		.menu-forum-ask {
+			display: none;
+		}
+	}
+}
+
+// -------------- photo and video post marker
+.post-marker {
+	display: block;
+	position: absolute;
+	top: 38%;
+	right: 20px;
+
+	span {
+		font-size: 30px;
+	}
 }

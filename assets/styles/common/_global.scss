@@ -29,13 +29,19 @@ main {
 	//margin: 0px 10px;
 }
 
-@media (min-width: 1200px) {
-	.container {
+@include desktop {
+  .container {
 		max-width: 970px;
 	}
   .container-fluid {
     padding-left: 0px;
     padding-right: 0px;
+  }
+}
+
+@include mobile {
+  .container-fluid {
+    padding: 0px;
   }
 }
 

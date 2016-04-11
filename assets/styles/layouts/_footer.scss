@@ -12,6 +12,12 @@
 		background-color: rgba(251, 189, 86, 1);
 	}
 
+	@include desktop {
+		.footer-pre-container {
+			padding: 0;
+		}
+	}
+
 	#menu-footer {
 		display: block;
 		list-style: none;

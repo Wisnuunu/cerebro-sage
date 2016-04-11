@@ -2,6 +2,9 @@
 /**
  * Template Name: Custom Template Games and Movies
  */
+
+ $url_forum = get_site_url()."/#";
+ $url_ask   = get_site_url()."/#";
 ?>
 
 <div class="container" id="smart-news">
@@ -33,6 +36,20 @@
   }
   ?>
   <section class="movie-highlight">
+
+    <div class="menu-forum-ask">
+      <div class="btn-forum">
+        <a href="<?php echo $url_forum; ?>">
+          <img src="<?= bloginfo('template_url')?>/assets/images/home/cb-the_forum1-1.png" alt="the forum" />
+        </a>
+      </div>
+      <div class="btn-ask">
+        <a href="<?php echo $url_ask; ?>">
+          <img src="<?= bloginfo('template_url')?>/assets/images/home/cb-ask1-1.png" alt="ask" />
+        </a>
+      </div>
+    </div>
+
     <div id="news-carousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators sr-only">
         <li data-target="#news-carousel" data-slide-to="0" class="active"></li>
@@ -172,8 +189,8 @@
             ?>
             <!-- <div class="thumbnail-preview"> -->
             <a href="<?php the_permalink(); ?>">
-              <!-- <img class="img img-responsive thumbnail-preview" src="<?php echo $thumb_url; ?>" alt="thumb-<?php echo $post->ID; ?>" /> -->
-              <div class="img img-responsive thumbnail-preview" style="background-image:url(<?php echo $thumb_url; ?>)"></div>
+              <div class="img img-responsive thumbnail-preview" style="background-image:url(<?php echo $thumb_url; ?>)">
+              </div>
             </a>
             <!-- </div> -->
             <div class="title">

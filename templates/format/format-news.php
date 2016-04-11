@@ -159,8 +159,8 @@
 					}
 					echo $format;
 				?><br />
-				<i><b>Shortlink:&nbsp</b></i>
-				<?php echo wp_get_shortlink(); ?>
+				<!-- <i><b>Shortlink:&nbsp</b></i> -->
+				<?php //echo wp_get_shortlink(); ?>
 			</div>
 			<div class="col-md-8" id="main">
 				<div id="content">
