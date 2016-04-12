@@ -328,11 +328,13 @@
             <?php endif; ?>
 
           </div>
+          <a href="/event-calendar/" target="_blank">
           <div class="show-more">
             <div class="btn">
               Show More
             </div>
           </div>
+          </a>
         </div>
       </div>
 
@@ -381,11 +383,13 @@
               <?php endwhile;?>
             <?php endif; ?>
         </div>
+        <a href="/tips-asik/" target="_blank">
         <div class="show-more">
           <div class="btn">
             Show More
           </div>
         </div>
+        </a>
       </div>
 
   </div>
