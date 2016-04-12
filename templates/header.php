@@ -23,7 +23,7 @@
               <input type="search" class="form-control" placeholder="<?php echo esc_attr_x( 'SEARCH', 'placeholder' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
               <!-- <input type="submit" id="submit-btn" class="btn btn-default" value="&nbsp" /> -->
 
-              <button class="btn btn-default btn-search" type="submit" name="button" ><i class="glyphicon glyphicon-search" ></i></button>
+              <button class="btn btn-default btn-search" type="submit" name="button" ><i class="fa fa-search" ></i></button>
             </form>
           </div>
         </div> <!-- end navbar-collapse -->

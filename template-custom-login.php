@@ -13,6 +13,40 @@
 <div class="container login-form">
 <div class="login-wrapper">
 
+  <div class="login-form-error">
+
+			<?php
+				// $args = array(
+				// 	'redirect' => home_url()
+				// 	get_permalink( get_page( $page_id_of_member_area ) ),
+				// 	'id_username' => 'user',
+				// 	'id_password' => 'pass',
+
+				// 	);
+
+				// wp_login_form( $args );
+
+				$login  = (isset($_GET['login']) ) ? $_GET['login'] : 0;
+
+				if ($login != '') {
+					echo '<div class="alert alert-danger" role="alert">';
+					echo '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>';
+				}
+
+				if ( $login === "failed" ) {
+			    	echo '<span class="login-submitg"><strong>ERROR:</strong> Invalid username and/or password.</span>';
+				} elseif ( $login === "empty" ) {
+				    echo '<span class="login-msg"><strong>ERROR:</strong> Username and/or Password is empty.</span>';
+				} elseif ( $login === "false" ) {
+				    echo '<span class="login-msg"><strong>ERROR:</strong> You are logged out.</span>';
+				}
+
+				if ($login != 0) {
+					echo "</div>";
+				}
+			?>
+	</div>
+
 	<div class="login-form-container">
 
 		<h3 id="title">Sign In</h3>
@@ -81,40 +115,6 @@
 	 </div> <!--end login-form-container -->
 
 </div> <!-- end login-wrapper -->
-
-	<div class="login-form-error">
-
-			<?php
-				// $args = array(
-				// 	'redirect' => home_url()
-				// 	get_permalink( get_page( $page_id_of_member_area ) ),
-				// 	'id_username' => 'user',
-				// 	'id_password' => 'pass',
-
-				// 	);
-
-				// wp_login_form( $args );
-
-				$login  = (isset($_GET['login']) ) ? $_GET['login'] : 0;
-
-				if ($login != '') {
-					echo '<div class="alert alert-danger" role="alert">';
-					echo '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>';
-				}
-
-				if ( $login === "failed" ) {
-			    	echo '<span class="login-submitg"><strong>ERROR:</strong> Invalid username and/or password.</span>';
-				} elseif ( $login === "empty" ) {
-				    echo '<span class="login-msg"><strong>ERROR:</strong> Username and/or Password is empty.</span>';
-				} elseif ( $login === "false" ) {
-				    echo '<span class="login-msg"><strong>ERROR:</strong> You are logged out.</span>';
-				}
-
-				if ($login != 0) {
-					echo "</div>";
-				}
-			?>
-	</div>
 
 </div>
 

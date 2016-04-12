@@ -20,14 +20,16 @@ body {
 	background-repeat: repeat;
 	background-attachment: fixed;
 
-  iframe {
-    display: none;
-  }
+  .form-control {
+		color: #636363;
+	}
+
+	.input-group-addon {
+		color: #5c5c5c;
+	}
 }
 
-main {
-	//margin: 0px 10px;
-}
+
 
 @include desktop {
   .container {

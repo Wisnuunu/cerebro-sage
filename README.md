@@ -34,6 +34,12 @@ Another wordpress themes using sage as base template
 * copy code bellow
 
 ```html
+<div class="container content" >
+
+<p>Silahkan lengkapi form di bawah ini, tim suppotr kami akan melakukan verivikasi email Anda dan menghubungi Anda dalam waktu 3x24 jam.
+<i>Note: Jika dalam 3x24 jam Anda belum mendapatkan balasan dari kami di email, periksa bagian spam dari email Anda.</i>
+</p>
+
 <div class="row">
 <div class="form-group col-sm-5">
 [email* email01 class:input-email class:form-control placeholder "Email"]
@@ -78,7 +84,9 @@ Another wordpress themes using sage as base template
 [recaptcha id:recaptcha class:g-recaptcha size:normal]
 
 <div class="container-fluid buttons">   
-  <p>[submit class:btn class:btn-default id:submit"Send"] <a id="reset" class="btn btn-default" href="#">Reset</a></p>
+  <p>[submit class:btn class:btn-default id:submit "Send"] <a id="reset" class="btn btn-default" href="#">Reset</a></p>
+</div>
+
 </div>
 ```
 
