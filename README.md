@@ -54,7 +54,7 @@ Another wordpress themes using sage as base template
 
 <div class="row">
 <div class="form-group col-sm-3">
-[select* category id:category class:category class:form-control "cat1" "cat2" "cat3" "cat4"]
+[select* category id:category class:category class:form-control "General Question" "Write for Us" "Kerjasama" "Sponsorship"]
 </div>
 </div>
 
