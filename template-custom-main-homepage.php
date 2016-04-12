@@ -328,7 +328,7 @@
             <?php endif; ?>
 
           </div>
-          <a href="/event-calendar/" target="_blank">
+          <a href="<?php get_home_url()?>/event-calendar/" target="_blank">
           <div class="show-more">
             <div class="btn">
               Show More
@@ -383,7 +383,7 @@
               <?php endwhile;?>
             <?php endif; ?>
         </div>
-        <a href="/tips-asik/" target="_blank">
+        <a href="<?php get_home_url()?>/tips-asik/" target="_blank">
         <div class="show-more">
           <div class="btn">
             Show More
