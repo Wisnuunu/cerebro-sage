@@ -42,12 +42,12 @@
 
     <div class="menu-forum-ask">
       <div class="btn-forum">
-        <a href="<?php echo $url_forum; ?>">
+        <a href="/forum">
           <img src="<?= bloginfo('template_url')?>/assets/images/home/cb-the_forum-1.png" alt="the forum" />
         </a>
       </div>
       <div class="btn-ask">
-        <a href="<?php echo $url_ask; ?>">
+        <a href="</ask-an-expert">
           <img src="<?= bloginfo('template_url')?>/assets/images/home/cb-ask-1.png" alt="ask" />
         </a>
       </div>

@@ -11,6 +11,6 @@
     <?php get_template_part('templates/content', 'page'); ?>
   <?php endwhile; ?>
   
-  <?php disqus_embed('cerebro1'); ?>
+  <?php disqus_embed('cerebro2'); ?>
 
 </div>
