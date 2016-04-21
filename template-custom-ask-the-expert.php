@@ -4,7 +4,6 @@
  */
 ?>
 
-<div class="container">
 <div class="about-wrapper">
   
   <?php while (have_posts()) : the_post(); ?>
@@ -14,5 +13,4 @@
   
   <?php disqus_embed('cerebro1'); ?>
 
-</div>
 </div>
