@@ -2,8 +2,8 @@
 /**
  * Template Name: Custom Template Event Calendar
  */
- $url_forum = get_site_url()."/#";
- $url_ask   = get_site_url()."/#";
+ $url_forum = get_site_url()."/forum";
+ $url_ask   = get_site_url()."/ask-an-expert";
  $url_rekomendasi_event = get_site_url()."/#";
 ?>
 

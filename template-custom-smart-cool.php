@@ -2,8 +2,8 @@
 /**
  * Template Name: Custom Template Smart & Cool
  */
- $url_forum = get_site_url()."/#";
- $url_ask   = get_site_url()."/#";
+ $url_forum = get_site_url()."/forum";
+ $url_ask   = get_site_url()."/ask-an-expert";
 ?>
 
 <section id="smart-cool">
@@ -15,7 +15,7 @@
     <?php endwhile; ?>
 
     <section id="highlight">
-      
+
       <div class="menu-forum-ask">
         <div class="btn-forum">
           <a href="<?php echo $url_forum; ?>">

@@ -3,8 +3,8 @@
  * Template Name: Custom Template Games and Movies
  */
 
- $url_forum = get_site_url()."/#";
- $url_ask   = get_site_url()."/#";
+ $url_forum = get_site_url()."/forum";
+ $url_ask   = get_site_url()."/ask-an-expert";
 ?>
 
 <div class="container" id="smart-news">

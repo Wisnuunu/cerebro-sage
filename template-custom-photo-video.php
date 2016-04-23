@@ -2,8 +2,8 @@
 /**
  * Template Name: Custom Template Photo And Video
  */
- $url_forum = get_site_url()."/#";
- $url_ask   = get_site_url()."/#";
+ $url_forum = get_site_url()."/forum";
+ $url_ask   = get_site_url()."/ask-an-expert";
  $url_submit_fotovideo = get_site_url()."/#";
 ?>
 

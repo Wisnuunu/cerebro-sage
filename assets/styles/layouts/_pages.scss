@@ -1429,6 +1429,18 @@ body {
 			margin-bottom: 10px;
 			margin-top: 10px;
 		}
+
+		.tips-wrapper, .tips-summary {
+			display: inline-block;
+		}
+
+		.tips-summary {
+			min-height: 180px;
+		}
+
+		.title {
+			margin-top: 5px;
+		}
 	}
 
 	#rumus-cepat {
@@ -1487,6 +1499,7 @@ body {
 	}
 
  }
+
 }
 
 
