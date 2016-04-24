@@ -1196,6 +1196,21 @@ body {
 				font-size: 14px;
 			}
 		}
+
+		.show-more {
+			text-align: center;
+			color: white;
+			font-weight: bold;
+			background-color: $red;
+			line-height: 2.2;
+			font-size: 13px;
+			margin-bottom: 20px;
+			display: block;
+		}
+
+		a:hover {
+			text-decoration: none;
+		}
 	}
 }
 

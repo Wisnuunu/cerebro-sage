@@ -4,6 +4,7 @@
  */
  $url_forum = get_site_url()."/forum";
  $url_ask   = get_site_url()."/ask-an-expert";
+ $url_moviegames = get_site_url()."/games-and-movie";
 ?>
 
 <section id="smart-cool">
@@ -403,6 +404,12 @@
 
       </div>
       <!-- END OF Games and Movies THUMBS -->
+    </div>
+
+    <div class="container">
+      <a class="show-more" id="url-moviegame" href="<?php echo $url_moviegames; ?>">
+          Show More
+      </a>
     </div>
   </section>
 
