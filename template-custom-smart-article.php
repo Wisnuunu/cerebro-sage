@@ -561,7 +561,7 @@
       </div>
       <div class="container read-more">
         <p>
-          <a href="#">read more</a>
+          <a href="/rumus-cepat">read more</a>
         </p>
       </div>
     </div>

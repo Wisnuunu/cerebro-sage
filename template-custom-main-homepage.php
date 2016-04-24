@@ -5,7 +5,7 @@
 
  $url_forum = get_site_url()."/forum";
  $url_ask   = get_site_url()."/ask-an-expert";
- $url_photo_video = get_site_url()."/#";
+ $url_photo_video = get_site_url()."/photo-and-video";
 
 ?>
 
@@ -281,7 +281,7 @@
 
       <div class="col-md-6">
         <div class="event-calendar">
-          <a href="<?php get_home_url()?>/event-calendar">
+          <a href="<?php get_home_url()?>/events-calendar">
             <img class="img img-responsive img-title" src="<?php bloginfo('template_url'); ?>/assets/images/home/cb-event_calendar.png" alt="Event Calendar" />
           </a>
           <div class="content">

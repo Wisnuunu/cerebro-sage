@@ -258,14 +258,14 @@
     </div>
     <div class="container-fluid read-more">
       <p>
-        <a href="#">read more</a>
+        <a href="/photo-and-video">read more</a>
       </p>
     </div>
   </section>
 
   <section id="event-calendar">
     <div class="container">
-      <a href="<?php get_home_url()?>/event-calendar">
+      <a href="<?php get_home_url()?>/events-calendar">
         <img class="img img-responsive img-title" src="<?php bloginfo('template_url'); ?>/assets/images/home/cb-event_calendar.png" alt="Event Calendar" />
       </a>
       <div class="event-wrapper">
@@ -314,9 +314,9 @@
 
       </div>
       <div class="show-more container-fuid">
-        <div class="btn">
+        <a href="<?php get_home_url()?>/events-calendar" class="btn">
           Show More
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -404,6 +404,7 @@
 
       </div>
       <!-- END OF Games and Movies THUMBS -->
+        
     </div>
 
     <div class="container">
