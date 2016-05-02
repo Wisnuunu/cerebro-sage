@@ -328,7 +328,7 @@
             <?php endif; ?>
 
           </div>
-          <a href="<?php get_home_url()?>/event-calendar/" target="_blank">
+          <a href="<?php get_home_url()?>/events-calendar/" target="_blank">
           <div class="show-more">
             <div class="btn">
               Show More

@@ -69,10 +69,6 @@ use Roots\Sage\Wrapper;
 
     <section class="widget" id="visit-menu">
       <ul>
-        <li><a href="#"><img src="<?php bloginfo('template_url'); ?>/assets/images/widget/cb_widget_01.png" alt="askfm" /></a></li>
-        <li><a href="#"><img src="<?php bloginfo('template_url'); ?>/assets/images/widget/cb_widget_02.png" alt="askfm" /></a></li>
-        <li><a href="#"><img src="<?php bloginfo('template_url'); ?>/assets/images/widget/cb_widget_03.png" alt="askfm" /></a></li>
-        <li><a href="#"><img src="<?php bloginfo('template_url'); ?>/assets/images/widget/cb_widget_04.png" alt="askfm" /></a></li>
       </ul>
     </section>
 

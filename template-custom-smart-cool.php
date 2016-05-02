@@ -4,7 +4,7 @@
  */
  $url_forum = get_site_url()."/forum";
  $url_ask   = get_site_url()."/ask-an-expert";
- $url_moviegames = get_site_url()."/games-and-movie";
+ $url_moviegames = get_site_url()."/games-and-movies";
 ?>
 
 <section id="smart-cool">
