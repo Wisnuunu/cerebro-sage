@@ -69,6 +69,10 @@ use Roots\Sage\Wrapper;
 
     <section class="widget" id="visit-menu">
       <ul>
+        <li><a href="https://ask.fm/Xcelbrainer" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/images/widget/cb_widget_01.png" alt="askfm" /></a></li>
+        <li><a href="https://www.facebook.com/cerebrovitxcel" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/images/widget/cb_widget_02.png" alt="askfm" /></a></li>
+        <li><a href="https://twitter.com/cerdasxsis" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/images/widget/cb_widget_03.png" alt="askfm" /></a></li>
+        <li><a href="https://www.youtube.com/user/CerebrovitXCel" target="_blank"><img src="<?php bloginfo('template_url'); ?>/assets/images/widget/cb_widget_04.png" alt="askfm" /></a></li>
       </ul>
     </section>
 
