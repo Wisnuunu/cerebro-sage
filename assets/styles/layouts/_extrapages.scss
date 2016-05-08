@@ -1,0 +1,38 @@
+// homepage
+@include tablet {
+  .menu-forum-ask {
+    display: none;
+  }
+
+  .news-highlight {
+    .col-sm-4, .col-sm-8 {
+      padding: 0px;
+    }
+    .title {
+      min-height: 253px;
+      padding: 5px 5px 5px 10px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .event-tips {
+    .event-calendar .content, .tips-asik .content {
+      min-height: 515px;
+    }
+    .col-sm-6 {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@include mobile {
+  .mod-news-high  {
+    background-color: white;
+    padding: 0px 10px;
+    margin: 0px 5px;
+  }
+
+}

@@ -338,8 +338,7 @@ body {
 
 			.title {
 				padding: 3px 5px;
-				margin-bottom: 10px;
-				min-height: 250px;
+				min-height: 200px;
 
 				p {
 					font-size: 12px;
@@ -385,24 +384,20 @@ body {
 		}
 	}	//end news-highlight
 
+
+  .news-thumbnails {
+    display: inline-block;
+  }
+
 	.news-thumbnails, .games-and-movie-thumbnails {
 
 		.smart-news-title {
 				margin: 20px 0 10px;
 		}
 
-		.col-sm-4 {
-			@media screen and (min-width: 1200px){
-				width: 32%;
-				margin-right: 9px;
-			}
-		}
-
 		.col-sm-3 {
-			@media screen and (min-width: 1200px){
-				width: 24%;
-				margin-right: 9.2px;
-			}
+			padding-left: 5px;
+			padding-right: 5px;
 		}
 
 		.news-thumbnail {
@@ -410,6 +405,14 @@ body {
 			padding: 10px;
 			min-height: 290px;
 			margin-top: 10px;
+
+			@include tablet {
+				min-height: 320px;
+			}
+
+			@include mobile {
+				min-height: 260px;
+			}
 
 			.thumbnail-preview {
 				min-height: 130px;
@@ -976,10 +979,11 @@ body {
 	}
 
 	.pv-category {
-		@media screen and (min-width: 1200px) {
-			position: absolute;
-			right: 15px;
-			bottom: 10px;
+		position: absolute;
+		right: 15px;
+		bottom: 10px;
+		@include mobile {
+				bottom: 0px;
 		}
 	}
 
@@ -1530,6 +1534,7 @@ body {
 //  --------- link forum and ask at highlight
 
 .movie-highlight, #highlight, #smart-news, .news-highlight {
+
 	@include desktop {
 		position: relative;
 
@@ -1562,13 +1567,6 @@ body {
 	}
 }
 
-.news-highlight {
-	@include desktop {
-		.menu-forum-ask {
-			right: -120px;
-		}
-	}
-}
 
 // -------------- photo and video post marker
 .post-marker {

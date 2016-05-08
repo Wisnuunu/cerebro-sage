@@ -42,7 +42,7 @@
 <section id="login-status">
   <div class="container" >
     <?php // TODO: add breadcrumb ?>
-    <div class="col-md-6 logo">
+    <div class="col-sm-6 logo">
       <b class="sr-only">Cerebrovit Logo</b>
       <img class="img img-responsive" src="<?php bloginfo('template_url'); ?>/assets/images/cb_header-logo.png" alt="cerebrovit logo" />
     </div>
@@ -61,8 +61,8 @@
         <?php else: ?>
 
         <?php $current_user = wp_get_current_user(); ?>
-        <div class="col-md-6 buttons-stat">
-          <div class="row pull-right">
+        <div class="col-sm-6 buttons-stat">
+          <div class="pull-right">
             <div class="col-xs-6" id="avatar">
               <?php
                 if ( function_exists('get_wp_user_avatar') ) {

@@ -17,6 +17,12 @@
 		@media screen and (min-width: 1200px){
 			width: 970px;
 		}
+
+		.menu-main-container {
+			@include tablet {
+				display: inline-block;
+			}
+		}
 	}
 
 	a {

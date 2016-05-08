@@ -20,11 +20,10 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/header');
     ?>
 
-    <div class="wrap container-fluid" role="document">
+    <div class="wrap" role="document">
       <div class="content">
 
       <div class="container-fluid">
-        <div class="">
 
           <!-- define current post format that will have single page without sidebar widget -->
           <?php if ( !get_post_format() || get_post_format() === 'video'): ?>
@@ -54,7 +53,6 @@ use Roots\Sage\Wrapper;
 
           <?php endif; ?>
 
-        </div>
       </div>
 
       </div><!-- /.content -->

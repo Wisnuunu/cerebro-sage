@@ -192,7 +192,7 @@
         <!-- </article> -->
 
         <?php if ($curPostCount === 7): ?>
-          <div class="advertise-space col-md-12">
+          <div class="advertise-space col-sm-12">
             <!-- <div class="row"> -->
               <img class="img img-responsive" src="<?php bloginfo('template_url')?>/assets/images/smart-news/cb_news-ads.png" alt="" />
             <!-- </div> -->
