@@ -17,6 +17,6 @@
     }
   },
   "config": {
-    "devUrl": "localhost/cerebro"
+    "devUrl": "www.cerebro.dev"
   }
 }

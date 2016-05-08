@@ -65,16 +65,19 @@
           //echo "/".$cur_post[0]->post_title;
           //echo "/".wp_trim_words($cur_post[0]->post_content, 20, '...');
           //echo "<br>";
+          $post_url  = get_permalink($cur_post[0]->ID);
           $img_url = wp_get_attachment_url( get_post_thumbnail_id($cur_post[0]->ID) );
           ?>
           <div class="item <?php echo ($i == 1 ? 'active' : ''); ?>">
             <div class="" id="image">
               <div class="img img-responsive bg-image" style="background-image:url(<?php echo $img_url; ?>)" alt="img01"></div>
               <div class="carousel-caption">
-               <!-- <h4>Metal Gear Solid V: Phantom Pain</h4> -->
-               <h4><?php echo $cur_post[0]->post_title; ?></h4>
-               <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p> -->
-               <p><?php echo wp_trim_words($cur_post[0]->post_content, 20, '...'); ?></p>
+               <a href="<?php echo $post_url; ?>">
+                 <!-- <h4>Metal Gear Solid V: Phantom Pain</h4> -->
+                 <h4><?php echo $cur_post[0]->post_title; ?></h4>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p> -->
+                <p><?php echo wp_trim_words($cur_post[0]->post_content, 20, '...'); ?></p>
+               </a>
              </div>
             </div>
           </div>
@@ -91,7 +94,7 @@
     <br>
     <div class="row">
       <!-- <div class="container-fluid"> -->
-        <div class="col-sm-2">
+        <div class="col-sm-3">
           <form class="sort-by" method="post">
             <div class="form-group">
               <select class="form-control" name="sort" placeholder="sort-by" onchange="this.form.submit()">

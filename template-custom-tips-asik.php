@@ -2,6 +2,9 @@
 /**
  * Template Name: Custom Template Tips Asik
  */
+
+ $url_forum = get_site_url()."/forum";
+ $url_ask   = get_site_url()."/ask-an-expert";
 ?>
 
 <div class="container" id="smart-news">
@@ -33,6 +36,19 @@
   }
   ?>
   <section class="movie-highlight">
+    <div class="menu-forum-ask">
+      <div class="btn-forum">
+        <a href="<?php echo $url_forum; ?>">
+          <img src="<?= bloginfo('template_url')?>/assets/images/home/cb-the_forum1-1.png" alt="the forum" />
+        </a>
+      </div>
+      <div class="btn-ask">
+        <a href="<?php echo $url_ask; ?>">
+          <img src="<?= bloginfo('template_url')?>/assets/images/home/cb-ask1-1.png" alt="ask" />
+        </a>
+      </div>
+    </div>
+
     <div id="news-carousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators sr-only">
         <li data-target="#news-carousel" data-slide-to="0" class="active"></li>
@@ -48,16 +64,19 @@
           //echo "/".$cur_post[0]->post_title;
           //echo "/".wp_trim_words($cur_post[0]->post_content, 20, '...');
           //echo "<br>";
+          $post_url = get_permalink($cur_post[0]->ID);
           $img_url = wp_get_attachment_url( get_post_thumbnail_id($cur_post[0]->ID) );
           ?>
           <div class="item <?php echo ($i == 1 ? 'active' : ''); ?>">
             <div class="" id="image">
-              <div class="img img-responsive bg-image" style="background-image:url(<?php echo $img_url; ?>)" alt="img01"></div>
+              <div class="img img-responsive bg-image" style="background-image:url(<?php echo $img_url; ?>)" alt="img-post-<?php echo $cur_post[0]->ID?>"></div>
               <div class="carousel-caption">
                <!-- <h4>Metal Gear Solid V: Phantom Pain</h4> -->
-               <h4><?php echo $cur_post[0]->post_title; ?></h4>
-               <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p> -->
-               <p><?php echo wp_trim_words($cur_post[0]->post_content, 20, '...'); ?></p>
+               <a href="<?php echo $post_url; ?>">
+                <h4><?php echo $cur_post[0]->post_title; ?></h4>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p> -->
+                <p><?php echo wp_trim_words($cur_post[0]->post_content, 20, '...'); ?></p>
+               </a>
              </div>
             </div>
           </div>
@@ -74,7 +93,7 @@
     <br>
     <div class="row">
       <!-- <div class="container-fluid"> -->
-        <div class="col-sm-2">
+        <div class="col-sm-3">
           <form class="sort-by" method="post">
             <div class="form-group">
               <select class="form-control" name="sort" placeholder="sort-by" onchange="this.form.submit()">

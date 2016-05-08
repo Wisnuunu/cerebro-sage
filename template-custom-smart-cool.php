@@ -64,13 +64,18 @@
           $img_url = wp_get_attachment_url( get_post_thumbnail_id($post_id) );
           $post_title = $pots[1][0]->post_title;
           $post_excerpt =wp_trim_words($pots[1][0]->post_content, 30, '...');
+          $post_url = get_permalink($post_id);
           ?>
           <div class="img img-responsive img-highlight" style="background-image:url(<?php echo $img_url;?>)">
             <!-- <img src="<?php echo $img_url; ?>" alt="image-<?php echo $post_id;?>" /> -->
+
+            <a href="<?php echo $post_url; ?>">
             <div class="description">
-              <h3 class="title"><?php echo $post_title; ?></h3>
-              <p class="excerpt"><?php echo $post_excerpt; ?></p>
+                <h3 class="title"><?php echo $post_title; ?></h3>
+                <p class="excerpt"><?php echo $post_excerpt; ?></p>
+
             </div>
+            </a>
           </div>
 
         </div>
@@ -82,14 +87,18 @@
             $img_url = wp_get_attachment_url( get_post_thumbnail_id($post_id) );
               $post_title = $pots[2][0]->post_title;
             $post_excerpt =wp_trim_words($pots[2][0]->post_content, 15, '...');
+            $post_url = get_permalink($post_id);
+
             ?>
             <div class="img img-responsive img-highlight-small" style="background-image:url(<?php echo $img_url; ?>)" >
+              <a href="<?php echo $post_url; ?>">
               <div class="description">
                 <!-- <h3 class="title"><?php echo $post_title; ?></h3> -->
-                <p class="excerpt"><?php echo $post_excerpt; ?></p>
+                  <p class="excerpt"><?php echo $post_excerpt; ?></p>
               </div>
-            </div>
+              </a>
 
+            </div>
           </div>
           <div class="col-md-12">
             <?php
@@ -98,12 +107,16 @@
             $img_url = wp_get_attachment_url( get_post_thumbnail_id($post_id) );
             $post_title = $pots[3][0]->post_title;
             $post_excerpt =wp_trim_words($pots[3][0]->post_content, 15, '...');
+            $post_url = get_permalink($post_id);
+
             ?>
             <div class="img img-responsive img-highlight-small" style="background-image:url(<?php echo $img_url; ?>)" >
+              <a href="<?php echo $post_url; ?>">
               <div class="description">
                 <!-- <h3 class="title"><?php echo $post_title; ?></h3> -->
                 <p class="excerpt"><?php echo $post_excerpt; ?></p>
               </div>
+              </a>
             </div>
           </div>
         </div>
@@ -404,7 +417,7 @@
 
       </div>
       <!-- END OF Games and Movies THUMBS -->
-        
+
     </div>
 
     <div class="container">

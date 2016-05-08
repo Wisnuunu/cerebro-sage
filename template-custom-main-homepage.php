@@ -5,6 +5,7 @@
 
  $url_forum = get_site_url()."/forum";
  $url_ask   = get_site_url()."/ask-an-expert";
+ $url_gamesmovie = get_site_url().'/games-and-movies';
  $url_photo_video = get_site_url()."/photo-and-video";
 
 ?>
@@ -263,6 +264,9 @@
 
     </div>
     <!-- END OF Games and Movies THUMBS -->
+    <!-- <div class="show-more-btn">
+      <a href="<?php echo $url_gamesmovie; ?>">Show More</a>
+    </div> -->
 
   </section>
 </div>

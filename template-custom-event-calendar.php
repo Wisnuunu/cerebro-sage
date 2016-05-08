@@ -64,17 +64,21 @@
           //echo "/".$cur_post[0]->post_title;
           //echo "/".wp_trim_words($cur_post[0]->post_content, 20, '...');
           //echo "<br>";
+          $post_url = get_permalink($cur_post[0]->ID);
           $img_url = wp_get_attachment_url( get_post_thumbnail_id($cur_post[0]->ID) );
           ?>
           <div class="item <?php echo ($i == 1 ? 'active' : ''); ?>">
             <div class="" id="image">
-              <div class="img img-responsive bg-image" style="background-image:url(<?php echo $img_url; ?>)" alt="img01"></div>
-              <div class="carousel-caption">
-               <!-- <h4>Metal Gear Solid V: Phantom Pain</h4> -->
-               <h4><?php echo $cur_post[0]->post_title; ?></h4>
-               <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p> -->
-               <p><?php echo wp_trim_words($cur_post[0]->post_content, 20, '...'); ?></p>
-             </div>
+                <div class="img img-responsive bg-image" style="background-image:url(<?php echo $img_url; ?>)" alt="img-post-<?php echo $cur_post[0]->ID; ?>"></div>
+
+                <div class="carousel-caption">
+                  <a href="<?php echo $post_url; ?>">
+                    <!-- <h4>Metal Gear Solid V: Phantom Pain</h4> -->
+                    <h4><?php echo $cur_post[0]->post_title; ?></h4>
+                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p> -->
+                    <p><?php echo wp_trim_words($cur_post[0]->post_content, 20, '...'); ?></p>
+                  </a>
+                </div>
             </div>
           </div>
 
@@ -161,7 +165,7 @@
       <?php while( $the_query->have_posts()) : $the_query->the_post(); ?>
 
         <!-- first row news thumbnails -->
-        <article class="">
+        <!-- <article style="display:inline-block;"> -->
           <div class="news-thumbnail col-sm-4" id="news-<?php echo $post->ID; ?>">
             <?php //get post thumbnail
               //$imgURL = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
@@ -185,7 +189,7 @@
               <?php echo get_the_excerpt(); ?>
             </div>
           </div>
-        </article>
+        <!-- </article> -->
 
         <?php if ($curPostCount === 7): ?>
           <div class="advertise-space col-md-12">

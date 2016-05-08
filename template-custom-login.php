@@ -26,11 +26,11 @@
 
 				// wp_login_form( $args );
 
-				$login  = (isset($_GET['login']) ) ? $_GET['login'] : 0;
+				$login  = (isset($_GET['login']) ) ? $_GET['login'] : '';
 
 				if ($login != '') {
 					echo '<div class="alert alert-danger" role="alert">';
-					echo '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>';
+					echo '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>&nbsp&nbsp';
 				}
 
 				if ( $login === "failed" ) {
@@ -41,7 +41,7 @@
 				    echo '<span class="login-msg"><strong>ERROR:</strong> You are logged out.</span>';
 				}
 
-				if ($login != 0) {
+				if ($login != '') {
 					echo "</div>";
 				}
 			?>
@@ -55,7 +55,7 @@
 		    <form class="form-signin form-horizontal" method="post" action="<?php echo wp_login_url(); ?>">
 
             <div class="login-username form-group">
-		            <label class="control-label col-sm-2" for="user_login"><?php _e( 'Email', 'personalize-login' ); ?></label>
+		            <label class="control-label col-sm-2" for="user_login"><?php _e( 'Username', 'personalize-login' ); ?></label>
                 <div class="col-sm-10">
                   <input class="form-control" type="text" name="log" id="user_login" placeholder="Enter Username">
                 </div>
