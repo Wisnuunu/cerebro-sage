@@ -21,7 +21,7 @@ $wrapper-width: 900px;
 }
 
 @mixin tablet {
-  @media screen and (max-width: 800px) {
+  @media screen and (min-width: 641px ) and (max-width: 1199px) {
     @content;
   }
 }

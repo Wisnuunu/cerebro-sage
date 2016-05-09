@@ -65,6 +65,7 @@
           //echo "/".wp_trim_words($cur_post[0]->post_content, 20, '...');
           //echo "<br>";
           $img_url = wp_get_attachment_url( get_post_thumbnail_id($cur_post[0]->ID) );
+          $post_url = get_permalink($cur_post[0]->ID);
           ?>
           <div class="item <?php echo ($i == 1 ? 'active' : ''); ?>">
             <div class="" id="image">
@@ -78,12 +79,14 @@
                 </p>
               </div>
               <div class="img img-responsive bg-image" style="background-image:url(<?php echo $img_url; ?>)" alt="img01"></div>
-              <div class="carousel-caption">
-               <!-- <h4>Metal Gear Solid V: Phantom Pain</h4> -->
-               <h4><?php echo $cur_post[0]->post_title; ?></h4>
-               <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p> -->
-               <p><?php echo wp_trim_words($cur_post[0]->post_content, 20, '...'); ?></p>
-             </div>
+              <a href="<?php echo $post_url; ?>">
+                <div class="carousel-caption">
+                <!-- <h4>Metal Gear Solid V: Phantom Pain</h4> -->
+                <h4><?php echo $cur_post[0]->post_title; ?></h4>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p> -->
+                <p><?php echo wp_trim_words($cur_post[0]->post_content, 20, '...'); ?></p>
+              </div>
+              </a>
             </div>
           </div>
 
@@ -99,26 +102,27 @@
     <br>
     <br>
     <div class="row">
-      <!-- <div class="container-fluid"> -->
-        <div class="col-sm-2">
-          <form class="sort-by" method="post">
-            <div class="form-group">
-              <select class="form-control" name="sort" placeholder="sort-by" onchange="this.form.submit()">
-                <option value="0" disabled selected>Sort by:</option>
-                <option value="1" <?php selected( $_POST['sort'],'1', 1 ); ?> >Title: A - Z</option>
-                <option value="2" <?php selected( $_POST['sort'],'2', 1 ); ?> >Title: Z - A</option>
-                <option value="3" <?php selected( $_POST['sort'],'3', 1 ); ?> >Date: Newer - Older</option>
-                <option value="4" <?php selected( $_POST['sort'],'4', 1 ); ?> >Date: Older - Newer</option>
-                <option value="5" <?php selected( $_POST['sort'],'5', 1 ); ?> >Most Popular</option>
-                <!-- <option value="6" <?php selected( $_POST['sort'],'6', 1 ); ?> >Most View</option> -->
-              </select>
-            </div>
-          </form>
-        </div>
+      <div class="container">
+        <!-- <div class="container-fluid"> -->
+          <div class="col-sm-3">
+            <form class="sort-by" method="post">
+              <div class="form-group">
+                <select class="form-control" name="sort" placeholder="sort-by" onchange="this.form.submit()">
+                  <option value="0" disabled selected>Sort by:</option>
+                  <option value="1" <?php selected( $_POST['sort'],'1', 1 ); ?> >Title: A - Z</option>
+                  <option value="2" <?php selected( $_POST['sort'],'2', 1 ); ?> >Title: Z - A</option>
+                  <option value="3" <?php selected( $_POST['sort'],'3', 1 ); ?> >Date: Newer - Older</option>
+                  <option value="4" <?php selected( $_POST['sort'],'4', 1 ); ?> >Date: Older - Newer</option>
+                  <option value="5" <?php selected( $_POST['sort'],'5', 1 ); ?> >Most Popular</option>
+                  <!-- <option value="6" <?php selected( $_POST['sort'],'6', 1 ); ?> >Most View</option> -->
+                </select>
+              </div>
+            </form>
+          </div>
 
-      <!-- </div> -->
+        <!-- </div> -->
+      </div>
     </div>
-
 
     <!-- Post with pagination -->
     <?php
@@ -182,13 +186,13 @@
 
     <?php if($the_query->have_posts()): ?>
       <!-- pagination here -->
-      <div class="firts-news-group row">
+      <div class="row">
       <!-- the loop -->
       <?php while( $the_query->have_posts()) : $the_query->the_post(); ?>
 
         <!-- first row news thumbnails -->
-        <article class="">
-          <div class="news-thumbnail col-sm-4" id="news-<?php echo $post->ID; ?>">
+        <article class="col-sm-4">
+          <div class="news-thumbnail" id="news-<?php echo $post->ID; ?>">
             <?php //get post thumbnail
               //$imgURL = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
               $thumb_id = get_post_thumbnail_id();

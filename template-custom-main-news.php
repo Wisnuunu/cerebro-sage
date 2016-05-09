@@ -123,13 +123,13 @@
 
     <?php if($the_query->have_posts()): ?>
       <!-- pagination here -->
-      <div class="firts-news-group row">
+      <div class="row">
       <!-- the loop -->
       <?php while( $the_query->have_posts()) : $the_query->the_post(); ?>
 
         <!-- first row news thumbnails -->
-        <article class="">
-          <div class="news-thumbnail col-sm-4" id="news-<?php echo $post->ID; ?>">
+        <article class="col-sm-4">
+          <div class="news-thumbnail" id="news-<?php echo $post->ID; ?>">
             <?php //get post thumbnail
               //$imgURL = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
               $thumb_id = get_post_thumbnail_id();

@@ -50,6 +50,9 @@
 		margin: 0px;
 		padding: 10px;
 		display: inline-block;
+		@include tablet {
+			display: block;
+		}
 
 		input[type='search'] {
 			height: 30px;

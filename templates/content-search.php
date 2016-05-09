@@ -1,7 +1,7 @@
 <article <?php post_class(); ?>>
 
   <section id="search-result">
-    <div class="col-md-2">
+    <div class="col-sm-2">
       <?php
       //get thumbnail picture
       $thumb_id = get_post_thumbnail_id();
@@ -12,7 +12,7 @@
         <div class="img img-responsive search-thumbnail" style="background-image:url(<?php echo $thumb_url; ?>)"></div>
       </a>
     </div>
-    <div class="col-md-10">
+    <div class="col-sm-10">
       <div class="search-summary">
         <header>
           <h4 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
