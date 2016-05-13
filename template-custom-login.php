@@ -9,7 +9,12 @@
   <?php //get_template_part('templates/content', 'page'); ?>
 <?php endwhile; ?>
 
-
+<?php
+  if (is_user_logged_in()) {
+    wp_redirect(home_url());
+    exit;
+  }
+?>
 <div class="container login-form">
 <div class="login-wrapper">
 
@@ -100,9 +105,12 @@
               <p><span>OR</span></p>
             </div>
             <div class="login-submit form-group">
-		            <a href="#" class="btn btn-fb col-sm-12">
+                <!-- real facebook button test  -->
+                <a class="btn btn-fb col-sm-12" href="http://www.cerebro.dev/wp-login.php?loginFacebook=1&redirect=http://www.cerebro.dev" onclick="window.location = 'http://www.cerebro.dev/wp-login.php?loginFacebook=1&redirect='+window.location.href; return false;">
+                  <!-- Click here to login or register with Facebook -->
                   <img src="<?php bloginfo('template_url'); ?>/assets/images/cb_fb-logo.png" alt="fb" /> Sign In With Facebook
                 </a>
+
 		        </div>
 		    </form>
 	    </div>

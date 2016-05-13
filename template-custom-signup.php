@@ -101,9 +101,10 @@
           <p><span>OR</span></p>
         </div>
         <div class="signup-fb">
-            <a href="#" class="btn btn-fb col-sm-12">
-              <img src="<?php bloginfo('template_url'); ?>/assets/images/cb_fb-logo.png" alt="fb" /> Sign Up With Facebook
-            </a>
+          <a class="btn btn-fb col-sm-12" href="http://www.cerebro.dev/wp-login.php?loginFacebook=1&redirect=http://www.cerebro.dev" onclick="window.location = 'http://www.cerebro.dev/wp-login.php?loginFacebook=1&redirect='+window.location.href; return false;">
+            <!-- Click here to login or register with Facebook -->
+            <img src="<?php bloginfo('template_url'); ?>/assets/images/cb_fb-logo.png" alt="fb" /> Sign In With Facebook
+          </a>
         </div>
 
       </form>

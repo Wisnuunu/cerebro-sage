@@ -23,7 +23,12 @@
         ?>
       </div>
       <div class="col-md-10 user-meta">
-        <h4 class="user-login"><?php echo "".$cur_user->user_login; ?></h4>
+        <?php
+          $profilename = get_user_meta( $cur_user->ID, 'profilename', true );
+          $cur_username = ($profilename != "") ? $profilename : $cur_user->user_login;
+          // echo ">> ".$cur_username." | ".$dusername." | ".$cur_user->user_login;
+        ?>
+        <h4 class="user-login"><?php echo "".$cur_username; ?></h4>
         <div class="info-group">
             Member since: <?php echo date("d-m-Y", strtotime(get_userdata(get_current_user_id( ))->user_registered)); ?><br>
           <?php
@@ -50,7 +55,7 @@
            <h4 class="title">Profile Detail</h4>
            <dl class="dl-horizontal">
              <div class="detail-group">
-               <dt>Name:</dt>          <dd><?php echo $cur_user->first_name.' '.$cur_user->last_name; ?></dd>
+               <dt>Name:</dt>          <dd><?php echo $cur_user->first_name/*.' '.$cur_user->last_name*/; ?></dd>
              </div>
              <div class="detail-group">
                <dt>Gender:</dt>        <dd><?php echo get_user_meta( $cur_user->ID, 'gender', true ); ?></dd>

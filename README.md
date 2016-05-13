@@ -167,5 +167,12 @@ download link   | download_link   | text
 * set how much result will be viewed each for pagination. On `Beasiswa` section, open `template-custom-smart-article.php` > go to section `main-content` in section `sort-by` > change `post_per_page` value
 * set rumus cepat badge for each thumbnails. Create category `Rumus Cepat` with slug `rumus`, add sub category with `Photo` and `Video`
 
+## Sign in & sign up with facebook
+* install plugin [Nextend Facebook](https://wordpress.org/plugins/nextend-facebook-connect/screenshots/)
+* follow the setup instruction from dashboard > setting > Nextend
+* modifiy the anchor `a href` button on template page login and signup, using Nextend template on `usage` section
+* add class for anchor with `class="btn btn-fb col-sm-12"`
+* change the text button to text image using `<img src="<?php bloginfo('template_url'); ?>/assets/images/cb_fb-logo.png" alt="fb" /> Sign In With Facebook`
+
 --------
 aDMIN:rahasia

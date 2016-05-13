@@ -163,6 +163,14 @@ function extra_user_profile_fields($user)
   <hr>
   <h3><?php _e("Extra profile information", "blank"); ?></h3>
   <table class="form-table">
+    <!-- displayed profilename -->
+    <tr>
+      <th><label for="profilename"><?php _e('Profile Name') ?></label></th>
+      <td>
+        <input type="url" name="profilename" value="<?php echo esc_attr( get_the_author_meta( 'profilename', $user->ID ) ); ?>" class="regular-text">
+        <br><span class="description">WP username cant be changed, use this field to enabled editable username</span>
+      </td>
+    </tr>
     <!-- gender -->
     <tr>
       <th><label for="gender"><?php _e("Gender"); ?></label></th>

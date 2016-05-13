@@ -73,7 +73,12 @@
               ?>
             </div>
             <div class="col-xs-6" id="right-group">
-              <div id="user">Hello, <span id="username"><a href="<?php echo get_home_url().'/user-dashboard'; ?>"><?php echo $current_user->user_login; ?></a></span></div>
+              <?php
+              $profilename = get_user_meta( $current_user->ID, 'profilename', true );
+              $cur_username = ($profilename != "") ? $profilename : $current_user->user_login;
+              // echo ">> ".$cur_username." | ".$dusername." | ".$cur_user->user_login;
+              ?>
+              <div id="user">Hello, <span id="username"><a href="<?php echo get_home_url().'/user-dashboard'; ?>"><?php echo $cur_username; ?></a></span></div>
               <div id="btn-logout">
                 <a class= "btn btn-primary" href="<?php echo wp_logout_url( get_permalink() ); ?>">Log Out</a>
               </div>

@@ -25,7 +25,12 @@
         ?>
       </div>
       <div class="col-md-10 user-meta">
-        <h4 class="user-login"><?php echo "".$cur_user->user_login; ?></h4>
+        <?php
+        $profilename = get_user_meta( $cur_user->ID, 'profilename', true );
+        $cur_username = ($profilename != "") ? $profilename : $cur_user->user_login;
+        // echo ">> ".$cur_username." | ".$dusername." | ".$cur_user->user_login;
+        ?>
+        <h4 class="user-login"><?php echo "".$cur_username; ?></h4>
         <div class="info-group">
             Member since: <?php echo date("d-m-Y", strtotime(get_userdata(get_current_user_id())->user_registered)); ?><br>
           <?php
@@ -65,14 +70,14 @@
                  <div class="form-group">
                    <label for="profilename" class="col-sm-3 control-label">Profile Name:</label>
                    <div class="col-sm-9">
-                     <input class="form-control" type="text" name="profilename" value="<?php echo $cur_user->user_login; ?>">
+                     <input class="form-control" type="text" name="profilename" value="<?php echo $cur_username; ?>">
                    </div>
                  </div>
 
                  <div class="form-group">
                    <label for="fname" class="col-sm-3 control-label">Name:</label>
                    <div class="col-sm-9">
-                     <input class="form-control" type="text" name="fname" value="<?php echo $cur_user->first_name." ".$cur_user->last_name; ?>">
+                     <input class="form-control" type="text" name="fname" value="<?php echo $cur_user->first_name/*." ".$cur_user->last_name;*/; ?>">
                    </div>
                  </div>
 
@@ -206,9 +211,10 @@
               $userdatas = array();
               //save initial variables
               // --- update user
-              $userdatas['display_name']  = (isset($_POST['profilename'])) ? esc_attr($_POST['profilename']) : $cur_user->user_login ;
+              // $userdatas['display_name']  = (isset($_POST['profilename'])) ? esc_attr($_POST['profilename']) : $cur_user->user_login ;
               $userdatas['first_name']    = (isset($_POST['fname'])) ? esc_attr($_POST['fname']) : $cur_user->first_name ;
               // --- update user meta
+              $userdatas['profilename']        = (isset($_POST['profilename'])) ? esc_attr($_POST['profilename']) : get_user_meta($cur_user->ID, 'profilename', true ) ;
               $userdatas['gender']        = (isset($_POST['gender'])) ? esc_attr($_POST['gender']) : get_user_meta($cur_user->ID, 'gender', true ) ;
               $userdatas['birthday']      = (isset($_POST['birthday'])) ? esc_attr($_POST['birthday']) : get_user_meta($cur_user->ID, 'birthday', true ) ;
               $userdatas['address']       = (isset($_POST['address'])) ? esc_attr($_POST['address']) : get_user_meta($cur_user->ID, 'address', true) ;
@@ -222,11 +228,12 @@
               //get updated variables & save everything
               $args_user = array(
                 'ID' => $cur_user->ID,
-                'display_name'  => $userdatas['display_name'],
+                // 'display_name'  => $userdatas['display_name'],
                 'first_name'    => $userdatas['first_name'],
               );
               wp_update_user($args_user);
 
+              update_user_meta($cur_user->ID, 'profilename', $userdatas['profilename']);
               update_user_meta($cur_user->ID, 'gender', $userdatas['gender']);
               update_user_meta($cur_user->ID, 'birthday', $userdatas['birthday']);
               update_user_meta($cur_user->ID, 'address', $userdatas['address']);
